@@ -30,7 +30,7 @@ with tab_inf:
        st.subheader("🦠 Angaben zum Virustyp")
        st.info("Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...")
 
-   with subtabs_ausgangssituation[0]:
+   with subtabs_ausgangssituation[1]:
        st.subheader("🔎 So funktioniert die Nutzung des Simulationstools:")
        st.info("In den Reitern am oberen Bildrand kannst du den…\n\nUm ein Szenario zu erstellen…\n\nDeine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\nDie Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...")
 
