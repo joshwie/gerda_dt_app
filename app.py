@@ -91,7 +91,7 @@ with tab_sz_erstellen:
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
-    aha_regeln_art = checks = st.columns(2)
+    aha_regeln_art = st.columns(2)
     with aha_regeln_art[0]:
         st.checkbox('Masken')
     with aha_regeln_art[1]:
@@ -157,16 +157,24 @@ with tab_sz_analysieren:
             with subtabs_analyse[i]:
                 st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':')
 
-                image_trajectory = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
-                st.image(image_trajectory)
+                # TODO: zusammenfassung Parameter..
 
-                image_inf_per_loc = Image.open('plots/infections_per_time_per_loc_type.png')
-                st.image(image_inf_per_loc)
+                col1, col2, col3, col4 = st.columns(4)
 
-                image_ = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
-                st.image(image_)
+                with col1:
+                    image_trajectory = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
+                    st.image(image_trajectory)
 
-                image_age_interactions = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
-                st.image(image_age_interactions)
+                with col2:
+                    image_inf_per_loc = Image.open('plots/infections_per_time_per_loc_type.png')
+                    st.image(image_inf_per_loc)
+
+                with col3:
+                    image_ = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
+                    st.image(image_)
+
+                with col4:
+                    image_age_interactions = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
+                    st.image(image_age_interactions)
 
 
