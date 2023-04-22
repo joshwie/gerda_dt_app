@@ -30,3 +30,8 @@ with tab_sz_erstellen:
         st.checkbox('Masken')
     with aha_regeln_art[1]:
         st.checkbox('Abstand')
+
+    aha_staerke = st.radio(
+        "Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?",
+        ('0%', '20%'), horizontal=True)
+
