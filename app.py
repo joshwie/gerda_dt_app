@@ -12,16 +12,22 @@ with tab_inf:
    subtabs_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
    with subtabs_ausgangssituation[0]:
-       st.text("Versetzt euch in die Rolle eines*r Politikers*in")
+       st.subheader("Versetzt euch in die Rolle eines*r Politikers*in")
        st.info("Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...")
 
-       st.text("Euch steht GERDA als Pandemie-Modell zur Verfügung")
+       st.write("##")
+
+       st.subheader("Euch steht GERDA als Pandemie-Modell zur Verfügung")
        st.info("Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM), das auf der Grundlage von Geodaten...")
 
-       st.text("Informationen über die Bevölkerungsgruppe")
+       st.write("##")
+
+       st.subheader("Informationen über die Bevölkerungsgruppe")
        st.info("Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen...")
 
-       st.text("Angaben zum Virustyp")
+       st.write("##")
+
+       st.subheader("Angaben zum Virustyp")
        st.info("Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...")
 
 with tab_sz_erstellen:
