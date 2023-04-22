@@ -1,7 +1,7 @@
 import streamlit as st
 
-#st.title("Pandemie")
 st.set_page_config(layout='wide')
+st.title("Pandemie")
 
 if 'max_szenarien' not in st.session_state:
     st.session_state['max_szenarien'] = 3
