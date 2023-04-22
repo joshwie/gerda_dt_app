@@ -10,4 +10,4 @@ with tab_inf:
 
 with tab_sz_erstellen:
     st.header("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
-    lockdown_start = st.slider('Lockdown-Start', 0, 1, 2)
+    lockdown_start = st.slider('Lockdown-Start', "nach 1 Woche", "nach 2 Wochen", "nach 3 Wochen", "nach 4 Wochen")
