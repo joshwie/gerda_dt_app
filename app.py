@@ -66,5 +66,5 @@ with tab_sz_erstellen:
 
     dummy_1, simulieren, dummy_1 = st.beta_columns(3)
     if simulieren.button('Simulieren'):
-        st.session_state['max_szenarien'] += 1
-        st.write(st.session_state['max_szenarien'])
+        st.session_state['erstellte_szenarien'] += 1
+        st.write(st.session_state['erstellte_szenarien'])
