@@ -2,7 +2,7 @@ import streamlit as st
 import time
 
 def progress_bar():
-
+    pass
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
