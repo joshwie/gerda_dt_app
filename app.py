@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
@@ -123,8 +124,12 @@ with tab_sz_erstellen:
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
         st.experimental_rerun()
         #st.write(st.session_state['erstellte_szenarien'])
-        
-    st.markdown("[Pandemie-Ausbrüche unter der Lupe](#pandemie-ausbr-che-unter-der-lupe)")
+
+    with st.spinner('Das Szenario wird erstellt...'):
+        time.sleep(3)
+    st.success('Done!')
+
+    st.markdown("[nach oben ^](#pandemie-ausbr-che-unter-der-lupe)")
 
 with tab_sz_analysieren:
     if len(st.session_state['erstellte_szenarien']) == 0:
