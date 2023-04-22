@@ -11,6 +11,9 @@ tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(["In
 with tab_inf:
    subtabs_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
+   with subtabs_ausgangssituation[0]:
+       st.info("Versetzt euch in die Rolle...")
+
 with tab_sz_erstellen:
 
     st.write("##")
