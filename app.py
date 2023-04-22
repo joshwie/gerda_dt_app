@@ -124,5 +124,5 @@ with tab_sz_analysieren:
 
         for i in range(0, st.session_state['erstellte_szenarien']):
             with subtabs_analyse[i]:
-                st.info("Ausgewählte Parameter für Szenario" + (i+1))
+                st.info("Ausgewählte Parameter für Szenario" + str((i+1)))
 
