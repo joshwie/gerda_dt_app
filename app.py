@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(layout='wide')
-st.title("Pandemie")
+st.title("Pandemie-Ausbrüche unter der Lupe")
 
 if 'max_szenarien' not in st.session_state:
     st.session_state['max_szenarien'] = 3
@@ -108,7 +108,7 @@ with tab_sz_erstellen:
     if simulieren.button('Simulieren', disabled=dont_show):
         # TODO: on_click --> Parameter_Kombination speichern
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
-        st.write(st.session_state['erstellte_szenarien'])
+        #st.write(st.session_state['erstellte_szenarien'])
 
 with tab_sz_analysieren:
     if len(st.session_state['erstellte_szenarien']) == 0:
