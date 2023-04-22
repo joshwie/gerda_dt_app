@@ -69,13 +69,15 @@ with tab_sz_erstellen:
 
     st.write("##")
 
-    if st.session_state['erstellte_szenarien'] < 3:
-        dummy_1, simulieren, dummy_1 = st.beta_columns(3)
-        if simulieren.button('Simulieren'):
-            st.session_state['erstellte_szenarien'] += 1
-            st.write(st.session_state['erstellte_szenarien'])
-    else:
+    dont_show = False
+    if st.session_state['erstellte_szenarien'] >= 3:
+        dont_show = True
         st.info("Du hast bereits die maximale Anzahl an Szenarien erstellt.")
+
+    dummy_1, simulieren, dummy_1 = st.beta_columns(3)
+    if simulieren.button('Simulieren', disabled=dont_show):
+        st.session_state['erstellte_szenarien'] += 1
+        st.write(st.session_state['erstellte_szenarien'])
 
 with tab_sz_analysieren:
     if st.session_state['erstellte_szenarien'] == 0:
