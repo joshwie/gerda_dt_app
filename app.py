@@ -17,17 +17,17 @@ with tab_inf:
 
        st.write("##")
 
-       st.subheader("Euch steht GERDA als Pandemie-Modell zur Verfügung")
+       st.subheader("📊 Euch steht GERDA als Pandemie-Modell zur Verfügung")
        st.info("Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM), das auf der Grundlage von Geodaten...")
 
        st.write("##")
 
-       st.subheader("Informationen über die Bevölkerungsgruppe")
+       st.subheader("🕵️‍♀️Informationen über die Bevölkerungsgruppe")
        st.info("Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen...")
 
        st.write("##")
 
-       st.subheader("Angaben zum Virustyp")
+       st.subheader("🦠 Angaben zum Virustyp")
        st.info("Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...")
 
 with tab_sz_erstellen:
