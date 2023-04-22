@@ -21,7 +21,9 @@ with tab_sz_erstellen:
     lockdown_orte = st.radio(
         "Welche Orte sollen im Lockdown geschlossen werden?",
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
-    
+
+    st.markdown("""---""")
+
     aha_staerke = st.radio(
         "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
@@ -35,14 +37,19 @@ with tab_sz_erstellen:
     with aha_regeln_art[1]:
         st.checkbox('Abstand')
 
+    st.markdown("""---""")
+
     aha_staerke = st.radio(
         "Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?",
         ('0%', '20%'), horizontal=True)
+
+    st.markdown("""---""")
 
     aha_staerke = st.radio(
         "Welche Impfstrategie soll verfolgt werden?",
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
+    st.markdown("""""")
 
     dummy_1, simulieren, dummy_1 = st.beta_columns(3)
     if simulieren.button('Simulieren'):
