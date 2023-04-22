@@ -39,4 +39,7 @@ with tab_sz_erstellen:
         "Welche Impfstrategie soll verfolgt werden?",
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
-    simulieren = st.button("Simulieren")
+
+    dummy_1, simulieren, dummy_1 = st.beta_columns(3)
+    if simulieren.button('Simulieren'):
+        st.write('hello')
