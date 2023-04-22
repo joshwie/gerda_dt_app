@@ -12,7 +12,7 @@ with tab_inf:
    subtabs_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
    with subtabs_ausgangssituation[0]:
-       st.subheader("Versetzt euch in die Rolle eines*r Politikers*in")
+       st.subheader("Versetzt euch in die Rolle eines/r Politikers/in")
        st.info("Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...")
 
        st.write("##")
