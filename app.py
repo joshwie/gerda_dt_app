@@ -109,16 +109,14 @@ with tab_sz_erstellen:
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
     st.write('##')
+    st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
-
-    st.write('##')
     st.write('##')
 
     dont_show = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
         dont_show = True
-        st.info('Es wurde bereits die maximale Anzahl (' + str(st.session_state['max_szenarien']) + ') an Szenarien erstellt.')
+        st.info('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
 
     dummy_1, simulieren = st.beta_columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
