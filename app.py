@@ -73,3 +73,7 @@ with tab_sz_erstellen:
     if simulieren.button('Simulieren'):
         st.session_state['erstellte_szenarien'] += 1
         st.write(st.session_state['erstellte_szenarien'])
+
+
+with tab_sz_analysieren:
+    st.info("under construction..")
