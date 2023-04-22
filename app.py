@@ -122,6 +122,7 @@ with tab_sz_erstellen:
         # TODO: on_click --> Parameter_Kombination speichern
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
         st.experimental_rerun()
+        st.markdown("[Pandemie-Ausbrüche unter der Lupe](##pandemie-ausbr-che-unter-der-lupe)")
         #st.write(st.session_state['erstellte_szenarien'])
 
 with tab_sz_analysieren:
