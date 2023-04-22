@@ -1,6 +1,9 @@
 import streamlit as st
 import time
 
+def progress_bar():
+
+
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
@@ -122,7 +125,6 @@ with tab_sz_erstellen:
     if simulieren.button('Simulieren', disabled=dont_show):
         # TODO: on_click --> Parameter_Kombination speichern
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
-        st.experimental_rerun()
         #st.write(st.session_state['erstellte_szenarien'])
 
         progress_text = "Das Szenario wird erstellt..."
@@ -133,6 +135,8 @@ with tab_sz_erstellen:
             my_bar.progress(percent_complete + 1, text=progress_text)
 
         st.success('Done!')
+        st.experimental_rerun()
+
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
