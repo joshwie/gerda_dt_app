@@ -39,7 +39,7 @@ with tab_inf:
 
    with subtabs_ausgangssituation[2]:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits <zwei> kleinere Sensitivitätsanalyse gemacht.\n\n'
+       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits zwei kleinere Sensitivitätsanalyse erstellt.\n\n'
                'Vielleicht können sie dabei helfen, ...')
 
 
@@ -50,8 +50,7 @@ with tab_sz_erstellen:
     # FIX (+1 weg)
     # nicht mehr als 3!
 
-    nr_sz_info_text = 'Es wurden bereits ' + str(len(st.session_state['erstellte_szenarien'])) + '/' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt'
-
+    nr_sz_info_text = 'Es wurden bereits ' + str(len(st.session_state['erstellte_szenarien'])) + '/' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt.'
     st.info(nr_sz_info_text)
 
     st.write('##')
@@ -113,6 +112,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
+    st.write('##')
     st.write('##')
 
     dont_show = False
