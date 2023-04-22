@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title('Pandemie-Ausbrüche unter der Lupe')
+st.title("Pandemie-Ausbrüche")
 st.set_page_config(page_title='Decision Theater', layout='wide')
 
 if 'max_szenarien' not in st.session_state:
