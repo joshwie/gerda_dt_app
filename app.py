@@ -9,7 +9,7 @@ if 'erstellte_szenarien' not in st.session_state:
 tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(["Informationen", "Szenario erstellen", "Szenario analysieren", "Szenarien vergleichen"])
 
 with tab_inf:
-   subtab_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
+   subtabs_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
 with tab_sz_erstellen:
 
@@ -83,4 +83,4 @@ with tab_sz_analysieren:
         tab_name = "Szenario " + str(i+1)
         tab_names.append(tab_name)
 
-    subtab_ausgangssituation = st.tabs(tab_names)
+    subtabs_analyse = st.tabs(tab_names)
