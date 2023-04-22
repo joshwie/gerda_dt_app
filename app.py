@@ -17,7 +17,9 @@ with tab_sz_erstellen:
 
     # FIX (+1 weg)
     # nicht mehr als 3!
-    st.info("Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt")
+
+    nr_sz_info_text = "Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt"
+    st.markdown(f"<div style='text-align: center;'>{nr_sz_info_text}</div>", unsafe_allow_html=True)
 
     st.write("##")
 
