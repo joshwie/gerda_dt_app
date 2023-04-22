@@ -80,6 +80,7 @@ with tab_sz_analysieren:
 
     tab_names = []
     for i in range(st.session_state['erstellte_szenarien']):
-        tab_names.append("Szenario " + i)
+        tab_name = "Szenario " + str(i)
+        tab_names.append(tab_name)
 
     subtab_ausgangssituation = st.tabs(tab_names)
