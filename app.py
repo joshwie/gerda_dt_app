@@ -18,7 +18,11 @@ with tab_sz_erstellen:
         "Welche Orte sollen im Lockdown geschlossen werden?",
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
 
-    
+    aha_regeln_art = checks = st.columns(2)
+    with aha_regeln_art[0]:
+        st.checkbox('Masken')
+    with aha_regeln_art[1]:
+        st.checkbox('Abstand')
 
     aha_staerke = st.radio(
         "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
