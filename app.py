@@ -28,6 +28,8 @@ with tab_sz_erstellen:
         "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
+    st.markdown("""---""")
+
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
