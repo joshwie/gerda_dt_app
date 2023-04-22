@@ -23,7 +23,7 @@ with tab_inf:
        st.text("Informationen über die Bevölkerungsgruppe")
        st.info("Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen...")
 
-   with subtabs_ausgangssituation[0]:
+   with subtabs_ausgangssituation[3]:
        st.text("Angaben zum Virustyp")
        st.info("Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...")
 
