@@ -79,8 +79,8 @@ with tab_sz_analysieren:
     st.info("under construction..")
 
     tab_names = []
-    for i in range(st.session_state['erstellte_szenarien']):
-        tab_name = "Szenario " + str(i)
+    for i in range(0, st.session_state['erstellte_szenarien']):
+        tab_name = "Szenario " + str(i+1)
         tab_names.append(tab_name)
 
     subtab_ausgangssituation = st.tabs(tab_names)
