@@ -12,17 +12,21 @@ with tab_sz_erstellen:
     st.subheader("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
 
+    st.markdown("""---""")
+
     lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, step=2)
+
+    st.markdown("""---""")
 
     lockdown_orte = st.radio(
         "Welche Orte sollen im Lockdown geschlossen werden?",
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
-
+    
     aha_staerke = st.radio(
         "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
-    caption_black = '<p style="color:Black;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
+    caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
     aha_regeln_art = checks = st.columns(2)
