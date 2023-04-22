@@ -9,11 +9,17 @@ with tab_inf:
    subtab_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
 with tab_sz_erstellen:
-    st.header("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
+    st.subheader("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
 
     lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, step=2)
 
-    genre = st.radio(
+    lockdown_orte = st.radio(
         "Welche Orte sollen im Lockdown geschlossen werden?",
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
+
+    
+
+    aha_staerke = st.radio(
+        "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
+        ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
