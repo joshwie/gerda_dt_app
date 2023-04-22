@@ -133,9 +133,6 @@ with tab_sz_analysieren:
             tab_name = 'Szenario ' + str(i+1)
             tab_names.append(tab_name)
 
-        # Test sidebar
-        sidebar = st.sidebar.markdown(tab_names)
-
         subtabs_analyse = st.tabs(tab_names)
 
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
