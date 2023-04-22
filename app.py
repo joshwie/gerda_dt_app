@@ -39,7 +39,7 @@ with tab_inf:
 
    with subtabs_ausgangssituation[2]:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Unter einer Sensitivitätsanalyse versteht man ...\nDas GERDA-Forschungsteam hat bereits <zwei> kleinere Sensitivitätsanalyse gemacht.\n'
+       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits <zwei> kleinere Sensitivitätsanalyse gemacht.\n\n'
                'Vielleicht können sie dabei helfen, ...')
 
 
