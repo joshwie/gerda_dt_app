@@ -1,7 +1,10 @@
 import streamlit as st
 
-erstellte_szenarien = 0
-max_szenarien = 3
+if 'max_szenarien' not in st.session_state:
+    st.session_state['max_szenarien'] = 3
+
+if 'erstellte_szenarien' not in st.session_state:
+    st.session_state['erstellte_szenarien'] = 0
 
 tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(["Informationen", "Szenario erstellen", "Szenario analysieren", "Szenarien vergleichen"])
 
@@ -12,7 +15,7 @@ with tab_sz_erstellen:
 
     st.write("##")
 
-    counter_text = st.text("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
+    counter_text = st.text("Es wurden bisher " + str(st.session_state['erstellte_szenarien']) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt")
 
     st.write("##")
 
@@ -63,5 +66,5 @@ with tab_sz_erstellen:
 
     dummy_1, simulieren, dummy_1 = st.beta_columns(3)
     if simulieren.button('Simulieren'):
-        erstellte_szenarien += 1
-        st.write(str(erstellte_szenarien))
+        st.session_state['max_szenarien'] += 1
+        st.write(st.session_state['max_szenarien'])
