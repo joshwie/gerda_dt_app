@@ -104,7 +104,7 @@ with tab_sz_erstellen:
         dont_show = True
         st.info('Du hast bereits die maximale Anzahl an Szenarien erstellt.')
 
-    dummy_1, simulieren, dummy_1 = st.beta_columns(3)
+    dummy_1, simulieren = st.beta_columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
         # TODO: on_click --> Parameter_Kombination speichern
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
