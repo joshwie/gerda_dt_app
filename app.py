@@ -157,7 +157,16 @@ with tab_sz_analysieren:
             with subtabs_analyse[i]:
                 st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':')
 
-                image = Image.open('plots/infections_per_time_per_loc_type.png')
-                st.image(image, caption='Infektionen pro Ort')
+                image_trajectory = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
+                st.image(image_trajectory)
+
+                image_inf_per_loc = Image.open('plots/infections_per_time_per_loc_type.png')
+                st.image(image_inf_per_loc)
+
+                image_ = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
+                st.image(image_)
+
+                image_age_interactions = Image.open('FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
+                st.image(image_age_interactions)
 
 
