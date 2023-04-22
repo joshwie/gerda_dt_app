@@ -13,7 +13,7 @@ with tab_inf:
 
    with subtabs_ausgangssituation[0]:
        st.subheader("Versetzt euch in die Rolle eines/r Politikers/in")
-       st.info("Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...")
+       st.info("🧑‍💼Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...")
 
        st.write("##")
 
