@@ -17,7 +17,7 @@ with tab_sz_erstellen:
 
     # FIX (+1 weg)
     # nicht mehr als 3!
-    counter_text = st.sucess("Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt")
+    st.info("Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt")
 
     st.write("##")
 
