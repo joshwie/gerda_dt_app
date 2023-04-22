@@ -18,8 +18,18 @@ with tab_sz_erstellen:
     # FIX (+1 weg)
     # nicht mehr als 3!
 
+    title_alignment = """
+    <style>
+    #the-title {
+      text-align: center
+    }
+    </style>
+    """
+    st.markdown(title_alignment, unsafe_allow_html=True)
+
     nr_sz_info_text = "Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt"
-    st.info(st.markdown(f"<div style='text-align: center;'>{nr_sz_info_text}</div>", unsafe_allow_html=True))
+
+    st.markdown(f"<div style='text-align: center;'>{nr_sz_info_text}</div>", unsafe_allow_html=True)
 
     st.write("##")
 
