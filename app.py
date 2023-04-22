@@ -50,7 +50,7 @@ with tab_sz_erstellen:
     # FIX (+1 weg)
     # nicht mehr als 3!
 
-    nr_sz_info_text = 'Es wurden bisher ' + str(len(st.session_state['erstellte_szenarien'])) + ' von ' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt'
+    nr_sz_info_text = 'Es wurden bisher ' + str(len(st.session_state['erstellte_szenarien'])) + ' / ' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt'
 
     st.info(nr_sz_info_text)
 
