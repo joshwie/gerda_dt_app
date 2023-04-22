@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+from PIL import Image
 
 def progress_bar():
     pass
@@ -43,7 +44,7 @@ with tab_inf:
 
    with subtabs_ausgangssituation[2]:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits zwei kleinere Sensitivitätsanalyse erstellt.\n\n'
+       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits zwei kleinere Sensitivitätsanalysen erstellt.\n\n'
                'Vielleicht können sie dabei helfen, ...')
 
 
@@ -135,7 +136,7 @@ with tab_sz_erstellen:
             my_bar.progress(percent_complete + 1, text=progress_text)
 
         st.success('Done!')
-        time.sleep(1)
+        time.sleep(2)
         st.experimental_rerun()
 
 
@@ -155,5 +156,8 @@ with tab_sz_analysieren:
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             with subtabs_analyse[i]:
                 st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':')
+
+                image = Image.open('plots/infections_per_time_per_loc_type.png')
+                st.image(image, caption='Infektionen pro Ort')
 
 
