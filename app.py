@@ -14,3 +14,7 @@ with tab_sz_erstellen:
 
     lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, step=2)
 
+    close_work_public = st.checkbox("Arbeit & Öffentliche Orte")
+    close_school_public = st.checkbox("Schulen & Öffentliche Orte")
+    close_school = st.checkbox("Schulen")
+    close_all = st.checkbox("Alles")
