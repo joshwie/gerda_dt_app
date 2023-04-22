@@ -22,7 +22,9 @@ with tab_sz_erstellen:
         "Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?",
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
-    st.text("Welche AHA-Regeln sollten gelten?")
+    caption_black = '<p style="color:Black">Welche AHA-Regeln sollten gelten?</p>'
+    st.markdown(caption_black, unsafe_allow_html=True)
+
     aha_regeln_art = checks = st.columns(2)
     with aha_regeln_art[0]:
         st.checkbox('Masken')
