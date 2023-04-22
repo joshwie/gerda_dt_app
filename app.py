@@ -76,11 +76,12 @@ with tab_sz_erstellen:
 
 
 with tab_sz_analysieren:
-    st.info("under construction..")
+    if st.session_state['erstellte_szenarien'] == 0:
+        st.info("Du musst für die Analyse mindestens ein Szenario erstellen")
+    else:
+        tab_names = []
+        for i in range(0, st.session_state['erstellte_szenarien']):
+            tab_name = "Szenario " + str(i+1)
+            tab_names.append(tab_name)
 
-    tab_names = []
-    for i in range(0, st.session_state['erstellte_szenarien']):
-        tab_name = "Szenario " + str(i+1)
-        tab_names.append(tab_name)
-
-    subtabs_analyse = st.tabs(["1", "2", "3"])
+        subtabs_analyse = st.tabs(tab_names)
