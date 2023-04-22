@@ -108,6 +108,7 @@ with tab_sz_erstellen:
     if simulieren.button('Simulieren', disabled=dont_show):
         # TODO: on_click --> Parameter_Kombination speichern
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
+        st.experimental_rerun()
         #st.write(st.session_state['erstellte_szenarien'])
 
 with tab_sz_analysieren:
