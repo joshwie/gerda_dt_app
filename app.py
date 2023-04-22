@@ -116,7 +116,7 @@ with tab_sz_erstellen:
     dont_show = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
         dont_show = True
-        st.warning('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
+        st.error('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
 
     dummy_1, simulieren = st.beta_columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
@@ -127,7 +127,7 @@ with tab_sz_erstellen:
 
     with st.spinner('Das Szenario wird erstellt...'):
         time.sleep(3)
-    st.success('Done!')
+        st.success('Done!')
 
     st.markdown("[nach oben ^](#pandemie-ausbr-che-unter-der-lupe)")
 
