@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(layout="wide")
+
 if 'max_szenarien' not in st.session_state:
     st.session_state['max_szenarien'] = 3
 
