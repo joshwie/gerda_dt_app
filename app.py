@@ -12,7 +12,7 @@ if 'erstellte_szenarien' not in st.session_state:
 tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(['Informationen', 'Szenario erstellen', 'Szenario analysieren', 'Szenarien vergleichen'])
 
 with tab_inf:
-   subtabs_ausgangssituation = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Erste Ergebnisse'])
+   subtabs_ausgangssituation = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Vorab-Analyse'])
 
    with subtabs_ausgangssituation[0]:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
@@ -38,7 +38,9 @@ with tab_inf:
        st.info('In den Reitern am oberen Bildrand kannst du den…\n\nUm ein Szenario zu erstellen…\n\nDeine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\nDie Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...')
 
    with subtabs_ausgangssituation[2]:
-       st.subheader('📈 Sensitivity Analysis')
+       st.subheader('📈 Sensitivitätsanalyse')
+       st.info('Unter einer Sensitivitätsanalyse versteht man ...\nDas GERDA-Forschungsteam hat bereits <zwei> kleinere Sensitivitätsanalyse gemacht.\n'
+               'Vielleicht können sie dabei helfen, ...')
 
 
 with tab_sz_erstellen:
