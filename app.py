@@ -15,15 +15,12 @@ with tab_inf:
        st.text("Versetzt euch in die Rolle eines*r Politikers*in")
        st.info("Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...")
 
-   with subtabs_ausgangssituation[1]:
        st.text("Euch steht GERDA als Pandemie-Modell zur Verfügung")
        st.info("Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM), das auf der Grundlage von Geodaten...")
 
-   with subtabs_ausgangssituation[2]:
        st.text("Informationen über die Bevölkerungsgruppe")
        st.info("Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen...")
 
-   with subtabs_ausgangssituation[3]:
        st.text("Angaben zum Virustyp")
        st.info("Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...")
 
