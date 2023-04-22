@@ -18,7 +18,7 @@ with tab_sz_erstellen:
     # FIX (+1 weg)
     # nicht mehr als 3!
 
-    nr_sz_info_text = "Es wurden bisher " + str((st.session_state['erstellte_szenarien']+1)) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt"
+    nr_sz_info_text = "Es wurden bisher " + str(st.session_state['erstellte_szenarien']) + " von " + str(st.session_state['max_szenarien']) + " Szenarien erstellt"
 
     st.info(nr_sz_info_text)
 
@@ -77,3 +77,9 @@ with tab_sz_erstellen:
 
 with tab_sz_analysieren:
     st.info("under construction..")
+
+    tab_names = []
+    for i in range(st.session_state['erstellte_szenarien']):
+        tab_names.append("Szenario " + i)
+
+    subtab_ausgangssituation = st.tabs(tab_names)
