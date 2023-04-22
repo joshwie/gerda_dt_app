@@ -58,7 +58,7 @@ with tab_sz_erstellen:
 
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
 
-    st.markdown("<span style='color:gray'>'''---'''</span>", unsafe_allow_html=True)
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
 
     st.markdown('''---''')
 
