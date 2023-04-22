@@ -55,7 +55,7 @@ with tab_sz_erstellen:
 
     st.write('##')
 
-    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1, label_visibility='visible')
+    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
@@ -132,6 +132,9 @@ with tab_sz_analysieren:
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             tab_name = 'Szenario ' + str(i+1)
             tab_names.append(tab_name)
+
+        # Test sidebar
+        sidebar = st.sidebar.markdown(tab_names)
 
         subtabs_analyse = st.tabs(tab_names)
 
