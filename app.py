@@ -35,3 +35,7 @@ with tab_sz_erstellen:
         "Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?",
         ('0%', '20%'), horizontal=True)
 
+    aha_staerke = st.radio(
+        "Welche Impfstrategie soll verfolgt werden?",
+        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
+
