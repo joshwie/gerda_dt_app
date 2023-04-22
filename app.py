@@ -9,7 +9,10 @@ with tab_inf:
    subtab_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
 with tab_sz_erstellen:
-    st.subheader("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
+    st.caption("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
+
+    st.write("##")
+
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
 
     st.markdown("""---""")
