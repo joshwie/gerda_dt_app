@@ -74,7 +74,7 @@ with tab_sz_erstellen:
 
     st.markdown('''---''')
 
-    caption_black = '<p style='color:#30333f;font-size: 14px;'>Welche AHA-Regeln sollten gelten?</p>'
+    caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
     aha_regeln_art = checks = st.columns(2)
