@@ -64,19 +64,25 @@ with tab_sz_erstellen:
 
     lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, step=2)
 
-    st.markdown('''---''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     lockdown_orte = st.radio(
         'Welche Orte sollen im Lockdown geschlossen werden?',
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
 
-    st.markdown('''---''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
-    st.markdown('''---''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
@@ -87,19 +93,25 @@ with tab_sz_erstellen:
     with aha_regeln_art[1]:
         st.checkbox('Abstand')
 
-    st.markdown('''---''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     aha_staerke = st.radio(
         'Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?',
         ('0%', '20%'), horizontal=True)
 
-    st.markdown('''---''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     aha_staerke = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
-    st.markdown('''''')
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
 
     st.write('##')
 
