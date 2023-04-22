@@ -125,11 +125,16 @@ with tab_sz_erstellen:
         st.experimental_rerun()
         #st.write(st.session_state['erstellte_szenarien'])
 
-    with st.spinner('Das Szenario wird erstellt...'):
-        time.sleep(3)
-        st.success('Done!')
+    progress_text = "Das Szenario wird erstellt..."
+    my_bar = st.progress(0, text=progress_text)
 
-    st.markdown("[nach oben ^](#pandemie-ausbr-che-unter-der-lupe)")
+    for percent_complete in range(100):
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1, text=progress_text)
+
+    st.success('Done!')
+
+    st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
 with tab_sz_analysieren:
     if len(st.session_state['erstellte_szenarien']) == 0:
