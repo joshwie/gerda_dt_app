@@ -9,7 +9,7 @@ with tab_inf:
    subtab_ausgangssituation = st.tabs(["Ausgangssituation", "Bedienungsanleitung", "Sensitivity Analysis"])
 
 with tab_sz_erstellen:
-    st.caption("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
+    counter_text = st.text("Es wurden bisher " + str(erstellte_szenarien) + " von " + str(max_szenarien) + " Szenarien erstellt")
 
     st.write("##")
 
@@ -56,6 +56,8 @@ with tab_sz_erstellen:
 
     st.markdown("""""")
 
+    st.write("##")
+
     dummy_1, simulieren, dummy_1 = st.beta_columns(3)
     if simulieren.button('Simulieren'):
-        st.write('hello')
+        erstellte_szenarien += 1
