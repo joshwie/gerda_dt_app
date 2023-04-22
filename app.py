@@ -83,4 +83,4 @@ with tab_sz_analysieren:
         tab_name = "Szenario " + str(i+1)
         tab_names.append(tab_name)
 
-    subtabs_analyse = st.tabs(tab_names)
+    subtabs_analyse = st.tabs(["1", "2", "3"])
