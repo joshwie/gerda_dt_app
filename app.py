@@ -168,7 +168,11 @@ with tab_inf:
    with bedienungsanleitung:
 
        st.subheader('🦠 Willkommen zur Pandemie-Simulations-App! 🦠')
-       st.caption('Hier könnt ihr verschiedene Szenarien erstellen und analysieren, um die Auswirkungen der Pandemie auf bestimmte Maßnahmen zu untersuchen. Zum Beispiel könnt ihr untersuchen, wie sich die Pandemie auswirkt, wenn ein Lockdown eingeführt wird oder Schulen geschlossen werden. In der oberen Leiste findet ihr 3 Reiter, zwischen denen ihr wählen könnt.')
+
+       caption_black = '<p style="color:#30333f;font-size: 14px;">Hier könnt ihr verschiedene Szenarien erstellen und analysieren, um die Auswirkungen der Pandemie auf bestimmte Maßnahmen zu untersuchen. Zum Beispiel könnt ihr untersuchen, wie sich die Pandemie auswirkt, wenn ein Lockdown eingeführt wird oder Schulen geschlossen werden. In der oberen Leiste findet ihr 3 Reiter, zwischen denen ihr wählen könnt.</p>'
+       st.markdown(caption_black, unsafe_allow_html=True)
+
+       st.caption('')
 
        st.write('##')
 
