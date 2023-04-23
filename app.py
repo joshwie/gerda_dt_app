@@ -316,7 +316,7 @@ with tab_sz_analysieren:
                     #st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält:** ' + str(param_combination['ungehorsam']))
                     #st.markdown('**Impfstrategie:** ' + '(DEAKTIVIERT)')
 
-                with links:
+                with rechts:
                     st.markdown(
                         '''
                             | Parameter | Wert |
