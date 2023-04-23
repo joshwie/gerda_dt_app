@@ -17,8 +17,6 @@ def store_parameter_combination():
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 def get_dynamic_paths_to_images(param_combination):
-    dynamic_paths_to_images = []
-
     # infectivity
     prefix = 'gerda_output/infectivity_'
     if param_combination['masken'] and param_combination['abstand']:
@@ -64,20 +62,19 @@ def get_dynamic_paths_to_images(param_combination):
 
 
     trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
-    sub_image_path = prefix + suffix + "/" + suffix + "_sub_statii.png"
-    infections_per_loc_path = prefix + suffix + "/" + "infections_per_time_per_loc_type.png"
-    infectionspattern_per_age_group = prefix + suffix + "/" + suffix + "_infectionpatterns.png"
+    sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
+    infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
+    infectionspattern_per_age_group = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
 
-    st.write(trajectory_image_path)
     #st.write(sub_image_path)
     #st.write(infections_per_loc_path)
     #st.write(infectionspattern_per_age_group)
 
     # comment (just testing)
     dynamic_paths_to_images = [trajectory_image_path,
-                       'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png',
-                       'test_plots/infections_per_time_per_loc_type.png',
-                       'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png']
+                       sub_image_path,
+                       infections_per_loc_path,
+                       infectionspattern_per_age_group]
 
     return dynamic_paths_to_images
 
