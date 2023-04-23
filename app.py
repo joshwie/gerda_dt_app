@@ -132,15 +132,16 @@ with tab_sz_erstellen:
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
         #st.write(st.session_state['erstellte_szenarien'])
 
-        progress_text = "Das Szenario wird erstellt..."
-        my_bar = st.progress(0, text=progress_text)
-
         # Uncomment for progress bar
         '''
+        progress_text = "Das Szenario wird erstellt..."
+        my_bar = st.progress(0, text=progress_text)
+        
+        
         for percent_complete in range(100):
             time.sleep(0.07)
             my_bar.progress(percent_complete + 1, text=progress_text)
-
+        
         st.success('Done!')
         time.sleep(2)
         '''
@@ -149,7 +150,7 @@ with tab_sz_erstellen:
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
         st.write("HI!")
-        #st.write(st.session_state['erstellte_szenarien'])
+        st.write(st.session_state['erstellte_szenarien'])
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
