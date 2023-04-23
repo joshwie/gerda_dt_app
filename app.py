@@ -229,12 +229,24 @@ with tab_sz_analysieren:
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             with subtabs_analyse[i]:
                 param_combination = st.session_state['erstellte_szenarien'][i]
+
+                masken_zusammenfassung = 'Nein'
+                if param_combination['masken']:
+                    masken_zusammenfassung = 'Ja'
+
+                abstand_zusammenfassung = 'Nein'
+                if param_combination['abstand']:
+                    abstand_zusammenfassung = 'Ja'
+
                 st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':\n\n'
                         'Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                         'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                         'Lockdown-Orte: ' + str(param_combination['lockdown_orte']) + '\n\n'
-                        
-                        '...')
+                        'AHA-Regeln empfohlen oder verpflichtend: ' + '(DEAKTIVIERT)\n\n'
+                        'Masken: ' + masken_zusammenfassung + '\n\n'
+                        'Abstand: ' + abstand_zusammenfassung + '\n\n'
+                        'Anteil der Bevölkerung, der sich nicht an die Maßnahmen hält:' + str(param_combination['ungehorsam']) + "\n\n"
+                        'Impfstrategie: ' + '(DEAKTIVIERT)')
 
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
