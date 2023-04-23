@@ -9,8 +9,8 @@ def store_parameter_combination():
         "lockdown_dauer": lockdown_dauer,
         "lockdown_orte": lockdown_orte,
         "aha_staerke": aha_staerke,
-        "masken": masken,
-        "abstand": abstand
+        "masken": masken_checkbox,
+        "abstand": abstand_checkbox
     }
 
 
@@ -107,9 +107,9 @@ with tab_sz_erstellen:
 
     masken, abstand = st.columns(2)
     with masken:
-        st.checkbox('Masken')
+        masken_checkbox = st.checkbox('Masken')
     with abstand:
-        st.checkbox('Abstand')
+        abstand_checkbox = st.checkbox('Abstand')
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
