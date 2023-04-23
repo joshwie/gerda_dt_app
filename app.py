@@ -321,7 +321,7 @@ with tab_sz_analysieren:
 
                     table_links_small = '<div style="color:#30333f;font-size: 14px;">' + table_links + '</div>'
 
-                    st.markdown(table_links_small)
+                    st.markdown(table_links)
 
                     #st.markdown('**Lockdown-Start nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
                     #st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
