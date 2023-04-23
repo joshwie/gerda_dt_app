@@ -2,7 +2,7 @@ import streamlit as st
 import time
 from PIL import Image
 
-WIDTH_FOR_IMAGES = 150
+WIDTH_FOR_IMAGES = 600
 
 def store_parameter_combination():
     param_combination = {
