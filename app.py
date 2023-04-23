@@ -328,7 +328,6 @@ with tab_sz_analysieren:
                         ''')
 
                 st.write('##')
-                st.divider()
                 st.write('##')
 
                     #st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
