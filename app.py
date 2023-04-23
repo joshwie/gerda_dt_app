@@ -7,7 +7,10 @@ def store_parameter_combination():
     param_combination = {
         "lockdown_start": lockdown_start,
         "lockdown_dauer": lockdown_dauer,
-        "lockdown_orte": lockdown_orte
+        "lockdown_orte": lockdown_orte,
+        "aha_staerke": aha_staerke,
+        "masken": masken,
+        "abstand": abstand
     }
 
 
@@ -102,10 +105,10 @@ with tab_sz_erstellen:
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
-    aha_regeln_art = st.columns(2)
-    with aha_regeln_art[0]:
+    masken, abstand = st.columns(2)
+    with masken:
         st.checkbox('Masken')
-    with aha_regeln_art[1]:
+    with abstand:
         st.checkbox('Abstand')
 
     st.write('##')
