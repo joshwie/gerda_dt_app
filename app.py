@@ -319,7 +319,7 @@ with tab_sz_analysieren:
                             | Verweigernde | :blue[''' + lockdown_ablehnende + ''']|
                         '''
 
-                    table_links_small = '<p style="color:#30333f;font-size: 14px;">' + table_links + '</p>'
+                    table_links_small = '<div style="color:#30333f;font-size: 14px;">' + table_links + '</div>'
 
                     st.markdown(table_links_small)
 
