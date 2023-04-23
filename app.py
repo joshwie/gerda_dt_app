@@ -85,10 +85,10 @@ with tab_inf:
 
    with bedienungsanleitung:
        st.subheader('🔎 So funktioniert die Nutzung des Simulationstools:')
-       st.info('In den Reitern am oberen Bildrand kannst du den…\n\n'
-               'Um ein Szenario zu erstellen…\n\n'
-               'Deine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\n'
-               'Die Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...')
+       st.info('In den Reitern am oberen Bildrand kannst du den Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
+               'Um ein Szenario zu erstellen, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
+               'Deine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
+               'Die Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.')
 
    with sensitivity_analysis:
        st.subheader('📈 Sensitivitätsanalyse')
@@ -238,7 +238,7 @@ with tab_sz_analysieren:
                 if param_combination['abstand']:
                     abstand_zusammenfassung = 'Ja'
 
-                st.subheader('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':\n\n')
+                st.subheader('Ausgewählte Parameter für Szenario ' + str((i+1)))
                 st.info('Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                         'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                         'Lockdown-Orte: ' + str(param_combination['lockdown_orte']) + '\n\n'
