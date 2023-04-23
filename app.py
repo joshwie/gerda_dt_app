@@ -19,7 +19,26 @@ def store_parameter_combination():
 def get_dynamic_paths_to_images(param_combination):
     dynamic_paths_to_images = []
 
+    # infectivity
+    path_to_images = 'infectivity_'
+    if param_combination['masken'] and param_combination['abstand']:
+        path_to_images += '0078/'
+    elif param_combination['masken'] or param_combination['abstand']:
+        path_to_images += '0106/'
+    else:
+        path_to_images += '0140/' # stimmen die Ordner-Bezeichnungen?
 
+    # start
+    if param_combination['lockdown_start'] == 1:
+        path_to_images += "start_168/"
+    if param_combination['lockdown_start'] == 2:
+        path_to_images += "start_336/"
+    if param_combination['lockdown_start'] == 3:
+        path_to_images += "start_504/"
+    if param_combination['lockdown_start'] == 4:
+        path_to_images += "start_672/"
+
+    st.write(path_to_images)
 
 
     # comment (just testing)
