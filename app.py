@@ -2,6 +2,7 @@ import streamlit as st
 import time
 from PIL import Image
 
+WIDTH_FOR_IMAGES = 150
 
 def store_parameter_combination():
     param_combination = {
@@ -226,12 +227,12 @@ with tab_sz_analysieren:
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
                     image_trajectory = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
-                    st.image(image_trajectory)
+                    st.image(image_trajectory, width=WIDTH_FOR_IMAGES)
 
                 with row1_col2:
                     st.subheader("Infektionen pro Ort")
                     image_inf_per_loc = Image.open('test_plots/infections_per_time_per_loc_type.png')
-                    st.image(image_inf_per_loc)
+                    st.image(image_inf_per_loc, width=WIDTH_FOR_IMAGES)
 
                 row2_col1, row2_col2 = st.columns(2)
 
