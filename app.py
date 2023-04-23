@@ -295,17 +295,19 @@ with tab_sz_analysieren:
 
                 links, rechts = st.columns(2)
 
-                lock_start_value = ' nach ' + str(param_combination['lockdown_start']) + ' Woche(n)'
+                lockdown_start_param_value = ' nach ' + str(param_combination['lockdown_start']) + ' Woche(n)'
+                lockdown_orte_param_value = str(param_combination['lockdown_orte'])
+                lockdown_ablehnende = str(param_combination['ungehorsam'])
 
                 with links:
                     st.markdown(
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | **Lockdown-Start:** | :blue[''' + lock_start_value + ''']|
-                            | e | f |
-                            | g | h |
-                            | i | j |
+                            | **Lockdown-Start:** | :blue[''' + lockdown_start_param_value + ''']|
+                            | **Lockdown-Orte:** | :blue[''' + lockdown_orte_param_value + ''']|
+                            | **Masken:** | :blue[''' + masken_zusammenfassung + ''']|
+                            | **Lockdown-Ablehnende** | :blue[''' + lockdown_ablehnende + ''']|
                         ''')
 
                     st.markdown('**Lockdown-Start:** nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
