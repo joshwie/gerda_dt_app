@@ -82,7 +82,9 @@ def get_dynamic_paths_to_images(param_combination):
 
     return dynamic_paths_to_images
 
-st.set_page_config(layout='wide')
+# Wide-Mode
+#st.set_page_config(layout='wide')
+
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
 if 'max_szenarien' not in st.session_state:
@@ -326,11 +328,11 @@ with tab_sz_analysieren:
                     image_age_interactions = Image.open(dynamic_paths_to_images[3])
                     st.image(image_age_interactions)
 
-                st.subheader("Diagnosen nach Alter im Zeitverlauf")
+                st.subheader("Neue Diagnosen nach Alter")
                 image_diagnoses_per_100000 = Image.open(dynamic_paths_to_images[4])
                 st.image(image_diagnoses_per_100000)
 
-                st.subheader("Mortalität nach Alter im Zeitverlauf")
+                st.subheader("Neue Todesfälle nach Alter")
                 image_deaths_per_100000_path = Image.open(dynamic_paths_to_images[5])
                 st.image(image_deaths_per_100000_path)
 
