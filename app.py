@@ -8,7 +8,7 @@ def store_parameter_combination():
 
     new_state = st.session_state['erstellte_szenarien'].append(param_combination)
 
-    print("XX!")
+    print("XX")
 
 
 st.set_page_config(layout='wide')
@@ -150,6 +150,7 @@ with tab_sz_erstellen:
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
+        print("YY")
         #st.write("HI!")
         #st.write(st.session_state['erstellte_szenarien'])
 
