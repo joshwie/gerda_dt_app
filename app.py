@@ -6,7 +6,9 @@ from PIL import Image
 def store_parameter_combination():
     param_combination = {}
 
-    st.session_state['erstellte_szenarien'].append(param_combination)
+    new_state = st.session_state['erstellte_szenarien'].append(param_combination)
+
+    print("XX!")
 
 
 st.set_page_config(layout='wide')
@@ -129,7 +131,6 @@ with tab_sz_erstellen:
     dummy_1, simulieren = st.columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
 
-        new_state = st.session_state['erstellte_szenarien'].append('dummy')
         #st.write(st.session_state['erstellte_szenarien'])
 
         # Uncomment for progress bar
@@ -149,8 +150,8 @@ with tab_sz_erstellen:
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
-        st.write("HI!")
-        st.write(st.session_state['erstellte_szenarien'])
+        #st.write("HI!")
+        #st.write(st.session_state['erstellte_szenarien'])
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
