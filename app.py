@@ -4,8 +4,11 @@ from PIL import Image
 
 
 def store_parameter_combination():
-    param_combination = {"lockdown_start": lockdown_start}
-
+    param_combination = {
+        "lockdown_start": lockdown_start,
+        "lockdown_dauer": lockdown_dauer,
+        "lockdown_orte": lockdown_orte
+    }
 
 
     st.session_state['erstellte_szenarien'].append(param_combination)
@@ -15,8 +18,6 @@ def store_parameter_combination():
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
-
-st.write("ZZ")
 
 if 'max_szenarien' not in st.session_state:
     st.session_state['max_szenarien'] = 3
