@@ -320,7 +320,7 @@ with tab_sz_analysieren:
                             | Lockdown-Start | :blue[''' + lockdown_start_param_value + ''']|
                             | Lockdown-Orte | :blue[''' + lockdown_orte_param_value + ''']|
                             | Masken | :blue[''' + masken_zusammenfassung + ''']|
-                            | Verweigernde | :blue[''' + lockdown_ablehnende + ''']|
+                            | Lockdown-Verweigernde | :blue[''' + lockdown_ablehnende + ''']|
                         '''
 
                     st.markdown(table_links)
