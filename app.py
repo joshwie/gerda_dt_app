@@ -59,7 +59,8 @@ with tab_inf:
        st.write('##')
 
        st.subheader('🕵️‍♀️ Informationen über die Bevölkerungsgruppe')
-       st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen...')
+       st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen. '
+               'Es ist sogar davon auszugehen, dass strengere Maßnahmen mit einem erhöhten Anteil derer, die sich nicht an die Maßnahmen halten, einhergeht.')
 
        st.write('##')
 
