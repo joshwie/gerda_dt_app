@@ -306,19 +306,8 @@ with tab_sz_analysieren:
                     st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
                     st.markdown('**AHA-Regeln empfohlen oder verpflichtend:** ' + '(DEAKTIVIERT)')
                     st.markdown('**Abstand:** ' + abstand_zusammenfassung)
-                    st.markdown('Anteil der Bevölkerung, der sich nicht an den Lockdown hält: ' + str(param_combination['ungehorsam']))
+                    st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält**: ' + str(param_combination['ungehorsam']))
 
-                '''
-                st.info('Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
-                        'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
-                        'Lockdown-Orte: ' + str(param_combination['lockdown_orte']) + '\n\n'
-                        'AHA-Regeln empfohlen oder verpflichtend: ' + '(DEAKTIVIERT)\n\n'
-                        'Masken: ' + masken_zusammenfassung + '\n\n'
-                        'Abstand: ' + abstand_zusammenfassung + '\n\n'
-                        'Anteil der Bevölkerung, der sich nicht an den Lockdown hält: ' + str(param_combination['ungehorsam']) + "\n\n"
-                        'Impfstrategie: ' + '(DEAKTIVIERT)')
-                '''
-                
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
 
