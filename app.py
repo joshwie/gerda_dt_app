@@ -319,9 +319,9 @@ with tab_sz_analysieren:
                             | Verweigernde | :blue[''' + lockdown_ablehnende + ''']|
                         '''
 
-                    table_links_small = '<div style="color:#30333f;font-size: 14px;">' + table_links + '</div>'
+                    table_links_small = '<style scoped> table {   font-size: 13px; } </style>' + table_links
 
-                    st.markdown(table_links)
+                    st.markdown(table_links_small, unsafe_allow_html=True)
 
                     #st.markdown('**Lockdown-Start nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
                     #st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
