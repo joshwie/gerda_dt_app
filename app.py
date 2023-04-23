@@ -17,18 +17,18 @@ def store_parameter_combination():
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 def get_dynamic_paths_to_images(param_combination):
-    paths_to_images = []
+    dynamic_paths_to_images = []
 
 
 
 
-    # uncomment (just testing)
-    paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
+    # comment (just testing)
+    dynamic_paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
                        'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png',
                        'test_plots/infections_per_time_per_loc_type.png',
                        'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png']
 
-    return paths_to_images
+    return dynamic_paths_to_images
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
@@ -235,7 +235,7 @@ with tab_sz_analysieren:
                                                                              '...')
 
                 # get the (4?) images, based on the parameter combination
-                dynamic_paths_to_images = get_dynamic_paths_to_images()
+                dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
 
                 row1_col1, row1_col2 = st.columns(2)
 
