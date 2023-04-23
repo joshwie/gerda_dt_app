@@ -143,13 +143,14 @@ with tab_sz_erstellen:
             my_bar.progress(percent_complete + 1, text=progress_text)
         
         st.success('Done!')
-        time.sleep(2)
 
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
         #st.write("HI!")
         #st.write(st.session_state['erstellte_szenarien'])
+
+        time.sleep(2)
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
