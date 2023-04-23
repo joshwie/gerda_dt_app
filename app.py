@@ -134,14 +134,14 @@ with tab_sz_erstellen:
         st.write("Button pressed")
         #st.write(st.session_state['erstellte_szenarien'])
 
+        # Progress-Bar
         progress_text = "Das Szenario wird erstellt..."
         my_bar = st.progress(0, text=progress_text)
         
-        
         for percent_complete in range(100):
-            time.sleep(0.07)
+            time.sleep(0.5)
             my_bar.progress(percent_complete + 1, text=progress_text)
-        
+
         st.success('Done!')
 
         # TODO: on_click --> Parameter_Kombination speichern
