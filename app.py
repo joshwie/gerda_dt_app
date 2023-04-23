@@ -79,7 +79,7 @@ with tab_inf:
 
    with sensitivity_analysis:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Das GERDA-Forschungsteam hat bereits etwas Vorarbeit geleistet und zwei kleine sogenannte Sensitivitätsanalysen erstellt.'
+       st.info('Das GERDA-Forschungsteam hat bereits etwas Vorarbeit geleistet und zwei sogenannte Sensitivitätsanalysen erstellt.'
                ' Bei einer Sensitivitätsanalyse wird geschaut, wie sich die Veränderung einer bestimmten Einflussgröße (z. B. Start oder Dauer eines Lockdowns) auf das Gesamtsystem auswirkt. Alle übrigen Einflussgrößen bleiben dabei unverändert.\n\n'
                ' Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur verfügung.'
                ' Vielleicht können euch bei der Wahl der Parameter für die Erstellung der Szenarien helfen.')
@@ -225,22 +225,22 @@ with tab_sz_analysieren:
 
                 with col1:
                     st.subheader("Infektionsverlauf")
-                    image_trajectory = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
+                    image_trajectory = Image.open('test_test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
                     st.image(image_trajectory)
 
                 with col2:
                     st.subheader("Infektionen pro Ort")
-                    image_inf_per_loc = Image.open('plots/infections_per_time_per_loc_type.png')
+                    image_inf_per_loc = Image.open('test_test_plots/infections_per_time_per_loc_type.png')
                     st.image(image_inf_per_loc)
 
                 with col3:
                     st.subheader("Infektionsverlauf")
-                    image_ = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
+                    image_ = Image.open('test_test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
                     st.image(image_)
 
                 with col4:
                     st.subheader("Infektionen nach Alter")
-                    image_age_interactions = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
+                    image_age_interactions = Image.open('test_test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
                     st.image(image_age_interactions)
 
 
