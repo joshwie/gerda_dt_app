@@ -29,9 +29,9 @@ if 'erstellte_szenarien' not in st.session_state:
 tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(['Informationen', 'Szenario erstellen', 'Szenario analysieren', 'Szenarien vergleichen'])
 
 with tab_inf:
-   subtabs_ausgangssituation = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Vorab-Analyse'])
+   ausgangssituation, bedienungsanleitung, sensitivity_analysis = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Vorab-Analyse'])
 
-   with subtabs_ausgangssituation[0]:
+   with ausgangssituation:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
        st.info('Stellt euch vor, ihr seid Mitglieder des Stadtrats und müsst bereits morgen Entscheidungen über Maßnahmen zur Vermeidung eines unkontrollierten Infektionsausbruchs treffen.\n\n'
                'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen. '
@@ -42,8 +42,8 @@ with tab_inf:
        st.subheader('📊 Euch steht GERDA als Pandemie-Modell zur Verfügung')
        st.info(
            'Für die Entscheidungsfindung stellt euch die Wissenschaft ein Infektionsmodell namens GERDA zur Verfügung.'
-           ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden,'
-           ' um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien des Infektionsgeschehens zu simulieren. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf auswirken könnten.\n\n'
+           ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die einzelnen Einwohner*innen von Gangelt im System synthetisch nachgebildet wurden,'
+           ' um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien des Infektionsgeschehens zu simulieren. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf möglicherweise auswirken könnten.\n\n'
            'Auch wenn bei der Entwicklung des Modells versucht wurde möglichst viele reale Gegebenheiten zu berücksichtigen, kann die Realität dennoch nie exakt abgebildet werden.'
            ' Das Modell soll somit lediglich als Entscheidungshilfe gesehen werden.'
            ' Denkt also auch an die verschiedenen Auswirkungen auf die Gesellschaft und andere/weitere Maßnahmen, die vom Modell nicht berücksichtigt werden.')
@@ -68,17 +68,30 @@ with tab_inf:
        st.subheader('🦠 Angaben zum Virustyp')
        st.info('Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
 
-   with subtabs_ausgangssituation[1]:
+   with bedienungsanleitung:
        st.subheader('🔎 So funktioniert die Nutzung des Simulationstools:')
        st.info('In den Reitern am oberen Bildrand kannst du den…\n\n'
                'Um ein Szenario zu erstellen…\n\n'
                'Deine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\n'
                'Die Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...')
 
-   with subtabs_ausgangssituation[2]:
+   with sensitivity_analysis:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Unter einer Sensitivitätsanalyse versteht man …\n\nDas GERDA-Forschungsteam hat bereits zwei kleinere Sensitivitätsanalysen erstellt.\n\n'
-               'Vielleicht können sie dabei helfen, ...')
+       st.info('Das GERDA-Forschungsteam hat bereits etwas Vorarbeit geleistet und zwei kleinere sogenannte Sensitivitätsanalysen erstellt.'
+               'Bei einer Sensitivitätsanalyse wird geschaut, wie sich die Veränderung einer bestimmten Einflussgröße (z. B. Start oder Dauer eines Lockdowns) auf das Gesamtsystem auswirkt. Alle übrigen Einflussgrößen bleiben dabei unverändert.\n\n'
+               'Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur verfügung.'
+               'Vielleicht können sie dabei helfen, welche Parameter ihr für der Erstellung der Szenarien wählen wollt.')
+
+       st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
+       image_sens_ana_s_20 = Image.open(
+           'sensitivity_analysis/suppl_s_20.png')
+       st.image(image_sens_ana_s_20)
+
+       st.subheader("Sensitivitätsanalyse für die Dauer des Lockdowns")
+       image_sens_ana_s_21 = Image.open(
+           'sensitivity_analysis/suppl_s_21.png')
+       st.image(image_sens_ana_s_21)
+
 
 
 with tab_sz_erstellen:
