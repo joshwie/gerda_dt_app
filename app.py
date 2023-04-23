@@ -86,6 +86,7 @@ with tab_inf:
        st.write('##')
 
        st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
+       st.write('##')
        image_sens_ana_s_20 = Image.open(
            'sensitivity_analysis/suppl_s_20.png')
        st.image(image_sens_ana_s_20)
@@ -99,6 +100,7 @@ with tab_inf:
        st.write('##')
 
        st.subheader("Sensitivitätsanalyse für die Dauer des Lockdowns")
+       st.write('##')
        image_sens_ana_s_21 = Image.open(
            'sensitivity_analysis/suppl_s_21.png')
        st.image(image_sens_ana_s_21)
