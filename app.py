@@ -228,7 +228,7 @@ with tab_sz_analysieren:
                     st.image(image_trajectory)
 
                 with row1_col2:
-                    st.subheader("Infektionsverlauf")
+                    st.subheader("Infektions-?")
                     image_ = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
                     st.image(image_)
 
