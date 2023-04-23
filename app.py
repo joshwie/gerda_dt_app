@@ -304,9 +304,9 @@ with tab_sz_analysieren:
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Start: | :blue[''' + lockdown_start_param_value + ''']|
-                            | Lockdown-Orte: | :blue[''' + lockdown_orte_param_value + ''']|
-                            | Masken: | :blue[''' + masken_zusammenfassung + ''']|
+                            | Lockdown-Start | :blue[''' + lockdown_start_param_value + ''']|
+                            | Lockdown-Orte | :blue[''' + lockdown_orte_param_value + ''']|
+                            | Masken | :blue[''' + masken_zusammenfassung + ''']|
                             | Lockdown-Ablehnende | :blue[''' + lockdown_ablehnende + ''']|
                         ''')
 
@@ -316,22 +316,24 @@ with tab_sz_analysieren:
                     #st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält:** ' + str(param_combination['ungehorsam']))
                     #st.markdown('**Impfstrategie:** ' + '(DEAKTIVIERT)')
 
+                lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
+                aha_regeln_param_value = 'DEAKTIVIERT'
+                impfstrategie_param_value = 'DEAKTIVIERT'
                 with rechts:
                     st.markdown(
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Start: | :blue[''' + lockdown_start_param_value + ''']|
-                            | Lockdown-Orte: | :blue[''' + lockdown_orte_param_value + ''']|
-                            | Masken: | :blue[''' + masken_zusammenfassung + ''']|
-                            | Lockdown-Ablehnende | :blue[''' + lockdown_ablehnende + ''']|
+                            | Lockdown-Dauer | :blue[''' + lockdown_dauer_param_value + ''']|
+                            | AHA-Regeln verpflichtend | :blue[''' + aha_regeln_param_value + ''']|
+                            | Abstand: | :blue[''' + abstand_zusammenfassung + ''']|
+                            | Impfstrategie | :blue[''' + impfstrategie_param_value + ''']|
                         ''')
 
                 st.write('##')
-                st.write('##')
 
                     #st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
-                    #st.markdown('**AHA-Regeln empfohlen oder verpflichtend:** ' + '(DEAKTIVIERT)')
+                    #st.markdown('**AHA-Regeln empfohlen/verpflichtend:** ' + '(DEAKTIVIERT)')
                     #st.markdown('**Abstand:** ' + abstand_zusammenfassung)
                     #st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält**: ' + str(param_combination['ungehorsam']))
 
