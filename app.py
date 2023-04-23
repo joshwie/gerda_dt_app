@@ -94,7 +94,7 @@ if 'erstellte_szenarien' not in st.session_state:
 tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(['Informationen', 'Szenario erstellen', 'Szenario analysieren', 'Szenarien vergleichen'])
 
 with tab_inf:
-   ausgangssituation, bedienungsanleitung, sensitivity_analysis = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Vorab-Analyse'])
+   ausgangssituation, sensitivity_analysis, bedienungsanleitung = st.tabs(['Ausgangssituation', 'Bedienungsanleitung', 'Vorab-Analyse'])
 
    with ausgangssituation:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
