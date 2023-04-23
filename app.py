@@ -64,6 +64,7 @@ def get_dynamic_paths_to_images(param_combination):
 
 
     trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
+    trajectory_image_path = '"' + trajectory_image_path + '"'
     sub_image_path = prefix + suffix + "/" + suffix + "_sub_statii.png"
     infections_per_loc_path = prefix + suffix + "/" + "infections_per_time_per_loc_type.png"
     infectionspattern_per_age_group = prefix + suffix + "/" + suffix + "_infectionpatterns.png"
