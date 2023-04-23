@@ -124,7 +124,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    dont_show = False
+    is_shown = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
         is_shown = True
         st.error('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
