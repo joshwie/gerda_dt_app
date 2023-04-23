@@ -82,10 +82,21 @@ with tab_inf:
                'Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur verfügung.'
                'Vielleicht können sie dabei helfen, welche Parameter ihr für der Erstellung der Szenarien wählen wollt.')
 
+       st.write('##')
+       st.write('##')
+
        st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
        image_sens_ana_s_20 = Image.open(
            'sensitivity_analysis/suppl_s_20.png')
        st.image(image_sens_ana_s_20)
+
+       st.write('##')
+       st.write('##')
+       st.markdown(
+           '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+           unsafe_allow_html=True)
+       st.write('##')
+       st.write('##')
 
        st.subheader("Sensitivitätsanalyse für die Dauer des Lockdowns")
        image_sens_ana_s_21 = Image.open(
