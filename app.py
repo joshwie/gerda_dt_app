@@ -77,12 +77,11 @@ with tab_inf:
 
    with sensitivity_analysis:
        st.subheader('📈 Sensitivitätsanalyse')
-       st.info('Das GERDA-Forschungsteam hat bereits etwas Vorarbeit geleistet und zwei kleinere sogenannte Sensitivitätsanalysen erstellt.'
-               'Bei einer Sensitivitätsanalyse wird geschaut, wie sich die Veränderung einer bestimmten Einflussgröße (z. B. Start oder Dauer eines Lockdowns) auf das Gesamtsystem auswirkt. Alle übrigen Einflussgrößen bleiben dabei unverändert.\n\n'
-               'Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur verfügung.'
-               'Vielleicht können sie dabei helfen, welche Parameter ihr für der Erstellung der Szenarien wählen wollt.')
+       st.info('Das GERDA-Forschungsteam hat bereits etwas Vorarbeit geleistet und zwei kleine sogenannte Sensitivitätsanalysen erstellt.'
+               ' Bei einer Sensitivitätsanalyse wird geschaut, wie sich die Veränderung einer bestimmten Einflussgröße (z. B. Start oder Dauer eines Lockdowns) auf das Gesamtsystem auswirkt. Alle übrigen Einflussgrößen bleiben dabei unverändert.\n\n'
+               ' Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur verfügung.'
+               ' Vielleicht können euch bei der Wahl der Parameter für die Erstellung der Szenarien helfen.')
 
-       st.write('##')
        st.write('##')
 
        st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
