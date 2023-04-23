@@ -2,8 +2,14 @@ import streamlit as st
 import time
 from PIL import Image
 
-def progress_bar():
-    pass
+
+def store_parameter_combination():
+    param_combination = {}
+
+    st.session_state['erstellte_szenarien'].append(param_combination)
+
+
+    return param_combination
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
@@ -124,7 +130,7 @@ with tab_sz_erstellen:
 
     dummy_1, simulieren = st.beta_columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
-        # TODO: on_click --> Parameter_Kombination speichern
+
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
         #st.write(st.session_state['erstellte_szenarien'])
 
@@ -139,6 +145,9 @@ with tab_sz_erstellen:
         time.sleep(2)
         st.experimental_rerun()
 
+        # TODO: on_click --> Parameter_Kombination speichern
+        store_parameter_combination()
+        st.write(st.session_state['erstellte_szenarien'])
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
@@ -162,14 +171,17 @@ with tab_sz_analysieren:
                 col1, col2, col3, col4 = st.columns(4)
 
                 with col1:
+                    st.header("Infektionsverlauf")
                     image_trajectory = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
                     st.image(image_trajectory)
 
                 with col2:
+                    st.header("Infektionen pro Ort")
                     image_inf_per_loc = Image.open('plots/infections_per_time_per_loc_type.png')
                     st.image(image_inf_per_loc)
 
                 with col3:
+                    st.header("Infektionsverlauf")
                     image_ = Image.open('plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
                     st.image(image_)
 
