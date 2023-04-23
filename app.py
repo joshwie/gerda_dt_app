@@ -64,7 +64,8 @@ def get_dynamic_paths_to_images(param_combination):
     trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
     sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
     infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
-    infectionspattern_per_age_group = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
+    infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
+    new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
 
     #st.write(sub_image_path)
     #st.write(infections_per_loc_path)
@@ -74,7 +75,8 @@ def get_dynamic_paths_to_images(param_combination):
     dynamic_paths_to_images = [trajectory_image_path,
                        sub_image_path,
                        infections_per_loc_path,
-                       infectionspattern_per_age_group]
+                       infectionspattern_per_age_group_path,
+                       new_diagnoses_per_100000_path]
 
     return dynamic_paths_to_images
 
@@ -112,7 +114,7 @@ with tab_inf:
            ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die einzelnen Einwohner*innen von Gangelt im System synthetisch nachgebildet wurden,'
            ' um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien des Infektionsgeschehens zu simulieren. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf möglicherweise auswirken könnten.\n\n'
            'Auch wenn bei der Entwicklung des Modells versucht wurde möglichst viele reale Gegebenheiten zu berücksichtigen, kann die Realität dennoch nie exakt abgebildet werden.'
-           ' Das Modell soll somit lediglich als Entscheidungshilfe gesehen werden.'
+           ' Das Modell soll somit lediglich als Entscheidungshilfe angesehen werden.'
            ' Denkt also auch an die verschiedenen Auswirkungen auf die Gesellschaft und andere/weitere Maßnahmen, die vom Modell nicht berücksichtigt werden.')
 
        st.write('##')
@@ -121,7 +123,7 @@ with tab_inf:
        st.info(
            'Die Erstellung möglicher Zukunftsszenarien mit Hilfe des Modells nimmt einige Zeit in Anspruch. '
            ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich 3 Zukunftsszenarien erstellt werden. '
-           ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen besetimmte Maßnahmen stützen.')
+           ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen bestimmte Maßnahmen stützen.')
 
        st.write('##')
 
@@ -241,7 +243,7 @@ with tab_sz_erstellen:
     is_shown = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
         is_shown = True
-        st.error('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
+        st.warning('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
 
     dummy_1, simulieren = st.columns(2)
     if simulieren.button('Simulieren', disabled=is_shown):
@@ -293,7 +295,7 @@ with tab_sz_analysieren:
                         'AHA-Regeln empfohlen oder verpflichtend: ' + '(DEAKTIVIERT)\n\n'
                         'Masken: ' + masken_zusammenfassung + '\n\n'
                         'Abstand: ' + abstand_zusammenfassung + '\n\n'
-                        'Anteil der Bevölkerung, der sich nicht an die Maßnahmen hält: ' + str(param_combination['ungehorsam']) + "\n\n"
+                        'Anteil der Bevölkerung, der sich nicht an den Lockdown hält: ' + str(param_combination['ungehorsam']) + "\n\n"
                         'Impfstrategie: ' + '(DEAKTIVIERT)')
 
                 # get the (4?) images, based on the parameter combination
