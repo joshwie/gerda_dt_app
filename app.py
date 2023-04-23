@@ -309,15 +309,19 @@ with tab_sz_analysieren:
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
 
                 with links:
-                    st.markdown(
-                        '''
+
+                    table_links = '''
                             | Parameter | Wert |
                             |---|---|
                             | Lockdown-Start | :blue[''' + lockdown_start_param_value + ''']|
                             | Lockdown-Orte | :blue[''' + lockdown_orte_param_value + ''']|
                             | Masken | :blue[''' + masken_zusammenfassung + ''']|
                             | Verweigernde | :blue[''' + lockdown_ablehnende + ''']|
-                        ''')
+                        '''
+
+                    table_links_small = '<p style="color:#30333f;font-size: 14px;">' + table_links + '</p>'
+
+                    st.markdown(table_links_small)
 
                     #st.markdown('**Lockdown-Start nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
                     #st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
