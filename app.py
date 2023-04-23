@@ -327,7 +327,9 @@ with tab_sz_analysieren:
                             | Lockdown-Ablehnende | :blue[''' + lockdown_ablehnende + ''']|
                         ''')
 
-                    st.divider()
+                st.write('##')
+                st.divider()
+                st.write('##')
 
                     #st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
                     #st.markdown('**AHA-Regeln empfohlen oder verpflichtend:** ' + '(DEAKTIVIERT)')
