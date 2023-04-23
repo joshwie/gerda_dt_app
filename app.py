@@ -20,7 +20,7 @@ def get_dynamic_paths_to_images(param_combination):
     dynamic_paths_to_images = []
 
     # infectivity
-    prefix = 'infectivity_'
+    prefix = 'gerda_output/infectivity_'
     if param_combination['masken'] and param_combination['abstand']:
         prefix += '0078/'
     elif param_combination['masken'] or param_combination['abstand']:
