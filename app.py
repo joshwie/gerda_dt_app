@@ -315,6 +315,8 @@ with tab_sz_analysieren:
                     image_ = Image.open(dynamic_paths_to_images[1])
                     st.image(image_)
 
+                st.divider()
+
                 row2_col1, row2_col2 = st.columns(2)
 
                 with row2_col1:
@@ -327,9 +329,13 @@ with tab_sz_analysieren:
                     image_age_interactions = Image.open(dynamic_paths_to_images[3])
                     st.image(image_age_interactions)
 
+                st.divider()
+
                 st.subheader("Diagnosen nach Alter im Zeitverlauf")
                 image_diagnoses_per_100000 = Image.open(dynamic_paths_to_images[4])
                 st.image(image_diagnoses_per_100000)
+
+                st.divider()
 
                 st.subheader("Mortalität nach Alter im Zeitverlauf")
                 image_deaths_per_100000_path = Image.open(dynamic_paths_to_images[5])
