@@ -40,7 +40,8 @@ with tab_inf:
        st.write('##')
 
        st.subheader('🦠 Angaben zum Virustyp')
-       st.info('Noch ist nicht viel über das VirusDer entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
+       st.info('Noch ist nicht alles über das Virus bekannt. Es scheint jedoch ansteckender als ein Grippevirus zu sein.'
+               'Darüber hinaus gibt es Hinweise auf einen ')
 
        st.write('##')
 
