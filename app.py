@@ -296,13 +296,19 @@ with tab_sz_analysieren:
                 links, rechts = st.columns(2)
 
                 with links:
-                    st.markdown('Lockdown-Start: **nach ' + str(param_combination['lockdown_start']) + ' Woche(n)**')
-                    st.markdown('Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
+                    st.markdown('**Lockdown-Start:** nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
+                    st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
+                    st.markdown('**Masken:** ' + masken_zusammenfassung)
+                    st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält:** ' + str(param_combination['ungehorsam']))
+                    st.markdown('**Impfstrategie:** ' + '(DEAKTIVIERT)')
 
                 with rechts:
-                    st.markdown('Lockdown-Orte: ' + str(param_combination['lockdown_orte']))
-                    st.markdown('AHA-Regeln empfohlen oder verpflichtend: ')
+                    st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
+                    st.markdown('**AHA-Regeln empfohlen oder verpflichtend:** ' + '(DEAKTIVIERT)')
+                    st.markdown('**Abstand:** ' + abstand_zusammenfassung)
+                    st.markdown('Anteil der Bevölkerung, der sich nicht an den Lockdown hält: ' + str(param_combination['ungehorsam']))
 
+                '''
                 st.info('Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                         'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                         'Lockdown-Orte: ' + str(param_combination['lockdown_orte']) + '\n\n'
@@ -311,7 +317,8 @@ with tab_sz_analysieren:
                         'Abstand: ' + abstand_zusammenfassung + '\n\n'
                         'Anteil der Bevölkerung, der sich nicht an den Lockdown hält: ' + str(param_combination['ungehorsam']) + "\n\n"
                         'Impfstrategie: ' + '(DEAKTIVIERT)')
-
+                '''
+                
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
 
