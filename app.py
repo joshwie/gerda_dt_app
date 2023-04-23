@@ -302,7 +302,7 @@ with tab_sz_analysieren:
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | **Lockdown-Start:** | ''' + lock_start_value + '''|
+                            | **Lockdown-Start:** | :blue[''' + lock_start_value + ''']|
                             | e | f |
                             | g | h |
                             | i | j |
