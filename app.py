@@ -146,10 +146,11 @@ with tab_sz_erstellen:
         st.success('Done!')
         time.sleep(2)
         '''
-        
+
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
+        st.write("HI!")
         st.write(st.session_state['erstellte_szenarien'])
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
