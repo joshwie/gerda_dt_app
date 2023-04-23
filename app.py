@@ -40,7 +40,7 @@ with tab_inf:
        st.write('##')
 
        st.subheader('🦠 Angaben zum Virustyp')
-       st.info('Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
+       st.info('Noch ist nicht viel über das VirusDer entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
 
        st.write('##')
 
@@ -183,15 +183,13 @@ with tab_sz_erstellen:
 
     dummy_1, simulieren = st.columns(2)
     if simulieren.button('Simulieren', disabled=is_shown):
-        st.write("Button pressed")
-        #st.write(st.session_state['erstellte_szenarien'])
 
         # Progress-Bar
         progress_text = "Das Szenario wird erstellt..."
         my_bar = st.progress(0, text=progress_text)
         
         for percent_complete in range(100):
-            time.sleep(0.01)
+            time.sleep(0.05)
             my_bar.progress(percent_complete + 1, text=progress_text)
 
         st.success('Done!')
@@ -200,7 +198,7 @@ with tab_sz_erstellen:
         store_parameter_combination()
 
         # muss drin bleiben
-        time.sleep(5) #change to 2
+        time.sleep(2) #change to 2
         st.experimental_rerun()
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
