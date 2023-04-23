@@ -134,8 +134,6 @@ with tab_sz_erstellen:
         st.write("Button pressed")
         #st.write(st.session_state['erstellte_szenarien'])
 
-        # Uncomment for progress bar
-        '''
         progress_text = "Das Szenario wird erstellt..."
         my_bar = st.progress(0, text=progress_text)
         
@@ -146,7 +144,6 @@ with tab_sz_erstellen:
         
         st.success('Done!')
         time.sleep(2)
-        '''
 
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
