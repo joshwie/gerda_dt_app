@@ -299,11 +299,6 @@ with tab_sz_analysieren:
                     st.markdown(
                         '''
                             | a | b |
-                            |---|---|
-                            | c | d |
-                            | e | f |
-                            | g | h |
-                            | i | j |
                         ''')
 
                     st.markdown('**Lockdown-Start:** nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
