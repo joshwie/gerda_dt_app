@@ -17,9 +17,6 @@ def store_parameter_combination():
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
-
-
-
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
@@ -36,13 +33,28 @@ with tab_inf:
 
    with subtabs_ausgangssituation[0]:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
-       st.info('Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n'
-               'Es handelt sich um eine kleine Gemeinde mit etwa 11.000 Menschen. Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
+       st.info('Stellt euch vor, ihr seid Mitglieder des Stadtrats und müsst bereits morgen Entscheidungen über Pandemiemaßnahmen treffen.\n'
+               'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen.'
+               'Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
        st.write('##')
 
        st.subheader('📊 Euch steht GERDA als Pandemie-Modell zur Verfügung')
-       st.info('Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM), das auf der Grundlage von Geodaten...')
+       st.info(
+           'Für die Entscheidungsfindung stellt euch die Wissenschaft ein Infektionsmodell namens GERDA zur Verfügung.'
+           'Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden, '
+           'um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien zu erstellen. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf auswirken könnten.\n\n'
+           'Auch wenn bei der Entwicklung des Modells versucht wurde möglichst viele reale Gegebenheiten zu berücksichtigen, kann die Realität dennoch nie exakt abgebildet werden.'
+           'Das Modell kann somit lediglich als Entscheidungshilfe gesehen werden.'
+           'Denkt also auch an Auswirkungen auf die Gesellschaft, andere Maßnahmen oder [...], die vom Modell nicht berücksichtigt werden.')
+
+       st.write('##')
+
+       st.subheader('⏳ Das Problem mit der Zeit')
+       st.info(
+           'Die Erstellung möglicher Zukunftsszenarien mit Hilfe des Modells nimmt einige Zeit in Anspruch. '
+           'Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich 3 Zukunftsszenarien erstellt werden. '
+           'Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen besetimmte Maßnahmen stützen.')
 
        st.write('##')
 
@@ -56,7 +68,10 @@ with tab_inf:
 
    with subtabs_ausgangssituation[1]:
        st.subheader('🔎 So funktioniert die Nutzung des Simulationstools:')
-       st.info('In den Reitern am oberen Bildrand kannst du den…\n\nUm ein Szenario zu erstellen…\n\nDeine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\nDie Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...')
+       st.info('In den Reitern am oberen Bildrand kannst du den…\n\n'
+               'Um ein Szenario zu erstellen…\n\n'
+               'Deine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen…\n\n'
+               'Die Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden…\n...')
 
    with subtabs_ausgangssituation[2]:
        st.subheader('📈 Sensitivitätsanalyse')
