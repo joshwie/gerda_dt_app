@@ -296,12 +296,12 @@ with tab_sz_analysieren:
                 links, rechts = st.columns(2)
 
                 with links:
-                    st.text('Lockdown-Start: nach ' + str(param_combination['lockdown_start']))
-                    st.text('Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']))
+                    st.markdown('Lockdown-Start: **nach ' + str(param_combination['lockdown_start']) + ' Woche(n)**')
+                    st.markdown('Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
 
                 with rechts:
-                    st.text('Lockdown-Orte: ' + str(param_combination['lockdown_orte']))
-                    st.text('AHA-Regeln empfohlen oder verpflichtend: ')
+                    st.markdown('Lockdown-Orte: ' + str(param_combination['lockdown_orte']))
+                    st.markdown('AHA-Regeln empfohlen oder verpflichtend: ')
 
                 st.info('Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                         'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
