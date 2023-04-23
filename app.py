@@ -34,7 +34,7 @@ with tab_inf:
    with subtabs_ausgangssituation[0]:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
        st.info('Stellt euch vor, ihr seid Mitglieder des Stadtrats und müsst bereits morgen Entscheidungen über Maßnahmen zur Vermeidung eines unkontrollierten Infektionsausbruchs treffen.\n\n'
-               'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen.'
+               'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen. '
                'Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
        st.write('##')
@@ -42,19 +42,19 @@ with tab_inf:
        st.subheader('📊 Euch steht GERDA als Pandemie-Modell zur Verfügung')
        st.info(
            'Für die Entscheidungsfindung stellt euch die Wissenschaft ein Infektionsmodell namens GERDA zur Verfügung.'
-           'Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden, '
+           ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden, '
            'um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien zu erstellen. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf auswirken könnten.\n\n'
            'Auch wenn bei der Entwicklung des Modells versucht wurde möglichst viele reale Gegebenheiten zu berücksichtigen, kann die Realität dennoch nie exakt abgebildet werden.'
-           'Das Modell kann somit lediglich als Entscheidungshilfe gesehen werden.'
-           'Denkt also auch an Auswirkungen auf die Gesellschaft, andere Maßnahmen oder [...], die vom Modell nicht berücksichtigt werden.')
+           ' Das Modell kann somit lediglich als Entscheidungshilfe gesehen werden.'
+           ' Denkt also auch an Auswirkungen auf die Gesellschaft, andere Maßnahmen oder [...], die vom Modell nicht berücksichtigt werden.')
 
        st.write('##')
 
        st.subheader('⏳ Das Problem mit der Zeit')
        st.info(
            'Die Erstellung möglicher Zukunftsszenarien mit Hilfe des Modells nimmt einige Zeit in Anspruch. '
-           'Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich 3 Zukunftsszenarien erstellt werden. '
-           'Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen besetimmte Maßnahmen stützen.')
+           ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich 3 Zukunftsszenarien erstellt werden. '
+           ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen besetimmte Maßnahmen stützen.')
 
        st.write('##')
 
