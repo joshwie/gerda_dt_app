@@ -39,7 +39,12 @@ with tab_inf:
 
        st.write('##')
 
-       st.subheader('📊 Euch steht GERDA als Pandemie-Modell zur Verfügung')
+       st.subheader('🦠 Angaben zum Virustyp')
+       st.info('Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
+
+       st.write('##')
+
+       st.subheader('📊 Euch steht GERDA als Infektions-Modell zur Verfügung')
        st.info(
            'Für die Entscheidungsfindung stellt euch die Wissenschaft ein Infektionsmodell namens GERDA zur Verfügung.'
            ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die einzelnen Einwohner*innen von Gangelt im System synthetisch nachgebildet wurden,'
@@ -63,10 +68,6 @@ with tab_inf:
                'Es ist sogar davon auszugehen, dass strengere Maßnahmen mit einem erhöhten Anteil derer, die sich nicht an die Maßnahmen halten, einhergeht.'
                ' Auch diesen Faktor könnt ihr bei der Erstellung von möglichen Szenarien berücksichtigen.')
 
-       st.write('##')
-
-       st.subheader('🦠 Angaben zum Virustyp')
-       st.info('Der entdeckte Virus wurde bereits untersucht und weist eine starke/schwache Infektiösität auf.\n...')
 
    with bedienungsanleitung:
        st.subheader('🔎 So funktioniert die Nutzung des Simulationstools:')
