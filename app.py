@@ -223,7 +223,7 @@ with tab_sz_analysieren:
             with subtabs_analyse[i]:
                 param_combination = st.session_state['erstellte_szenarien'][i]
                 st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':\n\n'
-                                                                             'Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n'
+                                                                             'Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                                                                              'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                                                                              '...')
 
