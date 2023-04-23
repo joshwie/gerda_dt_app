@@ -16,10 +16,17 @@ def store_parameter_combination():
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
-def find_paths_to_images(param_combination):
+def get_dynamic_paths_to_images(param_combination):
     paths_to_images = []
 
 
+
+
+    # uncomment (just testing)
+    paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
+                       'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png',
+                       'test_plots/infections_per_time_per_loc_type.png',
+                       'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png']
 
     return paths_to_images
 
@@ -227,30 +234,31 @@ with tab_sz_analysieren:
                                                                              'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                                                                              '...')
 
-                # TODO: zusammenfassung Parameter..
+                # get the (4?) images, based on the parameter combination
+                dynamic_paths_to_images = get_dynamic_paths_to_images()
 
                 row1_col1, row1_col2 = st.columns(2)
 
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
-                    image_trajectory = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
+                    image_trajectory = Image.open(dynamic_paths_to_images[0])
                     st.image(image_trajectory)
 
                 with row1_col2:
                     st.subheader("Infektions-?")
-                    image_ = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
+                    image_ = Image.open(dynamic_paths_to_images[1])
                     st.image(image_)
 
                 row2_col1, row2_col2 = st.columns(2)
 
                 with row2_col1:
                     st.subheader("Infektionen pro Ort")
-                    image_inf_per_loc = Image.open('test_plots/infections_per_time_per_loc_type.png')
+                    image_inf_per_loc = Image.open(dynamic_paths_to_images[2])
                     st.image(image_inf_per_loc)
 
                 with row2_col2:
                     st.subheader("Infektionen nach Alter")
-                    image_age_interactions = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
+                    image_age_interactions = Image.open(dynamic_paths_to_images[3])
                     st.image(image_age_interactions)
 
 
