@@ -26,7 +26,7 @@ def get_dynamic_paths_to_images(param_combination):
     elif param_combination['masken'] or param_combination['abstand']:
         prefix += '0106/'
     else:
-        prefix += '0140/' # stimmen die Ordner-Bezeichnungen?
+        prefix += '014/' # stimmen die Ordner-Bezeichnungen?
 
     # lockdown start
     if param_combination['lockdown_start'] == 1:
