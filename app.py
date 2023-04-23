@@ -16,6 +16,13 @@ def store_parameter_combination():
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
+def find_paths_to_images(param_combination):
+    paths_to_images = []
+
+
+
+    return paths_to_images
+
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
@@ -194,11 +201,9 @@ with tab_sz_erstellen:
 
         st.success('Done!')
 
-        # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
 
-        # muss drin bleiben
-        time.sleep(2) #change to 2
+        time.sleep(2)
         st.experimental_rerun()
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
@@ -216,7 +221,9 @@ with tab_sz_analysieren:
 
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             with subtabs_analyse[i]:
-                st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':')
+                param_combination = st.session_state['erstellte_szenarien'][i]
+                st.info('Ausgewählte Parameter für Szenario ' + str((i+1)) + ':\n\n'
+                                                                             'Lockdown-Start: ' + param_combination["lockdown_start"])
 
                 # TODO: zusammenfassung Parameter..
 
