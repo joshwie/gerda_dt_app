@@ -126,11 +126,11 @@ with tab_sz_erstellen:
 
     dont_show = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
-        dont_show = True
+        is_shown = True
         st.error('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
 
     dummy_1, simulieren = st.columns(2)
-    if simulieren.button('Simulieren', disabled=dont_show):
+    if simulieren.button('Simulieren', disabled=is_shown):
         st.write("Button pressed")
         #st.write(st.session_state['erstellte_szenarien'])
 
@@ -151,7 +151,6 @@ with tab_sz_erstellen:
         st.experimental_rerun()
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
-        print("YY")
         #st.write("HI!")
         #st.write(st.session_state['erstellte_szenarien'])
 
