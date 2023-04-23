@@ -4,7 +4,9 @@ from PIL import Image
 
 
 def store_parameter_combination():
-    param_combination = {}
+    param_combination = {"lockdown_start": lockdown_start}
+
+
 
     st.session_state['erstellte_szenarien'].append(param_combination)
 
