@@ -126,7 +126,7 @@ with tab_sz_erstellen:
         dont_show = True
         st.error('Es wurde bereits die maximale Anzahl an Szenarien (' + str(st.session_state['max_szenarien']) + ') erstellt.')
 
-    dummy_1, simulieren = st.beta_columns(2)
+    dummy_1, simulieren = st.columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
 
         new_state = st.session_state['erstellte_szenarien'].append('dummy')
