@@ -42,11 +42,11 @@ with tab_inf:
        st.subheader('📊 Euch steht GERDA als Pandemie-Modell zur Verfügung')
        st.info(
            'Für die Entscheidungsfindung stellt euch die Wissenschaft ein Infektionsmodell namens GERDA zur Verfügung.'
-           ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden, '
-           'um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien zu erstellen. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf auswirken könnten.\n\n'
+           ' Bei GERDA handelt es sich um ein agentenbasiertes Modell (ABM). Das bedeutet, dass die Einwohner*innen von Gangelt im System nachgebildet wurden,'
+           ' um auf der Grundlage von echten Geodaten mögliche Zukunftsszenarien des Infektionsgeschehens zu simulieren. Damit kann getestet werden, wie sich verschiedene politische Maßnahmen auf den Infektionsverlauf auswirken könnten.\n\n'
            'Auch wenn bei der Entwicklung des Modells versucht wurde möglichst viele reale Gegebenheiten zu berücksichtigen, kann die Realität dennoch nie exakt abgebildet werden.'
-           ' Das Modell kann somit lediglich als Entscheidungshilfe gesehen werden.'
-           ' Denkt also auch an Auswirkungen auf die Gesellschaft, andere Maßnahmen oder [...], die vom Modell nicht berücksichtigt werden.')
+           ' Das Modell soll somit lediglich als Entscheidungshilfe gesehen werden.'
+           ' Denkt also auch an die verschiedenen Auswirkungen auf die Gesellschaft und andere/weitere Maßnahmen, die vom Modell nicht berücksichtigt werden.')
 
        st.write('##')
 
@@ -60,7 +60,8 @@ with tab_inf:
 
        st.subheader('🕵️‍♀️ Informationen über die Bevölkerungsgruppe')
        st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen. '
-               'Es ist sogar davon auszugehen, dass strengere Maßnahmen mit einem erhöhten Anteil derer, die sich nicht an die Maßnahmen halten, einhergeht.')
+               'Es ist sogar davon auszugehen, dass strengere Maßnahmen mit einem erhöhten Anteil derer, die sich nicht an die Maßnahmen halten, einhergeht.'
+               ' Auch diesen Faktor könnt ihr bei der Erstellung von möglichen Szenarien berücksichtigen.')
 
        st.write('##')
 
