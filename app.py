@@ -70,13 +70,13 @@ def get_dynamic_paths_to_images(param_combination):
     infections_per_loc_path = prefix + suffix + "/" + "infections_per_time_per_loc_type.png"
     infectionspattern_per_age_group = prefix + suffix + "/" + suffix + "_infectionpatterns.png"
 
-    #st.write(trajectory_image_path)
+    st.write(trajectory_image_path)
     #st.write(sub_image_path)
     #st.write(infections_per_loc_path)
     #st.write(infectionspattern_per_age_group)
 
     # comment (just testing)
-    dynamic_paths_to_images = [trajectory_image_path,
+    dynamic_paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
                        'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png',
                        'test_plots/infections_per_time_per_loc_type.png',
                        'test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png']
