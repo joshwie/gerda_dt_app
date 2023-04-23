@@ -221,24 +221,26 @@ with tab_sz_analysieren:
 
                 # TODO: zusammenfassung Parameter..
 
-                col1, col2, col3, col4 = st.columns(4)
+                row1_col1, row1_col2 = st.columns(2)
 
-                with col1:
+                with row1_col1:
                     st.subheader("Infektionsverlauf")
                     image_trajectory = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png')
                     st.image(image_trajectory)
 
-                with col2:
+                with row1_col2:
                     st.subheader("Infektionen pro Ort")
                     image_inf_per_loc = Image.open('test_plots/infections_per_time_per_loc_type.png')
                     st.image(image_inf_per_loc)
 
-                with col3:
+                row2_col1, row2_col2 = st.columns(2)
+
+                with row2_col1:
                     st.subheader("Infektionsverlauf")
                     image_ = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png')
                     st.image(image_)
 
-                with col4:
+                with row2_col2:
                     st.subheader("Infektionen nach Alter")
                     image_age_interactions = Image.open('test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png')
                     st.image(image_age_interactions)
