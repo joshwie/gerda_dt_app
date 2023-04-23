@@ -10,7 +10,10 @@ def store_parameter_combination():
         "lockdown_orte": lockdown_orte,
         "aha_staerke": aha_staerke,
         "masken": masken_checkbox,
-        "abstand": abstand_checkbox
+        "abstand": abstand_checkbox,
+        "ungehorsam": ungehorsam,
+        "impfstrategie": impfstrategie
+
     }
 
 
@@ -115,7 +118,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    aha_staerke = st.radio(
+    ungehorsam = st.radio(
         'Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?',
         ('0%', '20%'), horizontal=True)
 
@@ -123,7 +126,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    aha_staerke = st.radio(
+    impfstrategie = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
