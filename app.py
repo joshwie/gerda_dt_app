@@ -66,6 +66,7 @@ def get_dynamic_paths_to_images(param_combination):
     infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
     infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
     new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
+    new_deaths_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_death_incidence.png"
 
     #st.write(sub_image_path)
     #st.write(infections_per_loc_path)
@@ -76,7 +77,8 @@ def get_dynamic_paths_to_images(param_combination):
                        sub_image_path,
                        infections_per_loc_path,
                        infectionspattern_per_age_group_path,
-                       new_diagnoses_per_100000_path]
+                       new_diagnoses_per_100000_path,
+                       new_deaths_per_100000_path]
 
     return dynamic_paths_to_images
 
@@ -329,10 +331,7 @@ with tab_sz_analysieren:
                 image_diagnoses_per_100000 = Image.open(dynamic_paths_to_images[4])
                 st.image(image_diagnoses_per_100000)
 
-                '''
-                with row3_col2:
-                    st.subheader("Infektionen nach Alter")
-                    image_age_interactions = Image.open(dynamic_paths_to_images[3])
-                    st.image(image_age_interactions)
-                '''
+                st.subheader("Mortalität nach Alter im Zeitverlauf")
+                image_deaths_per_100000_path = Image.open(dynamic_paths_to_images[5])
+                st.image(image_deaths_per_100000_path)
 
