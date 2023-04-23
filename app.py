@@ -11,6 +11,8 @@ def store_parameter_combination():
     print("XX")
 
 
+print("ZZ")
+
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
