@@ -38,34 +38,42 @@ def get_dynamic_paths_to_images(param_combination):
     if param_combination['lockdown_start'] == 4:
         prefix += "start_672/"
 
-    postfix = ""
+    prefix += "analysis/plots/"
+
+    suffix = ""
     # disobedience
     if param_combination['ungehorsam'] == '0%':
-        postfix += 'FU__disobedience_0_'
+        suffix += 'FU__disobedience_0_'
     if param_combination['ungehorsam'] == '20%':
-        postfix += 'FU__disobedience_0o2_'
+        suffix += 'FU__disobedience_0o2_'
 
     # lockdown end
     lockdown_start_int = int(param_combination['lockdown_start']) * 168
     lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
     start_3 = str(lockdown_start_int + lockdown_dauer_int)
-    postfix += 'start_3_' + start_3 + "_"
+    suffix += 'start_3_' + start_3 + "_"
 
     # closed locs
-    postfix += 'closed_locs_'
+    suffix += 'closed_locs_'
     if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
-        postfix += "['work', 'public']"
+        suffix += "['work', 'public']"
     if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
-        postfix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
+        suffix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
     if param_combination['lockdown_orte'] == 'Schulen':
-        postfix += "['school', 'school_0', 'school_1', 'school_2']"
+        suffix += "['school', 'school_0', 'school_1', 'school_2']"
     if param_combination['lockdown_orte'] == 'Alles':
-        postfix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
+        suffix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
 
 
-    trajectory_path = prefix + postfix + "/" + postfix + "_statii.png"
+    trajectory_image_path = prefix + suffix + "/" + suffix + "_statii.png"
+    sub_image_path = prefix + suffix + "/" + suffix + "_sub_statii.png"
+    infections_per_loc_path = prefix + suffix + "/" + "infections_per_time_per_loc_type.png"
+    infectionspattern_per_age_group = prefix + suffix + "/" + suffix + "_infectionpatterns.png"
 
-    st.write(trajectory_path)
+    st.write(trajectory_image_path)
+    st.write(sub_image_path)
+    st.write(infections_per_loc_path)
+    st.write(infectionspattern_per_age_group)
 
     # comment (just testing)
     dynamic_paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
