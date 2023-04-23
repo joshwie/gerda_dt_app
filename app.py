@@ -307,7 +307,7 @@ with tab_sz_analysieren:
                             | Lockdown-Start | :blue[''' + lockdown_start_param_value + ''']|
                             | Lockdown-Orte | :blue[''' + lockdown_orte_param_value + ''']|
                             | Masken | :blue[''' + masken_zusammenfassung + ''']|
-                            | Lockdown-Ablehnende | :blue[''' + lockdown_ablehnende + ''']|
+                            | Lockd.-Ablehnende | :blue[''' + lockdown_ablehnende + ''']|
                         ''')
 
                     #st.markdown('**Lockdown-Start nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
