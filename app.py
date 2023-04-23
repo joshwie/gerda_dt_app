@@ -9,8 +9,6 @@ def store_parameter_combination():
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 
-    return param_combination
-
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
 
@@ -151,7 +149,7 @@ with tab_sz_erstellen:
         # TODO: on_click --> Parameter_Kombination speichern
         store_parameter_combination()
         st.write("HI!")
-        st.write(st.session_state['erstellte_szenarien'])
+        #st.write(st.session_state['erstellte_szenarien'])
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
