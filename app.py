@@ -28,7 +28,7 @@ def get_dynamic_paths_to_images(param_combination):
     else:
         path_to_images += '0140/' # stimmen die Ordner-Bezeichnungen?
 
-    # start
+    # lockdown start
     if param_combination['lockdown_start'] == 1:
         path_to_images += "start_168/"
     if param_combination['lockdown_start'] == 2:
@@ -38,17 +38,28 @@ def get_dynamic_paths_to_images(param_combination):
     if param_combination['lockdown_start'] == 4:
         path_to_images += "start_672/"
 
+    # disobedience
     if param_combination['ungehorsam'] == '0%':
         path_to_images += 'FU__disobedience_0_'
     if param_combination['ungehorsam'] == '20%':
         path_to_images += 'FU__disobedience_0o2_'
 
+    # lockdown end
     lockdown_start_int = int(param_combination['lockdown_start']) * 168
     lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
     start_3 = str(lockdown_start_int + lockdown_dauer_int)
-
     path_to_images += 'start_3_' + start_3
 
+    # closed locs
+    path_to_images += 'closed_locs_'
+    if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
+        path_to_images += "['work', 'public']"
+    if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
+        path_to_images += "['public', 'school', 'school_0', 'school_1', 'school_2']"
+    if param_combination['lockdown_orte'] == 'Schulen':
+        path_to_images += "['school', 'school_0', 'school_1', 'school_2']"
+    if param_combination['lockdown_orte'] == 'Alles':
+        path_to_images += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
 
     st.write(path_to_images)
 
