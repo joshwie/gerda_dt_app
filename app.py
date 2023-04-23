@@ -295,10 +295,17 @@ with tab_sz_analysieren:
 
                 links, rechts = st.columns(2)
 
+                lock_start_value = ' nach ' + str(param_combination['lockdown_start']) + ' Woche(n)'
+
                 with links:
                     st.markdown(
                         '''
-                            | a | b |
+                            | Parameter | Wert |
+                            |---|---|
+                            | **Lockdown-Start:** | ''' + lock_start_value + '''|
+                            | e | f |
+                            | g | h |
+                            | i | j |
                         ''')
 
                     st.markdown('**Lockdown-Start:** nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
