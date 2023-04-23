@@ -38,6 +38,18 @@ def get_dynamic_paths_to_images(param_combination):
     if param_combination['lockdown_start'] == 4:
         path_to_images += "start_672/"
 
+    if param_combination['ungehorsam'] == '0%':
+        path_to_images += 'FU__disobedience_0_'
+    if param_combination['ungehorsam'] == '20%':
+        path_to_images += 'FU__disobedience_0o2_'
+
+    lockdown_start_int = int(param_combination['lockdown_start']) * 168
+    lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
+    start_3 = str(lockdown_start_int + lockdown_dauer)
+
+    path_to_images += 'start_3_' + start_3
+
+
     st.write(path_to_images)
 
 
