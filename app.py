@@ -292,6 +292,17 @@ with tab_sz_analysieren:
                     abstand_zusammenfassung = 'Ja'
 
                 st.subheader('Ausgewählte Parameter für Szenario ' + str((i+1)))
+
+                links, rechts = st.columns(2)
+
+                with links:
+                    st.text('Lockdown-Start: nach ' + str(param_combination['lockdown_start']))
+                    st.text('Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']))
+
+                with rechts:
+                    st.text('Lockdown-Orte: ' + str(param_combination['lockdown_orte']))
+                    st.text('AHA-Regeln empfohlen oder verpflichtend: ')
+
                 st.info('Lockdown-Start: nach ' + str(param_combination['lockdown_start']) + ' Woche(n)\n\n'
                         'Lockdown-Dauer: ' + str(param_combination['lockdown_dauer']) + ' Woche(n)\n\n'
                         'Lockdown-Orte: ' + str(param_combination['lockdown_orte']) + '\n\n'
