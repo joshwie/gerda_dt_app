@@ -15,11 +15,9 @@ def store_parameter_combination():
         "impfstrategie": impfstrategie
 
     }
-
-
     st.session_state['erstellte_szenarien'].append(param_combination)
 
-    st.write(st.session_state['erstellte_szenarien'])
+
 
 
 st.set_page_config(layout='wide')
@@ -38,7 +36,8 @@ with tab_inf:
 
    with subtabs_ausgangssituation[0]:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
-       st.info('Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n...')
+       st.info('Stell dir vor du bist Mitglied des Stadtrats und musst morgen Entscheidungen über Pandemiemaßnahmen treffen.\n'
+               'Es handelt sich um eine kleine Gemeinde mit etwa 11.000 Menschen. Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
        st.write('##')
 
