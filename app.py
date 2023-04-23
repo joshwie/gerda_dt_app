@@ -20,49 +20,52 @@ def get_dynamic_paths_to_images(param_combination):
     dynamic_paths_to_images = []
 
     # infectivity
-    path_to_images = 'infectivity_'
+    prefix = 'infectivity_'
     if param_combination['masken'] and param_combination['abstand']:
-        path_to_images += '0078/'
+        prefix += '0078/'
     elif param_combination['masken'] or param_combination['abstand']:
-        path_to_images += '0106/'
+        prefix += '0106/'
     else:
-        path_to_images += '0140/' # stimmen die Ordner-Bezeichnungen?
+        prefix += '0140/' # stimmen die Ordner-Bezeichnungen?
 
     # lockdown start
     if param_combination['lockdown_start'] == 1:
-        path_to_images += "start_168/"
+        prefix += "start_168/"
     if param_combination['lockdown_start'] == 2:
-        path_to_images += "start_336/"
+        prefix += "start_336/"
     if param_combination['lockdown_start'] == 3:
-        path_to_images += "start_504/"
+        prefix += "start_504/"
     if param_combination['lockdown_start'] == 4:
-        path_to_images += "start_672/"
+        prefix += "start_672/"
 
+    postfix = ""
     # disobedience
     if param_combination['ungehorsam'] == '0%':
-        path_to_images += 'FU__disobedience_0_'
+        postfix += 'FU__disobedience_0_'
     if param_combination['ungehorsam'] == '20%':
-        path_to_images += 'FU__disobedience_0o2_'
+        postfix += 'FU__disobedience_0o2_'
 
     # lockdown end
     lockdown_start_int = int(param_combination['lockdown_start']) * 168
     lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
     start_3 = str(lockdown_start_int + lockdown_dauer_int)
-    path_to_images += 'start_3_' + start_3 + "_"
+    postfix += 'start_3_' + start_3 + "_"
 
     # closed locs
-    path_to_images += 'closed_locs_'
+    postfix += 'closed_locs_'
     if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
-        path_to_images += "['work', 'public']"
+        postfix += "['work', 'public']"
     if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
-        path_to_images += "['public', 'school', 'school_0', 'school_1', 'school_2']"
+        postfix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
     if param_combination['lockdown_orte'] == 'Schulen':
-        path_to_images += "['school', 'school_0', 'school_1', 'school_2']"
+        postfix += "['school', 'school_0', 'school_1', 'school_2']"
     if param_combination['lockdown_orte'] == 'Alles':
-        path_to_images += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
+        postfix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
 
-    st.write(path_to_images)
 
+    trajectory_path = prefix + postfix + "/" + postfix + "_statii.png"
+
+    st.write(trajectory_path)
 
     # comment (just testing)
     dynamic_paths_to_images = ['test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png',
