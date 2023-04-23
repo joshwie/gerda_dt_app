@@ -10,11 +10,10 @@ def store_parameter_combination():
 
     st.write("XX")
 
-
-st.write("ZZ")
-
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
+
+st.write("ZZ")
 
 if 'max_szenarien' not in st.session_state:
     st.session_state['max_szenarien'] = 3
