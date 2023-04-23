@@ -296,6 +296,13 @@ with tab_sz_analysieren:
                 links, rechts = st.columns(2)
 
                 with links:
+                    st.markdown(
+                        '''
+                            ---
+                            |a|b
+                            ---
+                        ''')
+
                     st.markdown('**Lockdown-Start:** nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
                     st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
                     st.markdown('**Masken:** ' + masken_zusammenfassung)
