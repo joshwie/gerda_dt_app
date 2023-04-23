@@ -8,10 +8,10 @@ def store_parameter_combination():
 
     new_state = st.session_state['erstellte_szenarien'].append(param_combination)
 
-    print("XX")
+    st.write("XX")
 
 
-print("ZZ")
+st.write("ZZ")
 
 st.set_page_config(layout='wide')
 st.title("Pandemie-Ausbrüche unter der Lupe")
@@ -132,7 +132,7 @@ with tab_sz_erstellen:
 
     dummy_1, simulieren = st.columns(2)
     if simulieren.button('Simulieren', disabled=dont_show):
-
+        st.write("Button pressed")
         #st.write(st.session_state['erstellte_szenarien'])
 
         # Uncomment for progress bar
