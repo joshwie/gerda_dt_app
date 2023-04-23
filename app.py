@@ -33,7 +33,7 @@ with tab_inf:
 
    with subtabs_ausgangssituation[0]:
        st.subheader('🧑‍💼 Versetzt euch in die Rolle eines/r Politikers/in')
-       st.info('Stellt euch vor, ihr seid Mitglieder des Stadtrats und müsst bereits morgen Entscheidungen über Pandemiemaßnahmen treffen.\n\n'
+       st.info('Stellt euch vor, ihr seid Mitglieder des Stadtrats und müsst bereits morgen Entscheidungen über Maßnahmen zur Vermeidung eines unkontrollierten Infektionsausbruchs treffen.\n\n'
                'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen.'
                'Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
