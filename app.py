@@ -166,13 +166,18 @@ with tab_inf:
        st.image(image_sens_ana_s_21)
 
    with bedienungsanleitung:
-       st.subheader('🔎 So funktioniert die Nutzung des Simulationstools:')
-       st.info(
-           'In den Reitern am oberen Bildrand kannst du den Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
-           'Um ein Szenario zu erstellen, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
-           'Deine erstellen Szenarien kannst du unter dem Reiter “Szenario analysieren” genauer unter die Lupe nehmen. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n'
-           'Die Unterschiede in den Ergebnissen der verschiedenen Szenarien können am besten unter dem Reiter “Szenarien vergleichen” analysiert werden. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.')
 
+       st.subheader('🦠 Willkommen zur Pandemie-Simulations-App! 🦠')
+       st.text('Hier kannst Du verschiedene Szenarien erstellen und analysieren, um die Auswirkungen der Pandemie auf bestimmte Maßnahmen zu untersuchen. In der oberen Leiste findest Du drei Aktionen, die Du ausführen kannst.')
+
+       st.subheader('🛠️ Szenarien erstellen')
+       st.info('Klicke auf den Reiter "Szenario erstellen", um zu untersuchen, wie sich die Pandemie in verschiedenen Szenarien entwickeln kann, wenn bestimmte Maßnahmen vollzogen werden. Zum Beispiel kannst Du untersuchen, wie sich die Pandemie auswirkt, wenn eine Maskenpflicht eingeführt wird oder wenn Schulen geschlossen werden. Du kannst insgesamt 3 Szenarien erstellen.')
+
+       st.subheader('🔍 Szenario analysieren')
+       st.info('Im Reiter "Szenario analysieren" kannst Einsicht in die Verläufe deiner erstellten Szenarien gewinnen, welche visuell dargestellt werde. Hier kannst Du die Anzahl der Infizierten, Genesenen und Verstorbenen in jedem Szenario einsehen. Klicke auf ein Szenario, um es genauer zu betrachten. ')
+
+       st.subheader('🤔 Szenarien vergleichen')
+       st.info('Im Reiter „Szenarien vergleichen" kannst du deine drei erstellten Szenarien im direkten Vergleich einsehen. Das hilft dir dabei die verschiedenen Verläufe der Pandemie zu bewerten und sinnvolle Schlüsse daraus zu ziehen.')
 
 with tab_sz_erstellen:
 
