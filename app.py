@@ -174,8 +174,6 @@ with tab_inf:
 
        st.caption('')
 
-       st.write('##')
-
        st.subheader('🛠️ Szenarien erstellen')
        st.info('Unter dem Reiter "Szenario erstellen", lassen sich durch die Auswahl verschiedener Parameter Szenarien erstellen, wobei pro Szenario 100 Simulationen durchgeführt werden <?>. Ihr könnt jedoch insgesamt maximal 3 Szenarien erstellen.')
 
