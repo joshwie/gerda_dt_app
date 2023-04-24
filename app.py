@@ -107,7 +107,7 @@ with tab_inf:
        st.write('##')
 
        st.subheader('🦠 Angaben zum Virustyp')
-       st.info('Noch ist nicht alles über das Virus bekannt. Es scheint jedoch ansteckender als ein Grippevirus zu sein.'
+       st.info('Noch gibt es nicht allzu viele Informationen über das Virus. Es scheint jedoch deutlich ansteckender als ein Grippevirus zu sein.'
                ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.')
 
        st.write('##')
@@ -175,7 +175,7 @@ with tab_inf:
        st.caption('')
 
        st.subheader('🛠️ Szenarien erstellen')
-       st.info('Unter dem Reiter "Szenario erstellen", lassen sich durch die Auswahl verschiedener Parameter Szenarien erstellen, wobei pro Szenario 100 Simulationen durchgeführt werden <?>. Ihr könnt jedoch insgesamt maximal 3 Szenarien erstellen.')
+       st.info('Unter dem Reiter "Szenario erstellen", lassen sich durch die Auswahl verschiedener Parameter Szenarien erstellen, wobei pro Szenario 100 Simulationen durchgeführt werden. Ihr könnt jedoch insgesamt maximal 3 Szenarien erstellen.')
 
        st.subheader('🔍 Szenario analysieren')
        st.info('Unter dem Reiter "Szenario analysieren" könnt ihr Einblicke in die visualisierten Daten eurer erstellten Szenarien gewinnen. Hier könnt ihr im Zeitverlauf die Anzahl der Infizierten, Genesenen und Verstorbenen für jedes Szenario einsehen. Klickt in der oberen Leiste auf das gewünschte Szenario, um es genauer zu betrachten. Das hilft euch dabei den Pandemieverlauf zu bewerten und sinnvolle Schlüsse daraus zu ziehen.')
