@@ -4,7 +4,7 @@ from PIL import Image
 
 def is_no_lockdown():
     if lockdown_start == 0:
-        st.write("0!")
+        pass
 
 def store_parameter_combination():
     param_combination = {
@@ -22,7 +22,7 @@ def store_parameter_combination():
 def get_dynamic_paths_to_images(param_combination):
 
     # Kein Lockdown ausgewaehlt
-    if param_combination[lockdown_start] == 0:
+    if param_combination[lockdown_dauer] == 0:
         pass
 
     # Mit Lockdown
@@ -197,13 +197,13 @@ with tab_sz_erstellen:
 
     st.write('##')
 
-    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 0, 4, value=1, step=1, on_change=is_no_lockdown)
+    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, value=1, step=1)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, step=2)
+    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=2, on_change=is_no_lockdown)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
