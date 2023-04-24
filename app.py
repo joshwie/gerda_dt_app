@@ -411,6 +411,7 @@ with tab_sz_analysieren:
 with tab_sz_vergleichen:
 
     expander_sir = st.expander("Infektionsverlauf (SIR)")
+    expander_sir.write("X")
 
     st.divider()
 
