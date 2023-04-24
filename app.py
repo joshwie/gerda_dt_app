@@ -391,7 +391,7 @@ with tab_sz_analysieren:
                 row2_col1, row2_col2 = st.columns(2)
 
                 with row2_col1:
-                    st.subheader("Infektionen pro Ort")
+                    st.subheader("Infektionen nach Ort")
                     image_inf_per_loc = Image.open(dynamic_paths_to_images[2])
                     st.image(image_inf_per_loc)
 
@@ -409,4 +409,25 @@ with tab_sz_analysieren:
                 st.image(image_deaths_per_100000_path)
 
 with tab_sz_vergleichen:
-    st.text("TODO")
+
+    expander_sir = st.expander("Infektionsverlauf (SIR)")
+
+    st.divider()
+
+    expander_stati = st.expander("Infektions-Stati im Zeitverlauf")
+
+    st.divider()
+
+    expander_loc = st.expander("Infektionen nach Ort")
+
+    st.divider()
+
+    expander_inf_age_groups = st.expander("Infektionen nach Alter")
+
+    st.divider()
+
+    expander_new_diagn_age = st.expander("Neue Diagnosen nach Alter")
+
+    st.divider()
+
+    expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
