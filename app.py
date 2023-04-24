@@ -411,7 +411,14 @@ with tab_sz_analysieren:
 with tab_sz_vergleichen:
 
     expander_sir = st.expander("Infektionsverlauf (SIR)")
-    expander_sir.write("X")
+    sir_1, sir_2, sir_3 = expander_sir.columns(3)
+    with sir_1:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png")
+    with sir_2:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png")
+    with sir_3:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png")
+
 
     st.divider()
 
