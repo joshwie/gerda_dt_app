@@ -340,7 +340,7 @@ with tab_sz_analysieren:
                             | Parameter | Wert |
                             |---|---|
                             | Lockdown-Dauer | :blue[''' + lockdown_dauer_param_value + ''']|
-                            | AHA-Regeln verpflichtend | :blue[''' + aha_regeln_param_value + ''']|
+                            | AHA-Regeln verpflichtend/empfohlen | :blue[''' + aha_regeln_param_value + ''']|
                             | Abstand: | :blue[''' + abstand_zusammenfassung + ''']|
                             | Impfstrategie | :blue[''' + impfstrategie_param_value + ''']|
                         ''')
