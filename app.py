@@ -6,6 +6,7 @@ def is_no_lockdown():
     if lockdown_dauer == 0:
         pass
         # TODO: disable lockdown_start-slider
+        # TODO: disable Disobedience
 
 
 def store_parameter_combination():
@@ -25,7 +26,22 @@ def get_dynamic_paths_to_images(param_combination):
 
     # Kein Lockdown ausgewaehlt
     if param_combination[lockdown_dauer] == 0:
-        pass
+        # infectivity
+        prefix = 'gerda_output/nolockdown/'
+
+        if param_combination['masken'] and param_combination['abstand']:
+            suffix = 'FU__infectivity_0o078'
+        elif param_combination['masken'] or param_combination['abstand']:
+            suffix = 'FU__infectivity_0o106'
+        else:
+            suffix = 'FU__infectivity_0o14'
+
+        trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
+        sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
+        infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
+        infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
+        new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
+        new_deaths_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_death_incidence.png"
 
     # Mit Lockdown
     else:
@@ -36,7 +52,7 @@ def get_dynamic_paths_to_images(param_combination):
         elif param_combination['masken'] or param_combination['abstand']:
             prefix += '0106/'
         else:
-            prefix += '014/' # stimmen die Ordner-Bezeichnungen?
+            prefix += '014/'
 
         # lockdown start
         if param_combination['lockdown_start'] == 1:
