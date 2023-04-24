@@ -117,7 +117,7 @@ if 'max_szenarien' not in st.session_state:
 if 'erstellte_szenarien' not in st.session_state:
     st.session_state['erstellte_szenarien'] = []
 
-tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenario analysieren', '🤔 Szenarien vergleichen'])
+tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenarien analysieren', '🤔 Szenarien vergleichen'])
 
 with tab_inf:
    ausgangssituation, sensitivity_analysis, bedienungsanleitung = st.tabs(['Ausgangssituation', 'Vorab-Analyse', 'Bedienungsanleitung'])
@@ -201,7 +201,7 @@ with tab_inf:
        st.subheader('🛠️ Szenario erstellen')
        st.info('Unter dem Reiter "Szenario erstellen", lassen sich durch die Auswahl verschiedener Parameter Szenarien erstellen, wobei pro Szenario 100 Simulationen durchgeführt werden. Ihr könnt jedoch insgesamt maximal 3 Szenarien erstellen.')
 
-       st.subheader('🔍 Szenario analysieren')
+       st.subheader('🔍 Szenarien analysieren')
        st.info('Unter dem Reiter "Szenario analysieren" könnt ihr Einblicke in die visualisierten Daten eurer erstellten Szenarien gewinnen. Hier könnt ihr im Zeitverlauf die Anzahl der Infizierten, Genesenen und Verstorbenen für jedes Szenario einsehen. Klickt in der oberen Leiste auf das gewünschte Szenario, um es genauer zu betrachten. Das hilft euch dabei den Pandemieverlauf zu bewerten und sinnvolle Schlüsse daraus zu ziehen.')
 
        st.subheader('🤔 Szenarien vergleichen')
