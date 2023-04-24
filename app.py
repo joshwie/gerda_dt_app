@@ -3,7 +3,7 @@ import time
 from PIL import Image
 
 def is_no_lockdown():
-    if lockdown_start == 1:
+    if lockdown_start == 0:
         st.write("0!")
 
 def store_parameter_combination():
