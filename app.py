@@ -304,7 +304,7 @@ with tab_sz_analysieren:
 
                 links, rechts = st.columns(2)
 
-                lockdown_start_param_value = ' nach ' + str(param_combination['lockdown_start']) + ' Woche(n)'
+                lockdown_start_param_value = ' nach ' + str(param_combination['lockdown_start']) + ' Wochen'
                 lockdown_orte_param_value = str(param_combination['lockdown_orte'])
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
 
