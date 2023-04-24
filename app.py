@@ -3,7 +3,7 @@ import time
 from PIL import Image
 
 def is_no_lockdown():
-    if param_combination['lockdown_start'] == 1:
+    if lockdown_start == 1:
         st.write("0!")
 
 def store_parameter_combination():
@@ -197,7 +197,7 @@ with tab_sz_erstellen:
 
     st.write('##')
 
-    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 0, 4, step=1, on_change=is_no_lockdown)
+    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 0, 4, value=1, step=1, on_change=is_no_lockdown)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
