@@ -4,6 +4,7 @@ from PIL import Image
 
 def is_no_lockdown():
     if lockdown_dauer == 0:
+        st.write("DISABLE")
         lockdown_start.enabled = False
 
 def store_parameter_combination():
