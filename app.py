@@ -3,8 +3,8 @@ import time
 from PIL import Image
 
 def is_no_lockdown():
-    if lockdown_start == 0:
-        pass
+    if lockdown_dauer == 0:
+        lockdown_start.enabled = False
 
 def store_parameter_combination():
     param_combination = {
