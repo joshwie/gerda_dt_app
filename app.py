@@ -158,7 +158,7 @@ with tab_inf:
        st.subheader('🕵️‍♀️ Informationen über die Bevölkerungsgruppe')
        st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen. '
                'Es ist sogar davon auszugehen, dass strengere Maßnahmen mit einem erhöhten Anteil derer, die sich nicht an die Maßnahmen halten, einhergeht.'
-               ' Auch diesen Faktor könnt ihr bei der Erstellung von möglichen Szenarien berücksichtigen.')
+               ' Auch diesen Faktor könnt ihr (je nach eurer Erwartung) bei der Erstellung von möglichen Szenarien Einstellen.')
 
    with sensitivity_analysis:
        st.subheader('📈 Sensitivitätsanalyse')
