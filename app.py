@@ -433,7 +433,7 @@ with tab_sz_vergleichen:
     st.divider()
 
     expander_loc = st.expander("Infektionen nach Ort")
-    loc_1, loc_2, loc_3 = expander_stati.columns(3)
+    loc_1, loc_2, loc_3 = expander_loc.columns(3)
     with loc_1:
         st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 1")
     with loc_2:
@@ -444,7 +444,7 @@ with tab_sz_vergleichen:
     st.divider()
 
     expander_inf_age_groups = st.expander("Infektionen nach Alter")
-    inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_stati.columns(3)
+    inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_inf_age_groups.columns(3)
     with inf_age_groups_1:
         st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 1")
     with inf_age_groups_2:
