@@ -236,14 +236,6 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    aha_staerke = st.radio(
-        'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
-
-    st.write('##')
-    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
-
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
 
@@ -257,8 +249,16 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
+    aha_staerke = st.radio(
+        'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
+        ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
+
+    st.write('##')
+    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
+
     ungehorsam = st.radio(
-        'Welcher Anteil der Bevölkerung hält sich nicht an die Lockdown-Verordnung?',
+        'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich nicht an die Lockdown-Verordnung hält?',
         ('0%', '20%'), horizontal=True)
 
     st.write('##')
