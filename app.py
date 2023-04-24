@@ -408,3 +408,5 @@ with tab_sz_analysieren:
                 image_deaths_per_100000_path = Image.open(dynamic_paths_to_images[5])
                 st.image(image_deaths_per_100000_path)
 
+with tab_sz_vergleichen:
+    st.text("TODO")
