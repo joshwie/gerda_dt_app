@@ -2,6 +2,10 @@ import streamlit as st
 import time
 from PIL import Image
 
+def is_no_lockdown():
+    if param_combination['lockdown_start'] == 1:
+        st.write("0!")
+
 def store_parameter_combination():
     param_combination = {
         "lockdown_start": lockdown_start,
@@ -12,67 +16,68 @@ def store_parameter_combination():
         "abstand": abstand_checkbox,
         "ungehorsam": ungehorsam,
         "impfstrategie": impfstrategie
-
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 def get_dynamic_paths_to_images(param_combination):
-    # infectivity
-    prefix = 'gerda_output/infectivity_'
-    if param_combination['masken'] and param_combination['abstand']:
-        prefix += '0078/'
-    elif param_combination['masken'] or param_combination['abstand']:
-        prefix += '0106/'
+
+    # Kein Lockdown ausgewaehlt
+    if param_combination[lockdown_start] == 0:
+        pass
+
+    # Mit Lockdown
     else:
-        prefix += '014/' # stimmen die Ordner-Bezeichnungen?
+        # infectivity
+        prefix = 'gerda_output/infectivity_'
+        if param_combination['masken'] and param_combination['abstand']:
+            prefix += '0078/'
+        elif param_combination['masken'] or param_combination['abstand']:
+            prefix += '0106/'
+        else:
+            prefix += '014/' # stimmen die Ordner-Bezeichnungen?
 
-    # lockdown start
-    if param_combination['lockdown_start'] == 1:
-        prefix += "start_168/"
-    if param_combination['lockdown_start'] == 2:
-        prefix += "start_336/"
-    if param_combination['lockdown_start'] == 3:
-        prefix += "start_504/"
-    if param_combination['lockdown_start'] == 4:
-        prefix += "start_672/"
+        # lockdown start
+        if param_combination['lockdown_start'] == 1:
+            prefix += "start_168/"
+        if param_combination['lockdown_start'] == 2:
+            prefix += "start_336/"
+        if param_combination['lockdown_start'] == 3:
+            prefix += "start_504/"
+        if param_combination['lockdown_start'] == 4:
+            prefix += "start_672/"
 
-    suffix = ""
-    # disobedience
-    if param_combination['ungehorsam'] == '0%':
-        suffix += 'FU__disobedience_0_'
-    if param_combination['ungehorsam'] == '20%':
-        suffix += 'FU__disobedience_0o2_'
+        suffix = ""
+        # disobedience
+        if param_combination['ungehorsam'] == '0%':
+            suffix += 'FU__disobedience_0_'
+        if param_combination['ungehorsam'] == '20%':
+            suffix += 'FU__disobedience_0o2_'
 
-    # lockdown end
-    lockdown_start_int = int(param_combination['lockdown_start']) * 168
-    lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
-    start_3 = str(lockdown_start_int + lockdown_dauer_int)
-    suffix += 'start_3_' + start_3 + "_"
+        # lockdown end
+        lockdown_start_int = int(param_combination['lockdown_start']) * 168
+        lockdown_dauer_int = int(param_combination['lockdown_dauer']) * 168
+        start_3 = str(lockdown_start_int + lockdown_dauer_int)
+        suffix += 'start_3_' + start_3 + "_"
 
-    # closed locs
-    suffix += 'closed_locs_'
-    if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
-        suffix += "['work', 'public']"
-    if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
-        suffix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
-    if param_combination['lockdown_orte'] == 'Schulen':
-        suffix += "['school', 'school_0', 'school_1', 'school_2']"
-    if param_combination['lockdown_orte'] == 'Alles':
-        suffix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
+        # closed locs
+        suffix += 'closed_locs_'
+        if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
+            suffix += "['work', 'public']"
+        if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
+            suffix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
+        if param_combination['lockdown_orte'] == 'Schulen':
+            suffix += "['school', 'school_0', 'school_1', 'school_2']"
+        if param_combination['lockdown_orte'] == 'Alles':
+            suffix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
 
 
-    trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
-    sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
-    infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
-    infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
-    new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
-    new_deaths_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_death_incidence.png"
+        trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
+        sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
+        infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
+        infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
+        new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
+        new_deaths_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_death_incidence.png"
 
-    #st.write(sub_image_path)
-    #st.write(infections_per_loc_path)
-    #st.write(infectionspattern_per_age_group)
-
-    # comment (just testing)
     dynamic_paths_to_images = [trajectory_image_path,
                        sub_image_path,
                        infections_per_loc_path,
@@ -174,7 +179,7 @@ with tab_inf:
 
        st.caption('')
 
-       st.subheader('🛠️ Szenarien erstellen')
+       st.subheader('🛠️ Szenario erstellen')
        st.info('Unter dem Reiter "Szenario erstellen", lassen sich durch die Auswahl verschiedener Parameter Szenarien erstellen, wobei pro Szenario 100 Simulationen durchgeführt werden. Ihr könnt jedoch insgesamt maximal 3 Szenarien erstellen.')
 
        st.subheader('🔍 Szenario analysieren')
@@ -187,15 +192,12 @@ with tab_sz_erstellen:
 
     st.write('##')
 
-    # FIX (+1 weg)
-    # nicht mehr als 3!
-
     nr_sz_info_text = 'Es wurden bereits ' + str(len(st.session_state['erstellte_szenarien'])) + '/' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt.'
     st.info(nr_sz_info_text)
 
     st.write('##')
 
-    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, step=1)
+    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 0, 4, step=1, on_change=is_no_lockdown)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
