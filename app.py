@@ -4,8 +4,9 @@ from PIL import Image
 
 def is_no_lockdown():
     if lockdown_dauer == 0:
-        st.write("DISABLE")
-        lockdown_start.enabled = False
+        pass
+        # TODO: disable lockdown_start-slider
+
 
 def store_parameter_combination():
     param_combination = {
