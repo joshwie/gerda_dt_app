@@ -25,7 +25,7 @@ def store_parameter_combination():
 def get_dynamic_paths_to_images(param_combination):
 
     # Kein Lockdown ausgewaehlt
-    if param_combination[lockdown_dauer] == 0:
+    if param_combination["lockdown_dauer"] == 0:
         # infectivity
         prefix = 'gerda_output/nolockdown/'
 
