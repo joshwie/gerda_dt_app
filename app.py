@@ -419,14 +419,27 @@ with tab_sz_vergleichen:
     with sir_3:
         st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 3")
 
-
     st.divider()
 
     expander_stati = st.expander("Infektions-Stati im Zeitverlauf")
+    stati_1, stati_2, stati_3 = expander_stati.columns(3)
+    with stati_1:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 1")
+    with stati_2:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 2")
+    with stati_3:
+        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 3")
 
     st.divider()
 
     expander_loc = st.expander("Infektionen nach Ort")
+    loc_1, loc_2, loc_3 = expander_stati.columns(3)
+    with loc_1:
+        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 1")
+    with loc_2:
+        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 2")
+    with loc_3:
+        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 3")
 
     st.divider()
 
