@@ -274,7 +274,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    if st.session_state.get("lockdown_yes_no", True):
+    if st.session_state.get("lockdown_yes_no", False):
         st.session_state.lockdown_disabled = True
     else:
         st.session_state.lockdown_disabled = False
