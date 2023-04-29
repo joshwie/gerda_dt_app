@@ -21,6 +21,9 @@ def store_parameter_combination():
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
+def toggle_impfung():
+    st.write(lockdown_yes_no)
+
 def get_dynamic_paths_to_images(param_combination):
 
     # Kein Lockdown ausgewaehlt
@@ -240,7 +243,7 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_yes_no = st.checkbox("Lockdown (ja/nein)")
+    lockdown_yes_no = st.checkbox("Lockdown (ja/nein)", on_change=toggle_impfung)
 
     st.write('##')
     st.markdown(
