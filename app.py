@@ -275,9 +275,18 @@ with tab_sz_erstellen:
         'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich nicht an die Lockdown-Verordnung hält?',
         ('0%', '20%'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
-
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
+    st.write('##')
+
+    impfstrategie = st.radio(
+        'Welche Impfstrategie soll verfolgt werden?',
+        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
+
+    st.write('##')
+    st.markdown(
+        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+        unsafe_allow_html=True)
     st.write('##')
 
     is_shown = False
