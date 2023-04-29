@@ -2,10 +2,8 @@ import streamlit as st
 import time
 from PIL import Image
 
-def is_no_lockdown():
-    if lockdown_dauer == 0:
-        pass
-        # TODO: disable Disobedience
+def toggle_lockdown():
+    st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 
 def store_parameter_combination():
@@ -20,9 +18,6 @@ def store_parameter_combination():
         "impfstrategie": impfstrategie
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
-
-def toggle_impfung():
-    st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 def get_dynamic_paths_to_images(param_combination):
 
@@ -243,7 +238,7 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_yes_no = st.checkbox("Lockdown (ja/nein)", on_change=toggle_impfung)
+    lockdown_yes_no = st.checkbox("Lockdown (ja/nein)", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
 
     st.write('##')
     st.markdown(
@@ -257,7 +252,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 0, 6, value=2, step=2, on_change=is_no_lockdown)
+    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 0, 6, value=2, step=2)
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
@@ -278,6 +273,11 @@ with tab_sz_erstellen:
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
+
+    if st.session_state.get("lockdown_yes_no", True):
+        st.session_state.lockdown_disabled = True
+    else:
+        st.session_state.lockdown_disabled = False
 
     impfstrategie = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
