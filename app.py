@@ -126,13 +126,12 @@ with tab_inf:
                'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen. '
                'Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
-       st.write('&nbsp;')
 
        st.subheader('🦠 Angaben zum Virustyp')
        st.info('Noch gibt es nicht allzu viele Informationen über das Virus. Es scheint jedoch deutlich ansteckender als ein Grippevirus zu sein.'
                ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.')
 
-       st.write('&nbsp;')
+       st.write('##')
 
        st.subheader('📊 Euch steht GERDA als Infektions-Modell zur Verfügung')
        st.info(
