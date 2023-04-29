@@ -8,6 +8,7 @@ def toggle_lockdown():
 
 def store_parameter_combination():
     param_combination = {
+        "lockdown_yes_no": lockdown_yes_no,
         "lockdown_start": lockdown_start,
         "lockdown_dauer": lockdown_dauer,
         "lockdown_orte": lockdown_orte,
@@ -22,7 +23,7 @@ def store_parameter_combination():
 def get_dynamic_paths_to_images(param_combination):
 
     # Kein Lockdown ausgewaehlt
-    if param_combination["lockdown_dauer"] == 0:
+    if param_combination["lockdown_yes_no"] == False:
         # infectivity
         prefix = 'gerda_output/nolockdown/'
 
@@ -257,7 +258,7 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 0, 6, value=2, step=2, disabled=st.session_state.get("lockdown_disabled", True))
+    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=2, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
