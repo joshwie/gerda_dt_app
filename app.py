@@ -240,11 +240,13 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('##')
 
-    st.divider()
-
     lockdown_yes_no = st.checkbox("Lockdown (ja/nein)")
 
-    st.divider()
+    st.write('##')
+    st.markdown(
+        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+        unsafe_allow_html=True)
+    st.write('##')
 
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, value=1, step=1)
 
