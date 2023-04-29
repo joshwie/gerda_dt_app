@@ -172,10 +172,8 @@ with tab_inf:
        st.markdown(
            '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
            unsafe_allow_html=True)
-       st.write('&nbsp;')
 
        st.subheader("Sensitivitätsanalyse für die Dauer des Lockdowns")
-       st.write('&nbsp;')
        image_sens_ana_s_21 = Image.open(
            'sensitivity_analysis/suppl_s_21.png')
        st.image(image_sens_ana_s_21)
