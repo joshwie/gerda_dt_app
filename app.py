@@ -22,7 +22,7 @@ def store_parameter_combination():
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 def toggle_impfung():
-    st.write(lockdown_yes_no)
+    st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 def get_dynamic_paths_to_images(param_combination):
 
@@ -281,7 +281,7 @@ with tab_sz_erstellen:
 
     impfstrategie = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
-        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
+        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
