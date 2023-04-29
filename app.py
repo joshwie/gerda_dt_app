@@ -126,13 +126,13 @@ with tab_inf:
                'Es handelt sich dabei um die kleine Gemeinde Gangelt mit einer Bevölkerung von etwa 11.000 Menschen. '
                'Es ist davon auszugehen, dass es bereits erste Infizierte gibt. Wer und wie viele genau, ist allerdings nicht bekannt.')
 
-       st.write('##')
+       st.write('&nbsp;')
 
        st.subheader('🦠 Angaben zum Virustyp')
        st.info('Noch gibt es nicht allzu viele Informationen über das Virus. Es scheint jedoch deutlich ansteckender als ein Grippevirus zu sein.'
                ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.')
 
-       st.write('##')
+       st.write('&nbsp;')
 
        st.subheader('📊 Euch steht GERDA als Infektions-Modell zur Verfügung')
        st.info(
@@ -143,7 +143,7 @@ with tab_inf:
            ' Das Modell soll somit lediglich als Entscheidungshilfe angesehen werden.'
            ' Denkt also auch an die verschiedenen Auswirkungen auf die Gesellschaft und andere/weitere Maßnahmen, die vom Modell nicht berücksichtigt werden.')
 
-       st.write('##')
+       st.write('&nbsp;')
 
        st.subheader('⏳ Das Problem mit der Zeit')
        st.info(
@@ -151,7 +151,7 @@ with tab_inf:
            ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich drei Zukunftsszenarien erstellt werden. '
            ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen bestimmte Maßnahmen stützen.')
 
-       st.write('##')
+       st.write('&nbsp;')
 
        st.subheader('🕵️‍♀️ Informationen über die Bevölkerungsgruppe')
        st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen. '
@@ -165,24 +165,24 @@ with tab_inf:
                ' Es steht zum einen eine Sensitivitätsanalye für den Start (oben) sowie eine für das Ende (unten) eines kompletten Lockdowns zur Verfügung.'
                ' Vielleicht können euch bei der Wahl der Parameter für die Erstellung der Szenarien helfen.')
 
-       st.write('##')
+       st.write('&nbsp;')
 
        st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
-       st.write('##')
+       st.write('&nbsp;')
        image_sens_ana_s_20 = Image.open(
            'sensitivity_analysis/suppl_s_20.png')
        st.image(image_sens_ana_s_20)
 
-       st.write('##')
-       st.write('##')
+       st.write('&nbsp;')
+       st.write('&nbsp;')
        st.markdown(
            '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
            unsafe_allow_html=True)
-       st.write('##')
-       st.write('##')
+       st.write('&nbsp;')
+       st.write('&nbsp;')
 
        st.subheader("Sensitivitätsanalyse für die Dauer des Lockdowns")
-       st.write('##')
+       st.write('&nbsp;')
        image_sens_ana_s_21 = Image.open(
            'sensitivity_analysis/suppl_s_21.png')
        st.image(image_sens_ana_s_21)
@@ -207,12 +207,12 @@ with tab_inf:
 
 with tab_sz_erstellen:
 
-    st.write('##')
+    st.write('&nbsp;')
 
     nr_sz_info_text = 'Es wurden bereits ' + str(len(st.session_state['erstellte_szenarien'])) + '/' + str(st.session_state['max_szenarien']) + ' Szenarien erstellt.'
     st.info(nr_sz_info_text)
 
-    st.write('##')
+    st.write('&nbsp;')
 
     caption_black = '<p style="color:#30333f;font-size: 14px;">Welche AHA-Regeln sollten gelten?</p>'
     st.markdown(caption_black, unsafe_allow_html=True)
@@ -223,29 +223,29 @@ with tab_sz_erstellen:
     with abstand:
         abstand_checkbox = st.checkbox('Abstand')
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown(
         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
         unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
         ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown(
         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
         unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     lockdown_yes_no = st.checkbox("Lockdown (ja / nein)", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown(
         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
         unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     if st.session_state.get("lockdown_yes_no", True):
         st.session_state.lockdown_disabled = False
@@ -254,41 +254,41 @@ with tab_sz_erstellen:
 
     lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, value=1, step=1, disabled=st.session_state.get("lockdown_disabled", True))
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=2, disabled=st.session_state.get("lockdown_disabled", True))
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     lockdown_orte = st.radio(
         'Welche Orte sollen im Lockdown geschlossen werden?',
         ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     ungehorsam = st.radio(
         'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich nicht an die Lockdown-Verordnung hält?',
         ('0%', '20%'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     impfstrategie = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
         ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
-    st.write('##')
+    st.write('&nbsp;')
     st.markdown(
         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
         unsafe_allow_html=True)
-    st.write('##')
+    st.write('&nbsp;')
 
     is_shown = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
@@ -383,7 +383,7 @@ with tab_sz_analysieren:
                             | Impfstrategie | :blue[''' + impfstrategie_param_value + ''']|
                         ''')
 
-                st.write('##')
+                st.write('&nbsp;')
 
                     #st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
                     #st.markdown('**AHA-Regeln empfohlen/verpflichtend:** ' + '(DEAKTIVIERT)')
