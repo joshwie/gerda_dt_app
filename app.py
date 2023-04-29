@@ -346,10 +346,10 @@ with tab_sz_analysieren:
                     table_links = '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Start | :purple[''' + lockdown_start_param_value + ''']|
-                            | Lockdown-Orte | :purple[''' + lockdown_orte_param_value + ''']|
-                            | Masken | :purple[''' + masken_zusammenfassung + ''']|
-                            | Lockdown-Verweigernde | :purple[''' + lockdown_ablehnende + ''']|
+                            | Lockdown-Start | :orange[''' + lockdown_start_param_value + ''']|
+                            | Lockdown-Orte | :orange[''' + lockdown_orte_param_value + ''']|
+                            | Masken | :orange[''' + masken_zusammenfassung + ''']|
+                            | Lockdown-Verweigernde | :orange[''' + lockdown_ablehnende + ''']|
                         '''
 
                     st.markdown(table_links)
@@ -368,10 +368,10 @@ with tab_sz_analysieren:
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Dauer | :purple[''' + lockdown_dauer_param_value + ''']|
-                            | AHA-Regeln verpflichtend/empfohlen | :purple[''' + aha_regeln_param_value + ''']|
-                            | Abstand: | :purple[''' + abstand_zusammenfassung + ''']|
-                            | Impfstrategie | :purple[''' + impfstrategie_param_value + ''']|
+                            | Lockdown-Dauer | :orange[''' + lockdown_dauer_param_value + ''']|
+                            | AHA-Regeln verpflichtend/empfohlen | :orange[''' + aha_regeln_param_value + ''']|
+                            | Abstand: | :orange[''' + abstand_zusammenfassung + ''']|
+                            | Impfstrategie | :orange[''' + impfstrategie_param_value + ''']|
                         ''')
 
                 st.write('&nbsp;')
