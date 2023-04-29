@@ -230,7 +230,7 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('&nbsp;')
 
-    lockdown_yes_no = st.checkbox("Lockdown (ja / nein)", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
+    lockdown_yes_no = st.checkbox("Lockdown", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
 
     st.write('&nbsp;')
     st.markdown(
