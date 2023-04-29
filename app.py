@@ -297,7 +297,7 @@ with tab_sz_erstellen:
             time.sleep(0.01)
             my_bar.progress(percent_complete + 1, text=progress_text)
 
-        st.success('Done!')
+        st.success('Fertig!')
 
         store_parameter_combination()
 
@@ -346,10 +346,10 @@ with tab_sz_analysieren:
                     table_links = '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Start | :orange[''' + lockdown_start_param_value + ''']|
-                            | Lockdown-Orte | :orange[''' + lockdown_orte_param_value + ''']|
-                            | Masken | :orange[''' + masken_zusammenfassung + ''']|
-                            | Lockdown-Verweigernde | :orange[''' + lockdown_ablehnende + ''']|
+                            | Lockdown-Start | :green[''' + lockdown_start_param_value + ''']|
+                            | Lockdown-Orte | :green[''' + lockdown_orte_param_value + ''']|
+                            | Masken | :green[''' + masken_zusammenfassung + ''']|
+                            | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         '''
 
                     st.markdown(table_links)
@@ -368,10 +368,10 @@ with tab_sz_analysieren:
                         '''
                             | Parameter | Wert |
                             |---|---|
-                            | Lockdown-Dauer | :orange[''' + lockdown_dauer_param_value + ''']|
-                            | AHA-Regeln verpflichtend/empfohlen | :orange[''' + aha_regeln_param_value + ''']|
-                            | Abstand: | :orange[''' + abstand_zusammenfassung + ''']|
-                            | Impfstrategie | :orange[''' + impfstrategie_param_value + ''']|
+                            | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
+                            | AHA-Regeln verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
+                            | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
+                            | Impfstrategie | :green[''' + impfstrategie_param_value + ''']|
                         ''')
 
                 st.write('&nbsp;')
