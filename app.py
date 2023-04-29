@@ -246,13 +246,18 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, value=1, step=1)
+    if st.session_state.get("lockdown_yes_no", True):
+        st.session_state.lockdown_disabled = False
+    else:
+        st.session_state.lockdown_disabled = True
+
+    lockdown_start = st.slider('Lockdown-Start (nach wie vielen Wochen?)', 1, 4, value=1, step=1, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 0, 6, value=2, step=2)
+    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 0, 6, value=2, step=2, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
@@ -260,7 +265,7 @@ with tab_sz_erstellen:
 
     lockdown_orte = st.radio(
         'Welche Orte sollen im Lockdown geschlossen werden?',
-        ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True)
+        ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
@@ -268,20 +273,8 @@ with tab_sz_erstellen:
 
     ungehorsam = st.radio(
         'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich nicht an die Lockdown-Verordnung hält?',
-        ('0%', '20%'), horizontal=True)
+        ('0%', '20%'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
-    st.write('##')
-    st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
-    st.write('##')
-
-    if st.session_state.get("lockdown_yes_no", True):
-        st.session_state.lockdown_disabled = False
-    else:
-        st.session_state.lockdown_disabled = True
-
-    impfstrategie = st.radio(
-        'Welche Impfstrategie soll verfolgt werden?',
-        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('##')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
