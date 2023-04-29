@@ -274,10 +274,10 @@ with tab_sz_erstellen:
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
     st.write('##')
 
-    if st.session_state.get("lockdown_yes_no", False):
-        st.session_state.lockdown_disabled = True
-    else:
+    if st.session_state.get("lockdown_yes_no", True):
         st.session_state.lockdown_disabled = False
+    else:
+        st.session_state.lockdown_disabled = True
 
     impfstrategie = st.radio(
         'Welche Impfstrategie soll verfolgt werden?',
