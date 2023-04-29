@@ -148,7 +148,7 @@ with tab_inf:
        st.subheader('⏳ Das Problem mit der Zeit')
        st.info(
            'Die Erstellung möglicher Zukunftsszenarien mit Hilfe des Modells nimmt einige Zeit in Anspruch. '
-           ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich 3 Zukunftsszenarien erstellt werden. '
+           ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich drei Zukunftsszenarien erstellt werden. '
            ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen bestimmte Maßnahmen stützen.')
 
        st.write('##')
@@ -239,7 +239,7 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('##')
 
-    lockdown_yes_no = st.checkbox("Lockdown (ja/nein)", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
+    lockdown_yes_no = st.checkbox("Lockdown (ja / nein)", key="lockdown_yes_no", value=True, on_change=toggle_lockdown)
 
     st.write('##')
     st.markdown(
