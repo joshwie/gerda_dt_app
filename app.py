@@ -161,7 +161,6 @@ with tab_inf:
                ' Vielleicht können euch bei der Wahl der Parameter für die Erstellung der Szenarien helfen.')
 
        st.subheader("Sensitivitätsanalyse für den Start des Lockdowns")
-       st.write('&nbsp;')
        image_sens_ana_s_20 = Image.open(
            'sensitivity_analysis/suppl_s_20.png')
        st.image(image_sens_ana_s_20)
