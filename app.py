@@ -168,7 +168,6 @@ with tab_inf:
            'sensitivity_analysis/suppl_s_20.png')
        st.image(image_sens_ana_s_20)
 
-       st.write('&nbsp;')
        st.markdown(
            '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
            unsafe_allow_html=True)
