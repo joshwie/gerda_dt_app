@@ -131,7 +131,6 @@ with tab_inf:
        st.info('Noch gibt es nicht allzu viele Informationen über das Virus. Es scheint jedoch deutlich ansteckender als ein Grippevirus zu sein.'
                ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.')
 
-       st.write('##')
 
        st.subheader('📊 Euch steht GERDA als Infektions-Modell zur Verfügung')
        st.info(
@@ -142,15 +141,12 @@ with tab_inf:
            ' Das Modell soll somit lediglich als Entscheidungshilfe angesehen werden.'
            ' Denkt also auch an die verschiedenen Auswirkungen auf die Gesellschaft und andere/weitere Maßnahmen, die vom Modell nicht berücksichtigt werden.')
 
-       st.write('&nbsp;')
 
        st.subheader('⏳ Das Problem mit der Zeit')
        st.info(
            'Die Erstellung möglicher Zukunftsszenarien mit Hilfe des Modells nimmt einige Zeit in Anspruch. '
            ' Da bereits morgen über Maßnahmen entschieden werden muss, können (trotz Hochleistungsrechnern) lediglich drei Zukunftsszenarien erstellt werden. '
            ' Auf deren Grundlage könnt ihr dann eure Entscheidung für oder gegen bestimmte Maßnahmen stützen.')
-
-       st.write('&nbsp;')
 
        st.subheader('🕵️‍♀️ Informationen über die Bevölkerungsgruppe')
        st.info('Nicht alle Personen in der Bevölkerung halten sich an die vorgegebenen Maßnahmen. '
