@@ -377,7 +377,7 @@ with tab_sz_analysieren:
                             | Parameter | Wert |
                             |---|---|
                             | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
-                            | AHA verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
+                            | "AHA" verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
                             | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
                             | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         ''')
