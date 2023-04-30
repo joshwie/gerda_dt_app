@@ -338,7 +338,12 @@ with tab_sz_analysieren:
                     lockdown_yes_no_value = 'Ja'
 
                 lockdown_start_param_value = ' nach ' + str(param_combination['lockdown_start']) + ' Wochen'
+                if not param_combination['lockdown_yes_no']:
+                    lockdown_start_param_value = ' (kein Lockdown)'
+
                 lockdown_orte_param_value = str(param_combination['lockdown_orte'])
+                if not param_combination['lockdown_yes_no']:
+                    lockdown_orte_param_value = ' (kein Lockdown)'
 
                 make_table_smaller = '<style scoped> table {font-size: 13px;} </style>'
 
@@ -356,12 +361,6 @@ with tab_sz_analysieren:
 
                     st.markdown(table_links)
 
-                    #st.markdown('**Lockdown-Start nach ' + str(param_combination['lockdown_start']) + ' Woche(n)')
-                    #st.markdown('**Lockdown-Orte:** ' + str(param_combination['lockdown_orte']))
-                    #st.markdown('**Masken:** ' + masken_zusammenfassung)
-                    #st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält:** ' + str(param_combination['ungehorsam']))
-                    #st.markdown('**Impfstrategie:** ' + '(DEAKTIVIERT)')
-
                 lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
                 aha_regeln_param_value = 'DEAKTIVIERT'
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
@@ -377,11 +376,6 @@ with tab_sz_analysieren:
                         ''')
 
                 st.write('&nbsp;')
-
-                    #st.markdown('**Lockdown-Dauer:** ' + str(param_combination['lockdown_dauer']) + ' Woche(n)')
-                    #st.markdown('**AHA-Regeln empfohlen/verpflichtend:** ' + '(DEAKTIVIERT)')
-                    #st.markdown('**Abstand:** ' + abstand_zusammenfassung)
-                    #st.markdown('**Anteil der Bevölkerung, der sich nicht an den Lockdown hält**: ' + str(param_combination['ungehorsam']))
 
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
