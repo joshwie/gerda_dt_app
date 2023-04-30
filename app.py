@@ -436,20 +436,14 @@ with tab_sz_vergleichen:
             for i in range(len(paths_to_images)):
                 image_chunks[i].append(paths_to_images[i])
 
-        st.write(image_chunks)
-
-
 
         expander_sir = st.expander("Infektionsverlauf (SIR)")
         sir = expander_sir.columns(3)
 
-        with sir[0]:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 1")
-        with sir[1]:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 2")
-        with sir[2]:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 3")
-
+        for i in range(len(image_chunks[0])):
+            with sir[i]:
+                st.image(image_chunks[0][i], caption="Szenario " + str((i+1)))
+                
         expander_stati = st.expander("Infektions-Stati im Zeitverlauf")
         stati_1, stati_2, stati_3 = expander_stati.columns(3)
         with stati_1:
