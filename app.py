@@ -341,9 +341,9 @@ with tab_sz_analysieren:
                 if not param_combination['lockdown_yes_no']:
                     lockdown_start_param_value = ' (kein Lockdown)'
 
-                lockdown_orte_param_value = str(param_combination['lockdown_orte'])
+                lockdown_ablehnende = str(param_combination['ungehorsam'])
                 if not param_combination['lockdown_yes_no']:
-                    lockdown_orte_param_value = ' (kein Lockdown)'
+                    lockdown_ablehnende = ' (kein Lockdown)'
 
                 make_table_smaller = '<style scoped> table {font-size: 13px;} </style>'
 
@@ -356,7 +356,7 @@ with tab_sz_analysieren:
                             | Masken | :green[''' + masken_zusammenfassung + ''']|
                             | Lockdown | :green[''' + lockdown_yes_no_value + ''']|
                             | Lockdown-Start | :green[''' + lockdown_start_param_value + ''']|
-                            | Lockdown-Orte | :green[''' + lockdown_orte_param_value + ''']|
+                            | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         '''
 
                     st.markdown(table_links)
@@ -367,9 +367,9 @@ with tab_sz_analysieren:
 
                 aha_regeln_param_value = 'DEAKTIVIERT'
 
-                lockdown_ablehnende = str(param_combination['ungehorsam'])
+                lockdown_orte_param_value = str(param_combination['lockdown_orte'])
                 if not param_combination['lockdown_yes_no']:
-                    lockdown_ablehnende = ' (kein Lockdown)'
+                    lockdown_orte_param_value = ' (kein Lockdown)'
 
                 with rechts:
                     st.markdown(
@@ -379,7 +379,7 @@ with tab_sz_analysieren:
                             | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
                             | "AHA" verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
                             | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
-                            | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
+                            | Lockdown-Orte | :green[''' + lockdown_orte_param_value + ''']|
                         ''')
 
                 st.write('&nbsp;')
