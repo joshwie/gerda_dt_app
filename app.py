@@ -418,6 +418,11 @@ with tab_sz_analysieren:
 
 with tab_sz_vergleichen:
 
+    szenarien = st.session_state['erstellte_szenarien']
+
+    for szenario in szenarien:
+        st.write(szenario)
+
     expander_sir = st.expander("Infektionsverlauf (SIR)")
     sir_1, sir_2, sir_3 = expander_sir.columns(3)
     with sir_1:
