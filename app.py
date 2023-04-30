@@ -425,7 +425,7 @@ with tab_sz_vergleichen:
 
         paths_to_images = get_dynamic_paths_to_images(szenarien[0])
         anzahl_images = len(paths_to_images)
-        st.write(anzahl_images)
+        st.write(paths_to_images)
         st.write("Anzahl: " + str(anzahl_images))
 
         image_chunks = []
