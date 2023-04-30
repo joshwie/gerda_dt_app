@@ -369,7 +369,7 @@ with tab_sz_analysieren:
 
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
                 if not param_combination['lockdown_yes_no']:
-                    lockdown_dauer_param_value = ' (kein Lockdown)'
+                    lockdown_ablehnende = ' (kein Lockdown)'
 
                 with rechts:
                     st.markdown(
