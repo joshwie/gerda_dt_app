@@ -422,15 +422,22 @@ with tab_sz_vergleichen:
         st.info('Du musst für den Vergleich mindestens zwei Szenarien erstellen')
     else:
         szenarien = st.session_state['erstellte_szenarien']
-        images = {}
+        anzahl_szenarien = len(szenarien)
+
+        anzahl_images = len(szenarien[0])
+        st.write("Anzahl:" + str(anzahl_images))
+        image_chunks = []
         for param_combination in szenarien:
             paths_to_images = get_dynamic_paths_to_images(param_combination)
-            #images[param_combination] = paths_to_images
-            st.write(paths_to_images)
-            st.write('##')
+
+            for i in range(len(paths_to_images)):
+                pass
+
+
 
         expander_sir = st.expander("Infektionsverlauf (SIR)")
         sir = expander_sir.columns(3)
+
         with sir[0]:
             st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 1")
         with sir[1]:
