@@ -35,7 +35,6 @@ def get_dynamic_paths_to_images(param_combination):
             suffix = 'FU__infectivity_0o14'
 
         trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
-        st.write(trajectory_image_path)
         sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
         infections_per_loc_path = prefix + suffix + "/analysis/plots/" + "infections_per_time_per_loc_type.png"
         infectionspattern_per_age_group_path = prefix + suffix + "/analysis/plots/" + suffix + "_infectionpatterns.png"
@@ -424,9 +423,11 @@ with tab_sz_vergleichen:
         szenarien = st.session_state['erstellte_szenarien']
         anzahl_szenarien = len(szenarien)
 
-        anzahl_images = len(szenarien[0])
-        st.write(szenarien[0])
-        st.write("Anzahl:" + str(anzahl_images))
+        paths_to_images = get_dynamic_paths_to_images(szenarien[0])
+        anzahl_images = len(paths_to_images)
+        st.write(anzahl_images)
+        st.write("Anzahl: " + str(anzahl_images))
+
         image_chunks = []
         for param_combination in szenarien:
             paths_to_images = get_dynamic_paths_to_images(param_combination)
