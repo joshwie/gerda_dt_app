@@ -425,7 +425,7 @@ with tab_sz_vergleichen:
         anzahl_szenarien = len(szenarien)
 
         anzahl_images = len(szenarien[0])
-        st.write(anzahl_images)
+        st.write(szenarien[0])
         st.write("Anzahl:" + str(anzahl_images))
         image_chunks = []
         for param_combination in szenarien:
