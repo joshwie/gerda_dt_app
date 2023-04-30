@@ -425,7 +425,7 @@ with tab_sz_vergleichen:
         images = {}
         for param_combination in szenarien:
             paths_to_images = get_dynamic_paths_to_images(param_combination)
-            images[param_combination] = paths_to_images
+            #images[param_combination] = paths_to_images
             st.write(paths_to_images)
             st.write('##')
 
