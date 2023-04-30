@@ -459,13 +459,10 @@ with tab_sz_vergleichen:
                 st.image(image_chunks[2][i], caption="Szenario " + str((i + 1)))
 
         expander_inf_age_groups = st.expander("Infektionen nach Alter")
-        inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_inf_age_groups.columns(3)
-        with inf_age_groups_1:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 1")
-        with inf_age_groups_2:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 2")
-        with inf_age_groups_3:
-            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 3")
+        inf_age_groups = expander_inf_age_groups.columns(3)
+        for i in range(len(image_chunks[3])):
+            with inf_age_groups[i]:
+                st.image(image_chunks[3][i], caption="Szenario " + str((i + 1)))
 
         expander_new_diagn_age = st.expander("Neue Diagnosen nach Alter")
         expander_new_diagn_age.write("TODO")
