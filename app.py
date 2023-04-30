@@ -369,7 +369,7 @@ with tab_sz_analysieren:
 
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
                 if not param_combination['lockdown_yes_no']:
-                    lockdown_ablehnende = ' (kein Lockdown)'
+                    lockdown_dauer_param_value = ' (kein Lockdown)'
 
                 with rechts:
                     st.markdown(
@@ -377,7 +377,7 @@ with tab_sz_analysieren:
                             | Parameter | Wert |
                             |---|---|
                             | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
-                            | AHA-Regeln verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
+                            | AHA verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
                             | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
                             | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         ''')
