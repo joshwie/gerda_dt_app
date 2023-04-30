@@ -465,7 +465,10 @@ with tab_sz_vergleichen:
                 st.image(image_chunks[3][i], caption="Szenario " + str((i + 1)))
 
         expander_new_diagn_age = st.expander("Neue Diagnosen nach Alter")
-        expander_new_diagn_age.write("TODO")
+        diagnoses_age_group = expander_new_diagn_age.container()
+        for i in range(len(image_chunks[4])):
+            with diagnoses_age_group[i]:
+                st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
 
         expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
         expander_new_deaths_age.write("TODO")
