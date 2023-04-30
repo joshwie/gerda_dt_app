@@ -427,7 +427,7 @@ with tab_sz_vergleichen:
         anzahl_images = len(paths_to_images)
 
         image_chunks = []
-        for i in range(len(anzahl_images)):
+        for i in range(anzahl_images):
             image_chunks.append([])
 
         for param_combination in szenarien:
