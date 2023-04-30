@@ -332,9 +332,13 @@ with tab_sz_analysieren:
 
                 links, rechts = st.columns(2)
 
+
+                lockdown_yes_no_value = 'Nein'
+                if param_combination['lockdown_yes_no']:
+                    lockdown_yes_no_value = 'Ja'
+
                 lockdown_start_param_value = ' nach ' + str(param_combination['lockdown_start']) + ' Wochen'
                 lockdown_orte_param_value = str(param_combination['lockdown_orte'])
-                lockdown_ablehnende = str(param_combination['ungehorsam'])
 
                 make_table_smaller = '<style scoped> table {font-size: 13px;} </style>'
 
@@ -344,10 +348,10 @@ with tab_sz_analysieren:
                     table_links = '''
                             | Parameter | Wert |
                             |---|---|
+                            | Masken | :green[''' + masken_zusammenfassung + ''']|
+                            | Lockdown | :green[''' + lockdown_yes_no_value + ''']|
                             | Lockdown-Start | :green[''' + lockdown_start_param_value + ''']|
                             | Lockdown-Orte | :green[''' + lockdown_orte_param_value + ''']|
-                            | Masken | :green[''' + masken_zusammenfassung + ''']|
-                            | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         '''
 
                     st.markdown(table_links)
@@ -360,16 +364,16 @@ with tab_sz_analysieren:
 
                 lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
                 aha_regeln_param_value = 'DEAKTIVIERT'
-                impfstrategie_param_value = 'DEAKTIVIERT'
+                lockdown_ablehnende = str(param_combination['ungehorsam'])
                 with rechts:
                     st.markdown(
                         '''
                             | Parameter | Wert |
                             |---|---|
+                            | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
                             | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
                             | AHA-Regeln verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
-                            | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
-                            | Impfstrategie | :green[''' + impfstrategie_param_value + ''']|
+                            | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         ''')
 
                 st.write('&nbsp;')
