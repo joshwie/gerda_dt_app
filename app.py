@@ -362,16 +362,23 @@ with tab_sz_analysieren:
                     st.markdown(table_links)
 
                 lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
+                if not param_combination['lockdown_yes_no']:
+                    lockdown_dauer_param_value = ' (kein Lockdown)'
+
                 aha_regeln_param_value = 'DEAKTIVIERT'
+
                 lockdown_ablehnende = str(param_combination['ungehorsam'])
+                if not param_combination['lockdown_yes_no']:
+                    lockdown_ablehnende = ' (kein Lockdown)'
+
                 with rechts:
                     st.markdown(
                         '''
                             | Parameter | Wert |
                             |---|---|
                             | Abstand: | :green[''' + abstand_zusammenfassung + ''']|
-                            | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
                             | AHA-Regeln verpflichtend/empfohlen | :green[''' + aha_regeln_param_value + ''']|
+                            | Lockdown-Dauer | :green[''' + lockdown_dauer_param_value + ''']|
                             | Lockdown-Verweigernde | :green[''' + lockdown_ablehnende + ''']|
                         ''')
 
