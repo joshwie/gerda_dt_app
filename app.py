@@ -418,49 +418,55 @@ with tab_sz_analysieren:
 
 with tab_sz_vergleichen:
 
-    szenarien = st.session_state['erstellte_szenarien']
+    if len(st.session_state['erstellte_szenarien']) < 2:
+        st.info('Du musst für den Vergleich mindestens zwei Szenarien erstellen')
+    else:
+        szenarien = st.session_state['erstellte_szenarien']
+        images = {}
+        for param_combination in szenarien:
+            paths_to_images = get_dynamic_paths_to_images(param_combination)
+            images[param_combination] = paths_to_images
+            st.write(paths_to_images)
+            st.write('##')
 
-    for szenario in szenarien:
-        st.write(szenario)
+        expander_sir = st.expander("Infektionsverlauf (SIR)")
+        sir = expander_sir.columns(3)
+        with sir[0]:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 1")
+        with sir[1]:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 2")
+        with sir[2]:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 3")
 
-    expander_sir = st.expander("Infektionsverlauf (SIR)")
-    sir_1, sir_2, sir_3 = expander_sir.columns(3)
-    with sir_1:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 1")
-    with sir_2:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 2")
-    with sir_3:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_statii.png", caption="Szenario 3")
+        expander_stati = st.expander("Infektions-Stati im Zeitverlauf")
+        stati_1, stati_2, stati_3 = expander_stati.columns(3)
+        with stati_1:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 1")
+        with stati_2:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 2")
+        with stati_3:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 3")
 
-    expander_stati = st.expander("Infektions-Stati im Zeitverlauf")
-    stati_1, stati_2, stati_3 = expander_stati.columns(3)
-    with stati_1:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 1")
-    with stati_2:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 2")
-    with stati_3:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_sub_statii.png", caption="Szenario 3")
+        expander_loc = st.expander("Infektionen nach Ort")
+        loc_1, loc_2, loc_3 = expander_loc.columns(3)
+        with loc_1:
+            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 1")
+        with loc_2:
+            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 2")
+        with loc_3:
+            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 3")
 
-    expander_loc = st.expander("Infektionen nach Ort")
-    loc_1, loc_2, loc_3 = expander_loc.columns(3)
-    with loc_1:
-        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 1")
-    with loc_2:
-        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 2")
-    with loc_3:
-        st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 3")
+        expander_inf_age_groups = st.expander("Infektionen nach Alter")
+        inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_inf_age_groups.columns(3)
+        with inf_age_groups_1:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 1")
+        with inf_age_groups_2:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 2")
+        with inf_age_groups_3:
+            st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 3")
 
-    expander_inf_age_groups = st.expander("Infektionen nach Alter")
-    inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_inf_age_groups.columns(3)
-    with inf_age_groups_1:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 1")
-    with inf_age_groups_2:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 2")
-    with inf_age_groups_3:
-        st.image("test_plots/FirstChunk__infectivity_0o14_start_2_360_start_3_3023_closed_locs_work_disobedience_0o5_infectionpatterns.png", caption="Szenario 3")
+        expander_new_diagn_age = st.expander("Neue Diagnosen nach Alter")
+        expander_new_diagn_age.write("TODO")
 
-    expander_new_diagn_age = st.expander("Neue Diagnosen nach Alter")
-    expander_new_diagn_age.write("TODO")
-
-    expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
-    expander_new_deaths_age.write("TODO")
+        expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
+        expander_new_deaths_age.write("TODO")
