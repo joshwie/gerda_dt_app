@@ -425,15 +425,18 @@ with tab_sz_vergleichen:
 
         paths_to_images = get_dynamic_paths_to_images(szenarien[0])
         anzahl_images = len(paths_to_images)
-        st.write(paths_to_images)
-        st.write("Anzahl: " + str(anzahl_images))
 
         image_chunks = []
+        for i in range(len(anzahl_images)):
+            image_chunks.append([])
+
         for param_combination in szenarien:
             paths_to_images = get_dynamic_paths_to_images(param_combination)
 
             for i in range(len(paths_to_images)):
-                pass
+                image_chunks[i].append(paths_to_images[i])
+
+        st.write(image_chunks)
 
 
 
