@@ -468,15 +468,17 @@ with tab_sz_vergleichen:
         with diagnoses_age_group:
             for i in range(len(image_chunks[4])):
                 if i > 0:
-                    st.write('&nbsp;')
                     st.markdown(
                         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
                         unsafe_allow_html=True)
-                    st.write('&nbsp;')
                 st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
 
         expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
         deaths_age_group = expander_new_deaths_age.container()
         with deaths_age_group:
+            if i > 0:
+                st.markdown(
+                    '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+                    unsafe_allow_html=True)
             for i in range(len(image_chunks[5])):
                 st.image(image_chunks[5][i], caption="Szenario " + str((i + 1)))
