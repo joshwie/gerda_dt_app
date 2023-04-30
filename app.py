@@ -328,7 +328,7 @@ with tab_sz_analysieren:
                 if param_combination['abstand']:
                     abstand_zusammenfassung = 'Ja'
 
-                st.subheader('Ausgewählte Parameter für Szenario ' + str((i+1)))
+                st.subheader('Eure gewählten Parameter für Szenario ' + str((i+1)))
 
                 links, rechts = st.columns(2)
 
@@ -341,7 +341,6 @@ with tab_sz_analysieren:
                 st.markdown(make_table_smaller, unsafe_allow_html=True)
 
                 with links:
-
                     table_links = '''
                             | Parameter | Wert |
                             |---|---|
@@ -468,6 +467,12 @@ with tab_sz_vergleichen:
         diagnoses_age_group = expander_new_diagn_age.container()
         with diagnoses_age_group:
             for i in range(len(image_chunks[4])):
+                if i > 0:
+                    st.write('&nbsp;')
+                    st.markdown(
+                        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+                        unsafe_allow_html=True)
+                    st.write('&nbsp;')
                 st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
 
         expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
