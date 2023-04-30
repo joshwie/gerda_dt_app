@@ -453,13 +453,10 @@ with tab_sz_vergleichen:
                 st.image(image_chunks[1][i], caption="Szenario " + str((i + 1)))
 
         expander_loc = st.expander("Infektionen nach Ort")
-        loc_1, loc_2, loc_3 = expander_loc.columns(3)
-        with loc_1:
-            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 1")
-        with loc_2:
-            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 2")
-        with loc_3:
-            st.image("test_plots/infections_per_time_per_loc_type.png", caption="Szenario 3")
+        loc = expander_loc.columns(3)
+        for i in range(len(image_chunks[2])):
+            with loc[i]:
+                st.image(image_chunks[2][i], caption="Szenario " + str((i + 1)))
 
         expander_inf_age_groups = st.expander("Infektionen nach Alter")
         inf_age_groups_1, inf_age_groups_2, inf_age_groups_3 = expander_inf_age_groups.columns(3)
