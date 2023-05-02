@@ -7,8 +7,8 @@ def toggle_lockdown():
     st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 def check_aha_staerke():
-    #st.write("Masken: " + str(masken_checkbox))
-    #st.write("Abstand: " + str(abstand_checkbox))
+    v = abstand_checkbox or masken_checkbox
+    st.write("Masken: " + str(v))
     if abstand_checkbox or masken_checkbox:
         st.session_state["aha_staerke_disable"] = False
     else:
@@ -237,7 +237,7 @@ with tab_sz_erstellen:
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", False))
+        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", True))
 
     st.write('&nbsp;')
     st.markdown(
