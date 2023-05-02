@@ -7,8 +7,6 @@ def toggle_lockdown():
     st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 def check_aha_staerke():
-    v = abstand_checkbox or masken_checkbox
-    st.write("Masken: " + str(v))
     if abstand_checkbox or masken_checkbox:
         st.session_state["aha_staerke_disable"] = False
     else:
@@ -329,7 +327,7 @@ with tab_sz_erstellen:
         store_parameter_combination()
 
         time.sleep(1)
-        #st.experimental_rerun()
+        st.experimental_rerun()
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
