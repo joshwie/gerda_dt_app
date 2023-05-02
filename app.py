@@ -295,17 +295,15 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('&nbsp;')
 
-    '''
-    impfstrategie = st.radio(
-        'Welche Impfstrategie soll verfolgt werden?',
-        ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
+    #impfstrategie = st.radio(
+    #    'Welche Impfstrategie soll verfolgt werden?',
+    #    ('Zufällig', 'Interaktion', 'Alter'), horizontal=True, disabled=True)
 
-    st.write('&nbsp;')
-    st.markdown(
-        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
-        unsafe_allow_html=True)
-    st.write('&nbsp;')
-    '''
+    #st.write('&nbsp;')
+    #st.markdown(
+    #    '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+    #    unsafe_allow_html=True)
+    #st.write('&nbsp;')
 
     is_shown = False
     if len(st.session_state['erstellte_szenarien']) >= 3:
