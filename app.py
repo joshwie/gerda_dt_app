@@ -329,7 +329,7 @@ with tab_sz_erstellen:
         store_parameter_combination()
 
         time.sleep(1)
-        st.experimental_rerun()
+        #st.experimental_rerun()
 
     st.markdown("[nach oben](#pandemie-ausbr-che-unter-der-lupe)")
 
