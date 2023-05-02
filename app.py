@@ -228,6 +228,7 @@ with tab_sz_erstellen:
         masken_checkbox = st.checkbox('Masken', key="masken_checkbox", on_change=check_aha_staerke, value=False)
     with abstand:
         abstand_checkbox = st.checkbox('Abstand', key="abstand_checkbox", on_change=check_aha_staerke, value=False)
+    st.experimental_rerun()
 
     st.write('&nbsp;')
     st.markdown(
