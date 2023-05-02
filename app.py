@@ -265,7 +265,7 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('&nbsp;')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=2,
+    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=1,
                                disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('&nbsp;')
