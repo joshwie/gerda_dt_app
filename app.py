@@ -237,7 +237,7 @@ with tab_sz_erstellen:
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", True))
+        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", False))
 
     st.write('&nbsp;')
     st.markdown(
