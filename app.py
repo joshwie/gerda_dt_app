@@ -7,8 +7,7 @@ def toggle_lockdown():
     st.session_state["lockdown_disabled"] = lockdown_yes_no
 
 def check_aha_staerke():
-    st.write(lockdown_yes_no)
-    st.session_state["aha_staerke"] = (lockdown_yes_no or lockdown_yes_no)
+    st.session_state["aha_staerke"] = abstand_checkbox or masken_checkbox
 
 def store_parameter_combination():
     param_combination = {
@@ -221,9 +220,9 @@ with tab_sz_erstellen:
 
     masken, abstand = st.columns(2)
     with masken:
-        masken_checkbox = st.checkbox('Masken', on_change=check_aha_staerke())
+        masken_checkbox = st.checkbox('Masken', on_change=check_aha_staerke)
     with abstand:
-        abstand_checkbox = st.checkbox('Abstand', on_change=check_aha_staerke())
+        abstand_checkbox = st.checkbox('Abstand', on_change=check_aha_staerke)
 
     st.write('&nbsp;')
     st.markdown(
