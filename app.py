@@ -22,7 +22,7 @@ def store_parameter_combination():
         "masken": masken_checkbox,
         "abstand": abstand_checkbox,
         "ungehorsam": ungehorsam,
-        "impfstrategie": impfstrategie
+        #"impfstrategie": impfstrategie
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
