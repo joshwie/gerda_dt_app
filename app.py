@@ -10,7 +10,9 @@ def check_aha_staerke():
     #st.write("Masken: " + str(masken_checkbox))
     #st.write("Abstand: " + str(abstand_checkbox))
     if abstand_checkbox or masken_checkbox:
-        st.session_state["aha_staerke"] = True
+        st.session_state["aha_staerke_disable"] = False
+    else:
+        st.session_state["aha_staerke_disable"] = True
 
 def store_parameter_combination():
     param_combination = {
@@ -235,7 +237,7 @@ with tab_sz_erstellen:
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke", True))
+        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", True))
 
     st.write('&nbsp;')
     st.markdown(
