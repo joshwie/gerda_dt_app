@@ -66,8 +66,12 @@ def get_dynamic_paths_to_images(param_combination):
         # disobedience
         if param_combination['ungehorsam'] == '0%':
             suffix += 'FU__disobedience_0_'
+        if param_combination['ungehorsam'] == '10%':
+            suffix += 'FU__disobedience_0o1_'
         if param_combination['ungehorsam'] == '20%':
             suffix += 'FU__disobedience_0o2_'
+        if param_combination['ungehorsam'] == '40%':
+            suffix += 'FU__disobedience_0o4_'
 
         # lockdown end
         lockdown_start_int = int(param_combination['lockdown_start']) * 168
@@ -221,7 +225,7 @@ with tab_sz_erstellen:
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Keine', 'Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
+        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=True)
 
     st.write('&nbsp;')
     st.markdown(
@@ -263,8 +267,8 @@ with tab_sz_erstellen:
     st.write('&nbsp;')
 
     ungehorsam = st.radio(
-        'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich nicht an die Lockdown-Verordnung hält?',
-        ('0%', '20%'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
+        'Wie hoch schätzt ihr den Anteil der Bevölkerung ein, der sich NICHT an die Lockdown-Verordnung hält?',
+        ('0%', '10%', '20%', '40%'), horizontal=True, disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('&nbsp;')
     st.markdown('<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>', unsafe_allow_html=True)
