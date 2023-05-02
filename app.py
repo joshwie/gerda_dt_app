@@ -223,9 +223,9 @@ with tab_sz_erstellen:
 
     masken, abstand = st.columns(2)
     with masken:
-        masken_checkbox = st.checkbox('Masken', key="masken_checkbox", on_change=check_aha_staerke, value=False)
+        masken_checkbox = st.checkbox('Masken', key="masken_checkbox", value=False)
     with abstand:
-        abstand_checkbox = st.checkbox('Abstand', key="abstand_checkbox", on_change=check_aha_staerke, value=False)
+        abstand_checkbox = st.checkbox('Abstand', key="abstand_checkbox", value=False)
 
     st.write('&nbsp;')
     st.markdown(
@@ -235,7 +235,7 @@ with tab_sz_erstellen:
 
     aha_staerke = st.radio(
         'Sollen die AHA-Regeln empfohlen oder verpflichtend gelten?',
-        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=st.session_state.get("aha_staerke_disable", True))
+        ('Empfohlen', 'Verpflichtend'), horizontal=True, disabled=False)
 
     st.write('&nbsp;')
     st.markdown(
