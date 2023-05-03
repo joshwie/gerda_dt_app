@@ -101,9 +101,9 @@ def get_dynamic_paths_to_images(param_combination):
 
         # closed locs
         suffix += 'closed_locs_'
-        if param_combination['lockdown_orte'] == 'Arbeit':
+        if param_combination['lockdown_orte'] == 'Arbeit': # TODO
             suffix += "['work']"
-        if param_combination['lockdown_orte'] == 'Schulen':
+        if param_combination['lockdown_orte'] == 'Schulen': # TODO
             suffix += "['school', 'school_0', 'school_1', 'school_2']"
         if param_combination['lockdown_orte'] == 'Öffentliche Orte':
             suffix += "['public']"
@@ -295,7 +295,7 @@ with tab_sz_erstellen:
 
     lockdown_orte = st.radio(
         'Welche Orte sollen im Lockdown geschlossen werden?',
-        ('Arbeit', 'Schulen', 'Öffentliche Orte', 'Arbeit & Schulen', 'Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Alles'), horizontal=True,
+        ('Schulen', 'Öffentliche Orte', 'Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Alles'), horizontal=True,
         disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('&nbsp;')
