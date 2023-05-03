@@ -278,7 +278,7 @@ with tab_sz_erstellen:
 
     lockdown_orte = st.radio(
         'Welche Orte sollen im Lockdown geschlossen werden?',
-        ('Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Schulen', 'Alles'), horizontal=True,
+        ('Arbeit', 'Schulen', 'Öffentliche Orte', 'Arbeit & Schulen', 'Arbeit & Öffentliche Orte', 'Schulen & Öffentliche Orte', 'Alles'), horizontal=True,
         disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('&nbsp;')
