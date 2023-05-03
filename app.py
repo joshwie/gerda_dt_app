@@ -423,7 +423,6 @@ with tab_sz_analysieren:
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
                     image_trajectory = Image.open(dynamic_paths_to_images[0])
-                    st.write(image_trajectory)
                     st.image(image_trajectory)
 
                 with row1_col2:
