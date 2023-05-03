@@ -7,6 +7,7 @@ import numpy as np
 def toggle_lockdown():
     st.session_state["lockdown_disabled"] = lockdown_yes_no
 
+# TODO
 def check_aha_staerke():
     if abstand_checkbox or masken_checkbox:
         st.session_state["aha_staerke_disable"] = False
@@ -34,12 +35,13 @@ def get_dynamic_paths_to_images(param_combination):
         # infectivity
         prefix = 'gerda_output/nolockdown/'
 
-        if param_combination['masken'] and param_combination['abstand']:
+        if (not param_combination['masken']) and (not param_combination['abstand']):
+            suffix = 'FU__infectivity_0o14'
+        elif param_combination['masken'] and param_combination['abstand']:
             suffix = 'FU__infectivity_0o078'
         elif param_combination['masken'] or param_combination['abstand']:
             suffix = 'FU__infectivity_0o106'
-        else:
-            suffix = 'FU__infectivity_0o14'
+
 
         trajectory_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_statii.png"
         sub_image_path = prefix + suffix + "/analysis/plots/" + suffix + "_sub_statii.png"
@@ -53,9 +55,20 @@ def get_dynamic_paths_to_images(param_combination):
         # infectivity
         prefix = 'gerda_output/infectivity_'
         if param_combination['masken'] and param_combination['abstand']:
-            prefix += '0078/'
-        elif param_combination['masken'] or param_combination['abstand']:
-            prefix += '0106/'
+            if param_combination['aha_staerke'] == "Empfohlen":
+                prefix += '0106/'
+            else:
+                prefix += '0078/'
+        elif param_combination['masken'] and (not param_combination['abstand']):
+            if param_combination['aha_staerke'] == "Empfohlen":
+                prefix += '0118/'
+            else:
+                prefix += '0098/'
+        elif (not param_combination['masken']) and param_combination['abstand']:
+            if param_combination['aha_staerke'] == "Empfohlen":
+                prefix += '0126/'
+            else:
+                prefix += '0112/'
         else:
             prefix += '014/'
 
