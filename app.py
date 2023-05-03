@@ -409,7 +409,7 @@ with tab_sz_analysieren:
                 if not param_combination['lockdown_yes_no']:
                     lockdown_dauer_param_value = ' (kein Lockdown)'
 
-                aha_regeln_param_value = 'DEAKTIVIERT'
+                aha_regeln_param_value = str(param_combination['aha_staerke'])
 
                 lockdown_orte_param_value = str(param_combination['lockdown_orte'])
                 if not param_combination['lockdown_yes_no']:
