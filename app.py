@@ -88,12 +88,16 @@ def get_dynamic_paths_to_images(param_combination):
 
         # closed locs
         suffix += 'closed_locs_'
+        if param_combination['lockdown_orte'] == 'Arbeit':
+            suffix += "['work']"
+        if param_combination['lockdown_orte'] == 'Schulen':
+            suffix += "['school', 'school_0', 'school_1', 'school_2']"
+        if param_combination['lockdown_orte'] == 'Öffentliche Orte':
+            suffix += "['public']"
         if param_combination['lockdown_orte'] == 'Arbeit & Öffentliche Orte':
             suffix += "['work', 'public']"
         if param_combination['lockdown_orte'] == 'Schulen & Öffentliche Orte':
             suffix += "['public', 'school', 'school_0', 'school_1', 'school_2']"
-        if param_combination['lockdown_orte'] == 'Schulen':
-            suffix += "['school', 'school_0', 'school_1', 'school_2']"
         if param_combination['lockdown_orte'] == 'Alles':
             suffix += "['work', 'public', 'school', 'school_0', 'school_1', 'school_2']"
 
