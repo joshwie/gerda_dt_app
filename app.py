@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from PIL import Image
+import numpy as np
 
 
 def toggle_lockdown():
@@ -265,7 +266,8 @@ with tab_sz_erstellen:
         unsafe_allow_html=True)
     st.write('&nbsp;')
 
-    lockdown_dauer = st.slider('Lockdown-Dauer (in Wochen?)', 2, 6, value=2, step=2,
+    lockdown_dauer_options = np.array([2,3,4,6])
+    lockdown_dauer = st.select_slider('Lockdown-Dauer (in Wochen?)', options=lockdown_dauer_options, value=2,
                                disabled=st.session_state.get("lockdown_disabled", True))
 
     st.write('&nbsp;')
