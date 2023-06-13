@@ -146,6 +146,7 @@ tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(
     ['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenarien analysieren', '🤔 Szenarien vergleichen'])
 
 with tab_inf:
+    st.image("https://medien.cedis.fu-berlin.de/pandemie_dt_media/test/FU__disobedience_0_start_3_840_closed_locs_['work',%20'public']_statii.png")
     ausgangssituation, sensitivity_analysis, bedienungsanleitung = st.tabs(
         ['Ausgangssituation', 'Vorab-Analyse', 'Bedienungsanleitung'])
 
