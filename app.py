@@ -121,6 +121,13 @@ def get_dynamic_paths_to_images(param_combination):
         new_diagnoses_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_diagnosis_incidence.png"
         new_deaths_per_100000_path = prefix + suffix + "/analysis/plots/" + suffix + "_age_specific_death_incidence.png"
 
+        trajectory_image_path = trajectory_image_path.replace(',', "%,")
+        sub_image_path = sub_image_path.replace(',', "%,")
+        infections_per_loc_path = infections_per_loc_path.replace(',', "%,")
+        infectionspattern_per_age_group_path = infectionspattern_per_age_group_path.replace(',', "%,")
+        new_diagnoses_per_100000_path = new_diagnoses_per_100000_path.replace(',', "%,")
+        new_deaths_per_100000_path = new_deaths_per_100000_path.replace(',', "%,")
+
     dynamic_paths_to_images = [trajectory_image_path,
                                sub_image_path,
                                infections_per_loc_path,
