@@ -442,32 +442,26 @@ with tab_sz_analysieren:
 
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
-                    st.write(dynamic_paths_to_images[0])
                     st.image(dynamic_paths_to_images[0])
 
                 with row1_col2:
                     st.subheader("Infektions-Stati im Zeitverlauf")
-                    st.write(dynamic_paths_to_images[1])
                     st.image(dynamic_paths_to_images[1])
 
                 row2_col1, row2_col2 = st.columns(2)
 
                 with row2_col1:
                     st.subheader("Infektionen nach Ort")
-                    st.write(dynamic_paths_to_images[2])
                     st.image(dynamic_paths_to_images[2])
 
                 with row2_col2:
                     st.subheader("Infektionen nach Alter")
-                    st.write(dynamic_paths_to_images[3])
                     st.image(dynamic_paths_to_images[3])
 
                 st.subheader("Neue Diagnosen nach Alter")
-                st.write(dynamic_paths_to_images[4])
                 st.image(dynamic_paths_to_images[4])
 
                 st.subheader("Neue Todesfälle nach Alter")
-                st.write(dynamic_paths_to_images[5])
                 st.image(dynamic_paths_to_images[5])
 
 with tab_sz_vergleichen:
