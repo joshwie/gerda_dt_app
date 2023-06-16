@@ -442,33 +442,27 @@ with tab_sz_analysieren:
 
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
-                    image_trajectory = Image.open(dynamic_paths_to_images[0])
-                    st.image(image_trajectory)
+                    st.image(dynamic_paths_to_images[0])
 
                 with row1_col2:
                     st.subheader("Infektions-Stati im Zeitverlauf")
-                    image_ = Image.open(dynamic_paths_to_images[1])
-                    st.image(image_)
+                    st.image(dynamic_paths_to_images[1])
 
                 row2_col1, row2_col2 = st.columns(2)
 
                 with row2_col1:
                     st.subheader("Infektionen nach Ort")
-                    image_inf_per_loc = Image.open(dynamic_paths_to_images[2])
-                    st.image(image_inf_per_loc)
+                    st.image(dynamic_paths_to_images[2])
 
                 with row2_col2:
                     st.subheader("Infektionen nach Alter")
-                    image_age_interactions = Image.open(dynamic_paths_to_images[3])
-                    st.image(image_age_interactions)
+                    st.image(dynamic_paths_to_images[3])
 
                 st.subheader("Neue Diagnosen nach Alter")
-                image_diagnoses_per_100000 = Image.open(dynamic_paths_to_images[4])
-                st.image(image_diagnoses_per_100000)
+                st.image(dynamic_paths_to_images[4])
 
                 st.subheader("Neue Todesfälle nach Alter")
-                image_deaths_per_100000_path = Image.open(dynamic_paths_to_images[5])
-                st.image(image_deaths_per_100000_path)
+                st.image(dynamic_paths_to_images[5])
 
 with tab_sz_vergleichen:
     if len(st.session_state['erstellte_szenarien']) < 2:
