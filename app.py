@@ -33,7 +33,7 @@ def get_dynamic_paths_to_images(param_combination):
     # Kein Lockdown ausgewaehlt
     if param_combination["lockdown_yes_no"] == False:
         # infectivity
-        prefix = 'gerda_output/nolockdown/'
+        prefix = 'https://medien.cedis.fu-berlin.de/pandemie_dt_media/gerda_output/nolockdown/'
 
         if (not param_combination['masken']) and (not param_combination['abstand']):
             suffix = 'FU__infectivity_0o14'
@@ -53,7 +53,7 @@ def get_dynamic_paths_to_images(param_combination):
     # Mit Lockdown
     else:
         # infectivity
-        prefix = 'gerda_output/infectivity_'
+        prefix = 'https://medien.cedis.fu-berlin.de/pandemie_dt_media/gerda_output/infectivity_'
         if param_combination['masken'] and param_combination['abstand']:
             if param_combination['aha_staerke'] == "Empfohlen":
                 prefix += '0106/'
@@ -146,7 +146,6 @@ tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(
     ['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenarien analysieren', '🤔 Szenarien vergleichen'])
 
 with tab_inf:
-    st.image("https://medien.cedis.fu-berlin.de/pandemie_dt_media/test/FU__disobedience_0_start_3_840_closed_locs_['work',%20'public']_statii.png")
     ausgangssituation, sensitivity_analysis, bedienungsanleitung = st.tabs(
         ['Ausgangssituation', 'Vorab-Analyse', 'Bedienungsanleitung'])
 
