@@ -442,6 +442,7 @@ with tab_sz_analysieren:
 
                 with row1_col1:
                     st.subheader("Infektionsverlauf")
+                    st.write(dynamic_paths_to_images[0])
                     st.image(dynamic_paths_to_images[0])
 
                 with row1_col2:
