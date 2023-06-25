@@ -166,7 +166,9 @@ with tab_inf:
         st.subheader('🦠 Angaben zum Virustyp')
         st.info(
             'Noch gibt es nicht allzu viele Informationen über das Virus. Es scheint jedoch deutlich ansteckender als ein Grippevirus zu sein.'
-            ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.')
+            ' Außerdem werden viele der Infizierten nach der Ansteckung grün.'
+            ' Darüber hinaus gibt es Hinweise auf einen vergleichsweise schwereren Verlauf und eine höhere Sterberate.'
+            )
 
         st.subheader('📊 Euch steht GERDA als Infektions-Modell zur Verfügung')
         st.info(
