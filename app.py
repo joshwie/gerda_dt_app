@@ -414,7 +414,7 @@ with tab_sz_analysieren:
 
                     st.markdown(table_links)
 
-                select_for_presentation_checkbox = st.checkbox("Für Präsentation merken")
+                #select_for_presentation_checkbox = st.checkbox("Für Präsentation merken")
 
                 lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
                 if not param_combination['lockdown_yes_no']:
