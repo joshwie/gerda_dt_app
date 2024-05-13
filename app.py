@@ -414,6 +414,8 @@ with tab_sz_analysieren:
 
                     st.markdown(table_links)
 
+                select_for_presentation_checkbox = st.checkbox("Use for presentation")
+
                 lockdown_dauer_param_value = str(param_combination['lockdown_dauer']) + ' Woche(n)'
                 if not param_combination['lockdown_yes_no']:
                     lockdown_dauer_param_value = ' (kein Lockdown)'
@@ -526,6 +528,8 @@ with tab_sz_vergleichen:
                         '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
                         unsafe_allow_html=True)
                 st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
+
+
 
         #expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
         #deaths_age_group = expander_new_deaths_age.container()
