@@ -468,9 +468,11 @@ with tab_sz_analysieren:
                 #st.write(dynamic_paths_to_images[4])
                 st.image(dynamic_paths_to_images[4])
 
+                '''
                 st.subheader("Neue Todesfälle nach Alter")
                 #st.write(dynamic_paths_to_images[5])
                 st.image(dynamic_paths_to_images[5])
+                '''
 
 with tab_sz_vergleichen:
     if len(st.session_state['erstellte_szenarien']) < 2:
