@@ -149,8 +149,8 @@ if 'max_szenarien' not in st.session_state:
 if 'erstellte_szenarien' not in st.session_state:
     st.session_state['erstellte_szenarien'] = []
 
-tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen = st.tabs(
-    ['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenarien analysieren', '🤔 Szenarien vergleichen'])
+tab_inf, tab_sz_erstellen, tab_sz_analysieren, tab_sz_vergleichen, about = st.tabs(
+    ['ℹ️ Informationen', '🛠️ Szenario erstellen', '🔍 Szenarien analysieren', '🤔 Szenarien vergleichen', '💡Über das Projekt'])
 
 with tab_inf:
     ausgangssituation, sensitivity_analysis, bedienungsanleitung = st.tabs(
