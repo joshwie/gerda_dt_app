@@ -468,11 +468,9 @@ with tab_sz_analysieren:
                 #st.write(dynamic_paths_to_images[4])
                 st.image(dynamic_paths_to_images[4])
 
-                '''
-                st.subheader("Neue Todesfälle nach Alter")
+                #st.subheader("Neue Todesfälle nach Alter")
                 #st.write(dynamic_paths_to_images[5])
-                st.image(dynamic_paths_to_images[5])
-                '''
+                #st.image(dynamic_paths_to_images[5])
 
 with tab_sz_vergleichen:
     if len(st.session_state['erstellte_szenarien']) < 2:
@@ -529,14 +527,13 @@ with tab_sz_vergleichen:
                         unsafe_allow_html=True)
                 st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
 
-        '''
-        expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
-        deaths_age_group = expander_new_deaths_age.container()
-        with deaths_age_group:
-            for i in range(len(image_chunks[5])):
-                if i > 0:
-                    st.markdown(
-                        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
-                        unsafe_allow_html=True)
-                st.image(image_chunks[5][i], caption="Szenario " + str((i + 1)))
-        '''
+
+        #expander_new_deaths_age = st.expander("Neue Todesfälle nach Alter")
+        #deaths_age_group = expander_new_deaths_age.container()
+        #with deaths_age_group:
+        #    for i in range(len(image_chunks[5])):
+        #        if i > 0:
+        #            st.markdown(
+        #                '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+        #                unsafe_allow_html=True)
+        #        st.image(image_chunks[5][i], caption="Szenario " + str((i + 1)))
