@@ -538,7 +538,9 @@ with tab_sz_vergleichen:
         #                unsafe_allow_html=True)
         #        st.image(image_chunks[5][i], caption="Szenario " + str((i + 1)))
 
-with tab_sz_vergleichen:
-    st.info("Über Uns – Das Projekt Schule@DecisionTheatreLab\nDie GERDA-WebApp wurde im Rahmen des Projekts Schule@DecisionTheatreLab entwickelt. Das Projekt bringt Schüler*innen und Wissenschaftler*innen zusammen und zielt darauf ab, ein tieferes Verständnis für die Bedeutung von Mathematik für unsere Gesellschaft und Zukunft zu entwickeln. In sogenannten Decision Theatres erleben die Schüler*innen, wie mathematische Modellierung Entscheidungsprozesse unterstützen kann. Weitere Informationen zu unserem Projekt und den Decision Theatres finden Sie auf unserer Webseite.(https://mathplus.de/schuledecisiontheatrelab/).")
+with about:
+    st.info("Über Uns – Das Projekt Schule@DecisionTheatreLab\n\nDie GERDA-WebApp wurde im Rahmen des Projekts Schule@DecisionTheatreLab entwickelt. Das Projekt bringt Schüler*innen und Wissenschaftler*innen zusammen und zielt darauf ab, ein tieferes Verständnis für die Bedeutung von Mathematik für unsere Gesellschaft und Zukunft zu entwickeln. In sogenannten Decision Theatres erleben die Schüler*innen, wie mathematische Modellierung Entscheidungsprozesse unterstützen kann. Weitere Informationen zu unserem Projekt und den Decision Theatres finden Sie auf unserer Webseite.(https://mathplus.de/schuledecisiontheatrelab/).")
+    st.info("Über Uns – Das Projekt Schule@DecisionTheatreLab\n\nDie GERDA-WebApp wurde im Rahmen des Projekts Schule@DecisionTheatreLab entwickelt. Das Projekt bringt Schüler*innen und Wissenschaftler*innen zusammen und zielt darauf ab, ein tieferes Verständnis für die Bedeutung von Mathematik für unsere Gesellschaft und Zukunft zu entwickeln. In sogenannten Decision Theatres erleben die Schüler*innen, wie mathematische Modellierung Entscheidungsprozesse unterstützen kann. Weitere Informationen zu unserem Projekt und den Decision Theatres finden Sie auf unserer Webseite.(https://mathplus.de/schuledecisiontheatrelab/).")
+
 
 
