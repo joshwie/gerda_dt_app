@@ -543,15 +543,11 @@ with tab_sz_analysieren:
 
         # Button zum Speichern des Szenarios
         if st.button("Szenario für's Plenum speichern"):
-            if szenario_code:
-                all_images = [
-                    dynamic_paths_to_images[0],
-                    dynamic_paths_to_images[1],
-                    dynamic_paths_to_images[2],
-                    dynamic_paths_to_images[3],
-                    dynamic_paths_to_images[4]
-                ]
-                speichere_szenario_in_firestore(szenario_code, all_images)
+    if szenario_code:
+        index = tab_names.index(st.session_state["__tabs__"])
+        param_combination = st.session_state['erstellte_szenarien'][index]
+        selected_images = get_dynamic_paths_to_images(param_combination)[:5]
+        speichere_szenario_in_firestore(szenario_code, selected_images)
             else:
                 st.warning("Bitte einen Code eingeben!")
 
