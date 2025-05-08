@@ -625,6 +625,3 @@ with about:
     st.info("**Über das Modell hinter der GERDA-WebApp**\n\nGERDA (GEoReferenced Demographic Agent-based model) ist ein agentenbasiertes Modell zur Simulation der Ausbreitung von COVID-19 in einem realistischen Szenario. Das Modell wurde von der Arbeitsgruppe Theoretische Biophysik an der Humboldt-Universität zu Berlin entwickelt und integriert demografische Daten, Tagesabläufe sowie geographische Informationen. Es berücksichtigt die klinischen Phasen von Infektion, Krankheit und Genesung und ermöglicht die Simulation verschiedener nicht-pharmazeutischer Maßnahmen an Orten wie Arbeitsplätzen, Schulen und öffentlichen Räumen. GERDA wurde unter der GNU General Public License v3.0 veröffentlicht und ist kostenlos im GitLab-Repository (https://tbp-klipp.science/GERDA-model/) verfügbar.\n\n")
     st.info("**Förderungen von MATH+ und Berlin University Alliance**\n\nDas Projekt Schule@DecisionTheatreLab wird von Oktober 2021 bis Ende 2024 sowohl vom Exzellenzcluster MATH+ als auch von der Berlin University Alliance (BUA) gefördert. Darüber hinaus wird es bis Ende 2025 weiterhin durch MATH+ finanziert.\n\n")
     st.info("**Technische Umsetzung durch Joshua Wiebe**\n\n")
-
-
-
