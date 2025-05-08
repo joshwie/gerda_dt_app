@@ -548,6 +548,8 @@ with tab_sz_analysieren:
         param_combination = st.session_state['erstellte_szenarien'][index]
         selected_images = get_dynamic_paths_to_images(param_combination)[:5]
         speichere_szenario_in_firestore(szenario_code, selected_images)
+    else:
+        st.warning("Bitte einen Code eingeben!")
             else:
                 st.warning("Bitte einen Code eingeben!")
 
