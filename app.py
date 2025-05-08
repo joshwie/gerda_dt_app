@@ -83,7 +83,7 @@ def speichere_szenario_in_firestore(code, image_urls):
             data = doc.to_dict()
             existing_images = data.get("images", [])
             # Merge: flache Liste ohne Duplikate
-            all_images = list(set(existing_images + image_urls))
+            all_images = existing_images + image_urls
             doc_ref.update({"images": all_images})
         else:
             doc_ref.set({"images": image_urls})
