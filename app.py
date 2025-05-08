@@ -526,7 +526,14 @@ with tab_sz_analysieren:
         # Button zum Speichern des Szenarios
         if st.button("Szenario in Firestore speichern"):
             if szenario_code:
-                speichere_szenario_in_firestore(szenario_code, dynamic_paths_to_images)
+                all_images = [
+                    dynamic_paths_to_images[0],
+                    dynamic_paths_to_images[1],
+                    dynamic_paths_to_images[2],
+                    dynamic_paths_to_images[3],
+                    dynamic_paths_to_images[4]
+                ]
+                speichere_szenario_in_firestore(szenario_code, all_images)
             else:
                 st.warning("Bitte einen Code eingeben!")
 
