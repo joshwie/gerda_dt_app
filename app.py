@@ -59,6 +59,17 @@ def store_parameter_combination():
 
 # Database
 def speichere_szenario_in_firestore(code, image_urls):
+    # Reihenfolge der Kategorien sicherstellen
+    category_order = [
+        "Infektionsverlauf (SIR)",
+        "Infektions-Stati im Zeitverlauf",
+        "Infektionen nach Ort",
+        "Infektionen nach Alter",
+        "Neue Diagnosen nach Alter"
+    ]
+
+    # Falls ein Mapping oder Metadaten verfügbar sind, hier sortieren (Platzhalter)
+    # Aktuell wird angenommen, dass image_urls bereits korrekt sortiert ist:
     doc_ref = db.collection("szenarien").document(code)
 
     try:
@@ -529,7 +540,7 @@ with tab_sz_analysieren:
         szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key="szenario_code")
 
         # Button zum Speichern des Szenarios
-        if st.button("Szenario in Firestore speichern"):
+        if st.button("Szenario für's Plenum speichern"):
             if szenario_code:
                 all_images = [
                     dynamic_paths_to_images[0],
@@ -577,7 +588,7 @@ with tab_sz_vergleichen:
             with statii[i]:
                 st.image(image_chunks[1][i], caption="Szenario " + str((i + 1)))
 
-        expander_loc = st.expander("Infektionen nach Ort")
+        expander_loc = st.expander("Ifektionen nach Ort")
         loc = expander_loc.columns(3)
         for i in range(len(image_chunks[2])):
             with loc[i]:
@@ -595,7 +606,7 @@ with tab_sz_vergleichen:
             for i in range(len(image_chunks[4])):
                 if i > 0:
                     st.markdown(
-                        '<div data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
+                        '<iv data-baseweb="tab-border" aria-hidden="true" role="presentation" class="st-cx st-bd st-cu"></div>',
                         unsafe_allow_html=True)
                 st.image(image_chunks[4][i], caption="Szenario " + str((i + 1)))
 
