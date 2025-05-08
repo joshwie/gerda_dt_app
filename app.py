@@ -3,6 +3,35 @@ import time
 from PIL import Image
 import numpy as np
 
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+# initialize firebase db if not existing
+if not firebase_admin._apps:
+    cred = credentials.Certificate({
+        "type": st.secrets["type"],
+        "project_id": st.secrets["project_id"],
+        "private_key_id": st.secrets["private_key_id"],
+        "private_key": st.secrets["private_key"].replace('\\n', '\n'),
+        "client_email": st.secrets["client_email"],
+        "client_id": st.secrets["client_id"],
+        "auth_uri": st.secrets["auth_uri"],
+        "token_uri": st.secrets["token_uri"],
+        "auth_provider_x509_cert_url": st.secrets["auth_provider_x509_cert_url"],
+        "client_x509_cert_url": st.secrets["client_x509_cert_url"]
+    })
+
+    firebase_admin.initialize_app(cred, {
+        'projectId': st.secrets["project_id"]
+    })
+
+# use Firestore
+db = firestore.client()
+
+# example 
+doc_ref = db.collection("test").document("demo")
+doc_ref.set({"abc": "def!"})
+doc = doc_ref.get()
 
 def toggle_lockdown():
     st.session_state["lockdown_disabled"] = lockdown_yes_no
@@ -542,6 +571,4 @@ with about:
     st.info("**Über Uns – Das Projekt Schule@DecisionTheatreLab**\n\nDie GERDA-WebApp wurde im Rahmen des Projekts Schule@DecisionTheatreLab entwickelt. Das Projekt bringt Schüler\*innen und Wissenschaftler\*innen zusammen und zielt darauf ab, ein tieferes Verständnis für die Bedeutung von Mathematik für unsere Gesellschaft und Zukunft zu entwickeln. In sogenannten Decision Theatres erleben die Schüler*innen, wie mathematische Modellierung Entscheidungsprozesse unterstützen kann. Weitere Informationen zu unserem Projekt und den Decision Theatres finden Sie auf unserer Webseite.(https://mathplus.de/schuledecisiontheatrelab/).")
     st.info("**Über das Modell hinter der GERDA-WebApp**\n\nGERDA (GEoReferenced Demographic Agent-based model) ist ein agentenbasiertes Modell zur Simulation der Ausbreitung von COVID-19 in einem realistischen Szenario. Das Modell wurde von der Arbeitsgruppe Theoretische Biophysik an der Humboldt-Universität zu Berlin entwickelt und integriert demografische Daten, Tagesabläufe sowie geographische Informationen. Es berücksichtigt die klinischen Phasen von Infektion, Krankheit und Genesung und ermöglicht die Simulation verschiedener nicht-pharmazeutischer Maßnahmen an Orten wie Arbeitsplätzen, Schulen und öffentlichen Räumen. GERDA wurde unter der GNU General Public License v3.0 veröffentlicht und ist kostenlos im GitLab-Repository (https://tbp-klipp.science/GERDA-model/) verfügbar.\n\n")
     st.info("**Förderungen von MATH+ und Berlin University Alliance**\n\nDas Projekt Schule@DecisionTheatreLab wird von Oktober 2021 bis Ende 2024 sowohl vom Exzellenzcluster MATH+ als auch von der Berlin University Alliance (BUA) gefördert. Darüber hinaus wird es bis Ende 2025 weiterhin durch MATH+ finanziert.\n\n")
-
-
 
