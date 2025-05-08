@@ -57,21 +57,26 @@ def store_parameter_combination():
     }
     st.session_state['erstellte_szenarien'].append(param_combination)
 
-
 # Database
-def speichere_szenario_in_firestore(code, image_url):
+def speichere_szenario_in_firestore(code, image_urls):
     doc_ref = db.collection("szenarien").document(code)
 
     try:
+        # make sure the urls are list
+        if isinstance(image_urls, str):
+            image_urls = [image_urls]
+
+        # access images if existing
         doc = doc_ref.get()
         if doc.exists:
             data = doc.to_dict()
-            images = data.get("images", [])
-            if image_url not in images:
-                images.append(image_url)
-                doc_ref.update({"images": images})
+            existing_images = data.get("images", [])
+            # Merge: flache Liste ohne Duplikate
+            all_images = list(set(existing_images + image_urls))
+            doc_ref.update({"images": all_images})
         else:
-            doc_ref.set({"images": [image_url]})
+            doc_ref.set({"images": image_urls})
+
         st.success(f"Szenario '{code}' erfolgreich gespeichert.")
     except Exception as e:
         st.error(f"Fehler beim Speichern in Firestore: {e}")
