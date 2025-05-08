@@ -501,6 +501,18 @@ with tab_sz_analysieren:
                 #st.write(dynamic_paths_to_images[5])
                 #st.image(dynamic_paths_to_images[5])
 
+        # Eingabe eines Codes durch den Benutzer
+        szenario_code = st.text_input("📌 Code eingeben (z. B. A1)", key="szenario_code")
+
+        # Button zum Speichern des Szenarios
+        if st.button("Szenario in Firestore speichern"):
+            if szenario_code and trajectory_image_path:
+                speichere_szenario_in_firestore(szenario_code, trajectory_image_path)
+            else:
+                st.warning("Bitte sowohl einen gültigen Code eingeben als auch ein Bild erzeugen.")
+
+
+
 with tab_sz_vergleichen:
     if len(st.session_state['erstellte_szenarien']) < 2:
         st.info('Du musst für den Vergleich mindestens zwei Szenarien erstellen')
@@ -571,4 +583,25 @@ with about:
     st.info("**Über Uns – Das Projekt Schule@DecisionTheatreLab**\n\nDie GERDA-WebApp wurde im Rahmen des Projekts Schule@DecisionTheatreLab entwickelt. Das Projekt bringt Schüler\*innen und Wissenschaftler\*innen zusammen und zielt darauf ab, ein tieferes Verständnis für die Bedeutung von Mathematik für unsere Gesellschaft und Zukunft zu entwickeln. In sogenannten Decision Theatres erleben die Schüler*innen, wie mathematische Modellierung Entscheidungsprozesse unterstützen kann. Weitere Informationen zu unserem Projekt und den Decision Theatres finden Sie auf unserer Webseite.(https://mathplus.de/schuledecisiontheatrelab/).")
     st.info("**Über das Modell hinter der GERDA-WebApp**\n\nGERDA (GEoReferenced Demographic Agent-based model) ist ein agentenbasiertes Modell zur Simulation der Ausbreitung von COVID-19 in einem realistischen Szenario. Das Modell wurde von der Arbeitsgruppe Theoretische Biophysik an der Humboldt-Universität zu Berlin entwickelt und integriert demografische Daten, Tagesabläufe sowie geographische Informationen. Es berücksichtigt die klinischen Phasen von Infektion, Krankheit und Genesung und ermöglicht die Simulation verschiedener nicht-pharmazeutischer Maßnahmen an Orten wie Arbeitsplätzen, Schulen und öffentlichen Räumen. GERDA wurde unter der GNU General Public License v3.0 veröffentlicht und ist kostenlos im GitLab-Repository (https://tbp-klipp.science/GERDA-model/) verfügbar.\n\n")
     st.info("**Förderungen von MATH+ und Berlin University Alliance**\n\nDas Projekt Schule@DecisionTheatreLab wird von Oktober 2021 bis Ende 2024 sowohl vom Exzellenzcluster MATH+ als auch von der Berlin University Alliance (BUA) gefördert. Darüber hinaus wird es bis Ende 2025 weiterhin durch MATH+ finanziert.\n\n")
+
+
+
+
+    # Database
+    def speichere_szenario_in_firestore(code, image_url):
+    doc_ref = db.collection("szenarien").document(code)
+
+    try:
+        doc = doc_ref.get()
+        if doc.exists:
+            data = doc.to_dict()
+            images = data.get("images", [])
+            if image_url not in images:
+                images.append(image_url)
+                doc_ref.update({"images": images})
+        else:
+            doc_ref.set({"images": [image_url]})
+        st.success(f"Szenario '{code}' erfolgreich gespeichert.")
+    except Exception as e:
+        st.error(f"Fehler beim Speichern in Firestore: {e}")
 
