@@ -88,7 +88,9 @@ def speichere_szenario_in_firestore(code, image_urls):
         else:
             doc_ref.set({"images": image_urls})
 
-        st.success(f"Szenario '{code}' erfolgreich gespeichert.")
+        with st.empty():
+            st.success("Szenario erfolgreich gespeichert.")
+            time.sleep(3)
     except Exception as e:
         st.error(f"Fehler beim Speichern in Firestore: {e}")
 
