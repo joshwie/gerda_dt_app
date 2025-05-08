@@ -58,6 +58,25 @@ def store_parameter_combination():
     st.session_state['erstellte_szenarien'].append(param_combination)
 
 
+# Database
+def speichere_szenario_in_firestore(code, image_url):
+doc_ref = db.collection("szenarien").document(code)
+
+try:
+    doc = doc_ref.get()
+    if doc.exists:
+        data = doc.to_dict()
+        images = data.get("images", [])
+        if image_url not in images:
+            images.append(image_url)
+            doc_ref.update({"images": images})
+    else:
+        doc_ref.set({"images": [image_url]})
+    st.success(f"Szenario '{code}' erfolgreich gespeichert.")
+except Exception as e:
+    st.error(f"Fehler beim Speichern in Firestore: {e}")
+
+
 def get_dynamic_paths_to_images(param_combination):
     # Kein Lockdown ausgewaehlt
     if param_combination["lockdown_yes_no"] == False:
@@ -585,23 +604,4 @@ with about:
     st.info("**Förderungen von MATH+ und Berlin University Alliance**\n\nDas Projekt Schule@DecisionTheatreLab wird von Oktober 2021 bis Ende 2024 sowohl vom Exzellenzcluster MATH+ als auch von der Berlin University Alliance (BUA) gefördert. Darüber hinaus wird es bis Ende 2025 weiterhin durch MATH+ finanziert.\n\n")
 
 
-
-
-    # Database
-    def speichere_szenario_in_firestore(code, image_url):
-    doc_ref = db.collection("szenarien").document(code)
-
-    try:
-        doc = doc_ref.get()
-        if doc.exists:
-            data = doc.to_dict()
-            images = data.get("images", [])
-            if image_url not in images:
-                images.append(image_url)
-                doc_ref.update({"images": images})
-        else:
-            doc_ref.set({"images": [image_url]})
-        st.success(f"Szenario '{code}' erfolgreich gespeichert.")
-    except Exception as e:
-        st.error(f"Fehler beim Speichern in Firestore: {e}")
 
