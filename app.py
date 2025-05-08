@@ -76,7 +76,7 @@ def speichere_szenario_in_firestore(code, image_urls):
         # make sure the urls are list
         if isinstance(image_urls, str):
             image_urls = [image_urls]
-
+        st.write(image_urls)
         # access images if existing
         doc = doc_ref.get()
         if doc.exists:
@@ -90,7 +90,6 @@ def speichere_szenario_in_firestore(code, image_urls):
 
         with st.empty():
             st.success("Szenario erfolgreich gespeichert.")
-            time.sleep(3)
     except Exception as e:
         st.error(f"Fehler beim Speichern in Firestore: {e}")
 
