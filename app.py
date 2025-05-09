@@ -542,7 +542,7 @@ with tab_sz_analysieren:
                 st.subheader("📤 Dieses Szenario mit der Klasse teilen?")
 
                 # Eingabe eines Codes durch den Benutzer
-                szenario_code = st.text_input("📌 Bitte hier den Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
+                szenario_code = st.text_input("📌 Bitte hier den Klassen-Code eingeben (frag die Lehrkraft danach)", key=f"szenario_code_{i}")
 
                 # Eingabe des Namens (verpflichtend)
                 gruppenname = st.text_input("👤 Name oder Gruppenname zur späteren Zuordnung (Z.B. 'Lars' oder 'Gruppe 3')", key=f"gruppenname_{i}")
@@ -550,7 +550,7 @@ with tab_sz_analysieren:
                 # Button zum Speichern des Szenarios
                 if st.button("Szenario für's Plenum speichern", key=f"save_button_{i}"):
                     if not szenario_code.strip():
-                        st.warning("Bitte einen Klassen-Code eingeben (frag deine Lehrkraft danach)!")
+                        st.warning("Bitte einen Klassen-Code eingeben (frag die Lehrkraft danach)!")
                     elif not gruppenname.strip():
                         st.warning("Bitte Namen oder Gruppennamen eingeben (z.B. Lars oder Gruppe 2)!")
                     else:
