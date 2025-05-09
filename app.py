@@ -551,21 +551,23 @@ with tab_sz_analysieren:
                         st.warning("Bitte Namen oder Gruppennamen eingeben (z.B. Lars oder Gruppe 2)!")
                     else:
                         szenario_code = szenario_code.upper()
-                        daten = {
-                            "images": all_dynamic_paths_to_images[i],
-                            "gruppenname": gruppenname.strip()
-                        }
-
                         doc_ref = db.collection("szenarien").document(szenario_code)
                         doc = doc_ref.get()
-                        if doc.exists:
-                            existing = doc.to_dict().get("images", [])
-                            doc_ref.update({
-                                "images": existing + all_dynamic_paths_to_images[i],
-                                "gruppenname": gruppenname.strip()
-                            })
-                        else:
-                            doc_ref.set(daten)
+                        try:
+                            if doc.exists:
+                                data = doc.to_dict()
+                                szenarien_liste = data.get("szenarien", [])
+                            else:
+                                szenarien_liste = []
+
+                            neues_szenario = {
+                                "gruppenname": gruppenname.strip(),
+                                "images": all_dynamic_paths_to_images[i]
+                            }
+                            szenarien_liste.append(neues_szenario)
+                            doc_ref.set({"szenarien": szenarien_liste})
+                        except Exception as e:
+                            st.error(f"Fehler beim Speichern: {e}")
 
                         with st.empty():
                             st.success("Szenario erfolgreich gespeichert.")
