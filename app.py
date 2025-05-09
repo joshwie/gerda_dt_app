@@ -538,17 +538,17 @@ with tab_sz_analysieren:
                 #st.image(dynamic_paths_to_images[5])
 
                 # Eingabe eines Codes durch den Benutzer
-                szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key=f"szenario_code_{i}")
+                szenario_code = st.text_input("📌 Bitte hier deinen Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
 
                 # Eingabe des Namens (verpflichtend)
-                gruppenname = st.text_input("👤 Dein Vorname oder selbst gewählter Gruppenname", key=f"gruppenname_{i}")
+                gruppenname = st.text_input("👤 Dein Name oder Gruppenname", key=f"gruppenname_{i}")
 
                 # Button zum Speichern des Szenarios
                 if st.button("Szenario für's Plenum speichern", key=f"save_button_{i}"):
                     if not szenario_code.strip():
-                        st.warning("Bitte einen Gruppencode eingeben!")
+                        st.warning("Bitte einen Klassen-Code eingeben (frag deine Lehrkraft danach)!")
                     elif not gruppenname.strip():
-                        st.warning("Bitte deinen Namen oder Gruppennamen eingeben!")
+                        st.warning("Bitte Namen oder Gruppennamen eingeben (z.B. Lars oder Gruppe 2)!")
                     else:
                         szenario_code = szenario_code.upper()
                         daten = {
