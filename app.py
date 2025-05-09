@@ -505,7 +505,7 @@ with tab_sz_analysieren:
 
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
-                all_dynamic_paths_to_images.append(dynamic_paths_to_images)
+                all_dynamic_paths_to_images.append(dynamic_paths_to_images[:4])
 
                 row1_col1, row1_col2 = st.columns(2)
 
