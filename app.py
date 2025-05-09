@@ -434,6 +434,8 @@ with tab_sz_analysieren:
 
         subtabs_analyse = st.tabs(tab_names)
 
+        all_dynamic_paths_to_images[]
+
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             with subtabs_analyse[i]:
                 param_combination = st.session_state['erstellte_szenarien'][i]
@@ -503,6 +505,7 @@ with tab_sz_analysieren:
 
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
+                all_dynamic_paths_to_images.append(dynamic_paths_to_images)
 
                 row1_col1, row1_col2 = st.columns(2)
 
@@ -536,15 +539,16 @@ with tab_sz_analysieren:
                 #st.write(dynamic_paths_to_images[5])
                 #st.image(dynamic_paths_to_images[5])
 
-            # Button zum Speichern des Szenarios
-            if st.button("Szenario für's Plenum speichern"):
-                if szenario_code:
-                    speichere_szenario_in_firestore(szenario_code, dynamic_paths_to_images)
-                else:
-                    st.warning("Bitte einen Code eingeben!")
-
         # Eingabe eines Codes durch den Benutzer
         szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key="szenario_code")
+
+        # Button zum Speichern des Szenarios
+        if st.button("Szenario für's Plenum speichern"):
+            if szenario_code:
+                speichere_szenario_in_firestore(szenario_code, dynamic_paths_to_images)
+            else:
+                st.warning("Bitte einen Code eingeben!")
+
 
 
 with tab_sz_vergleichen:
