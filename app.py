@@ -434,7 +434,7 @@ with tab_sz_analysieren:
 
         subtabs_analyse = st.tabs(tab_names)
 
-        all_dynamic_paths_to_images[]
+        all_dynamic_paths_to_images = []
 
         for i in range(0, len(st.session_state['erstellte_szenarien'])):
             with subtabs_analyse[i]:
