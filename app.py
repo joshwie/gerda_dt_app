@@ -544,7 +544,7 @@ with tab_sz_analysieren:
                 if szenario_code:
                     # Aktives Tab ermitteln
                     index = tab_names.index(st.session_state.get("__tabs__", tab_names[0]))
-                    param_combination = st.session_state['erstellte_szenarien'][index]
+                    param_combination = st.session_state['erstellte_szenarien'][i]
                     selected_images = get_dynamic_paths_to_images(param_combination)[:5]
                     speichere_szenario_in_firestore(szenario_code, selected_images)
                 else:
