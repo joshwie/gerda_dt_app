@@ -537,7 +537,8 @@ with tab_sz_analysieren:
                 #st.image(dynamic_paths_to_images[5])
 
             # Eingabe eines Codes durch den Benutzer
-            szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key="szenario_code")
+            key_tab = szenario_code + "i"
+            szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key=key_tab)
 
             # Button zum Speichern des Szenarios
             if st.button("Szenario für's Plenum speichern"):
