@@ -76,7 +76,6 @@ def speichere_szenario_in_firestore(code, image_urls):
         # make sure the urls are list
         if isinstance(image_urls, str):
             image_urls = [image_urls]
-        st.write(image_urls)
         # access images if existing
         doc = doc_ref.get()
         if doc.exists:
@@ -89,9 +88,7 @@ def speichere_szenario_in_firestore(code, image_urls):
             doc_ref.set({"images": image_urls})
             
         st.success("Szenario erfolgreich gespeichert.")
-        time.sleep(1)
-        st.rerun()
-        
+
     except Exception as e:
         st.error(f"Fehler beim Speichern in Firestore: {e}")
 
@@ -508,7 +505,7 @@ with tab_sz_analysieren:
 
                 # get the (4?) images, based on the parameter combination
                 dynamic_paths_to_images = get_dynamic_paths_to_images(param_combination)
-                all_dynamic_paths_to_images.append(dynamic_paths_to_images[:4])
+                all_dynamic_paths_to_images.append(dynamic_paths_to_images[:5])
 
                 row1_col1, row1_col2 = st.columns(2)
 
