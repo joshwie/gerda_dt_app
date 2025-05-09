@@ -541,7 +541,7 @@ with tab_sz_analysieren:
                 szenario_code = st.text_input("📌 Bitte hier deinen Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
 
                 # Eingabe des Namens (verpflichtend)
-                gruppenname = st.text_input("👤 Dein Name oder Gruppenname", key=f"gruppenname_{i}")
+                gruppenname = st.text_input("👤 Dein Name oder Gruppenname (Z.B. 'Lars' oder 'Gruppe 3')", key=f"gruppenname_{i}")
 
                 # Button zum Speichern des Szenarios
                 if st.button("Szenario für's Plenum speichern", key=f"save_button_{i}"):
