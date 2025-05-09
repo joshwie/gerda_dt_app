@@ -546,6 +546,7 @@ with tab_sz_analysieren:
         if st.button("Szenario für's Plenum speichern"):
             if szenario_code:
                 active_index = tab_names.index(st.session_state.get("__tabs__", tab_names[0]))
+                st.write(active_index)
                 speichere_szenario_in_firestore(szenario_code, all_dynamic_paths_to_images[active_index])
             else:
                 st.warning("Bitte einen Code eingeben!")
