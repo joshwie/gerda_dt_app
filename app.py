@@ -542,7 +542,7 @@ with tab_sz_analysieren:
                 st.subheader("📤 Dieses Szenario mit der Klasse teilen?")
 
                 # Eingabe eines Codes durch den Benutzer
-                szenario_code = st.text_input("📌 Bitte hier deinen Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
+                szenario_code = st.text_input("📌 Bitte hier den Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
 
                 # Eingabe des Namens (verpflichtend)
                 gruppenname = st.text_input("👤 Name oder Gruppenname zur späteren Zuordnung (Z.B. 'Lars' oder 'Gruppe 3')", key=f"gruppenname_{i}")
