@@ -537,6 +537,10 @@ with tab_sz_analysieren:
                 #st.write(dynamic_paths_to_images[5])
                 #st.image(dynamic_paths_to_images[5])
 
+                st.write('&nbsp;')
+                st.markdown("---")
+                st.subheader("📤 Dieses Szenario mit der Klasse teilen?")
+
                 # Eingabe eines Codes durch den Benutzer
                 szenario_code = st.text_input("📌 Bitte hier deinen Klassen-Code eingeben (frag deine Lehrkraft danach)", key=f"szenario_code_{i}")
 
