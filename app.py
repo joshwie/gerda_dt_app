@@ -87,10 +87,8 @@ def speichere_szenario_in_firestore(code, image_urls):
         else:
             doc_ref.set({"images": image_urls})
             
-        st.success("Szenario erfolgreich gespeichert.")
-
     except Exception as e:
-        st.error(f"Fehler beim Speichern in Firestore: {e}")
+        st.error(f"Fehler beim Speichern: {e}")
 
 
 def get_dynamic_paths_to_images(param_combination):
@@ -542,13 +540,36 @@ with tab_sz_analysieren:
                 # Eingabe eines Codes durch den Benutzer
                 szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key=f"szenario_code_{i}")
 
+                # Eingabe des Namens (verpflichtend)
+                gruppenname = st.text_input("👤 Dein Vorname oder selbst gewählter Gruppenname", key=f"gruppenname_{i}")
+
                 # Button zum Speichern des Szenarios
                 if st.button("Szenario für's Plenum speichern", key=f"save_button_{i}"):
-                    if szenario_code:
-                        szenario_code = szenario_code.upper()
-                        speichere_szenario_in_firestore(szenario_code, all_dynamic_paths_to_images[i])
+                    if not szenario_code.strip():
+                        st.warning("Bitte einen Gruppencode eingeben!")
+                    elif not gruppenname.strip():
+                        st.warning("Bitte deinen Namen oder Gruppennamen eingeben!")
                     else:
-                        st.warning("Bitte einen Code eingeben!")
+                        szenario_code = szenario_code.upper()
+                        daten = {
+                            "images": all_dynamic_paths_to_images[i],
+                            "gruppenname": gruppenname.strip()
+                        }
+
+                        doc_ref = db.collection("szenarien").document(szenario_code)
+                        doc = doc_ref.get()
+                        if doc.exists:
+                            existing = doc.to_dict().get("images", [])
+                            doc_ref.update({
+                                "images": existing + all_dynamic_paths_to_images[i],
+                                "gruppenname": gruppenname.strip()
+                            })
+                        else:
+                            doc_ref.set(daten)
+
+                        with st.empty():
+                            st.success("Szenario erfolgreich gespeichert.")
+                            time.sleep(3)
 
 
 
