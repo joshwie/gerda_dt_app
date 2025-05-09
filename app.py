@@ -540,14 +540,13 @@ with tab_sz_analysieren:
                 #st.image(dynamic_paths_to_images[5])
 
         # Eingabe eines Codes durch den Benutzer
-        szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key="szenario_code")
+        szenario_code = st.text_input("📌 Bitte hier deinen Gruppen-Code eingeben (z.B. B5)", key=f"szenario_code_{i}")
 
         # Button zum Speichern des Szenarios
         if st.button("Szenario für's Plenum speichern"):
             if szenario_code:
-                active_index = tab_names.index(st.session_state.get("__tabs__", tab_names[0]))
-                st.write(active_index)
-                speichere_szenario_in_firestore(szenario_code, all_dynamic_paths_to_images[active_index])
+                if st.button("Szenario für's Plenum speichern", key=f"save_button_{i}"):
+                    speichere_szenario_in_firestore(szenario_code, all_dynamic_paths_to_images[i])
             else:
                 st.warning("Bitte einen Code eingeben!")
 
